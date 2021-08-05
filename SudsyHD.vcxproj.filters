@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\View">
+      <UniqueIdentifier>{e057440c-ed02-4c3b-bd42-c6dd5cc45283}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\View\Core">
+      <UniqueIdentifier>{beba0f02-7840-4801-9aa7-c3025fe1d35f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\View">
+      <UniqueIdentifier>{9fa3bc3d-104c-4a98-a07f-e530c3aceb0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\View\Core">
+      <UniqueIdentifier>{41eb63f4-b0f5-4ee9-a547-beac035f00ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Controller">
+      <UniqueIdentifier>{6aa67f67-5089-4d59-8bbe-2ad18a26e2b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Model">
+      <UniqueIdentifier>{6c4ebd26-ee98-40aa-9213-178d8a272591}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Controller">
+      <UniqueIdentifier>{ff5bb050-5904-4de5-a1b9-99d605285cf6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Model">
+      <UniqueIdentifier>{51c7f508-7a39-4760-9dec-211cebe2f8d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\View\RenderStrategies">
+      <UniqueIdentifier>{6c7a20d9-0f17-4c5f-8f17-1486b521c5e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\View\RenderStrategies">
+      <UniqueIdentifier>{c84f970b-40da-4bd3-b0aa-422d14fcc6e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Model\BoardObjects">
+      <UniqueIdentifier>{1c3d4f6f-51ff-4c5f-bc50-83a5abc601b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Model\BoardObjects">
+      <UniqueIdentifier>{068f66e9-e412-45c5-a2ee-4bdb8951f2a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Controller\GameStates">
+      <UniqueIdentifier>{38feba02-84c5-47e2-822d-6a32a633ebe0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Controller\GameStates">
+      <UniqueIdentifier>{6f11a653-c273-4c2f-a915-7a06c6c8ccc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Controller\InputCommands">
+      <UniqueIdentifier>{55db5e76-ce21-432e-9fd7-00289e9f3a96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Controller\InputCommands">
+      <UniqueIdentifier>{8597bdc3-002f-421d-b117-2f30e3f615f6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="View\Core\Camera.h">
+      <Filter>Header Files\View\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="View\Core\EBO.h">
+      <Filter>Header Files\View\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="View\Core\Mesh.h">
+      <Filter>Header Files\View\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="View\Core\shader.h">
+      <Filter>Header Files\View\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="View\Core\ShaderSkybox.h">
+      <Filter>Header Files\View\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="View\Core\Texture.h">
+      <Filter>Header Files\View\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="View\Core\VAO.h">
+      <Filter>Header Files\View\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="View\Core\VBO.h">
+      <Filter>Header Files\View\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller\GameController.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\IGameModel.h">
+      <Filter>Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\GameModel.h">
+      <Filter>Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="View\IView.h">
+      <Filter>Header Files\View</Filter>
+    </ClInclude>
+    <ClInclude Include="View\View.h">
+      <Filter>Header Files\View</Filter>
+    </ClInclude>
+    <ClInclude Include="View\RenderStrategies\RenderStrategy.h">
+      <Filter>Header Files\View\RenderStrategies</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\BoardObjects\BoardObject.h">
+      <Filter>Header Files\Model\BoardObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller\GameStates\GameState.h">
+      <Filter>Header Files\Controller\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller\GameStates\GameContext.h">
+      <Filter>Header Files\Controller\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller\InputCommands\InputCommand.h">
+      <Filter>Header Files\Controller\InputCommands</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="View\Core\glad.c">
+      <Filter>Source Files\View\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="View\Core\Camera.cpp">
+      <Filter>Source Files\View\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="View\Core\EBO.cpp">
+      <Filter>Source Files\View\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="View\Core\Mesh.cpp">
+      <Filter>Source Files\View\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="View\Core\shader.cpp">
+      <Filter>Source Files\View\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="View\Core\ShaderSkybox.cpp">
+      <Filter>Source Files\View\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="View\Core\stb.cpp">
+      <Filter>Source Files\View\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="View\Core\Texture.cpp">
+      <Filter>Source Files\View\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="View\Core\VAO.cpp">
+      <Filter>Source Files\View\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="View\Core\VBO.cpp">
+      <Filter>Source Files\View\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller\GameController.cpp">
+      <Filter>Source Files\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\IGameModel.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\GameModel.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="View\IView.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="View\View.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="View\RenderStrategies\RenderStrategy.cpp">
+      <Filter>Source Files\View\RenderStrategies</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BoardObjects\BoardObject.cpp">
+      <Filter>Source Files\Model\BoardObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller\GameStates\GameState.cpp">
+      <Filter>Source Files\Controller\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller\GameStates\GameContext.cpp">
+      <Filter>Source Files\Controller\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller\InputCommands\InputCommand.cpp">
+      <Filter>Source Files\Controller\InputCommands</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
