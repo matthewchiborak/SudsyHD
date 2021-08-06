@@ -4,3 +4,8 @@ GameModel::GameModel()
 	: IGameModel()
 {
 }
+
+void GameModel::advance()
+{
+	context.request();
+}

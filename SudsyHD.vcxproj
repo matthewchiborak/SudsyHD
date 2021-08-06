@@ -146,12 +146,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Controller\GameController.h" />
-    <ClInclude Include="Controller\GameStates\GameContext.h" />
-    <ClInclude Include="Controller\GameStates\GameState.h" />
     <ClInclude Include="Controller\InputCommands\InputCommand.h" />
+    <ClInclude Include="Controller\InputStates\InputContext.h" />
+    <ClInclude Include="Controller\InputStates\InputState.h" />
+    <ClInclude Include="Controller\InputStates\InputStateBoard.h" />
     <ClInclude Include="Model\BoardObjects\BoardObject.h" />
     <ClInclude Include="Model\GameModel.h" />
+    <ClInclude Include="Model\GameStates\GameContext.h" />
+    <ClInclude Include="Model\GameStates\GameState.h" />
+    <ClInclude Include="Model\GameStates\GameStateWait.h" />
     <ClInclude Include="Model\IGameModel.h" />
+    <ClInclude Include="Model\Point.h" />
     <ClInclude Include="View\Core\Camera.h" />
     <ClInclude Include="View\Core\EBO.h" />
     <ClInclude Include="View\Core\Mesh.h" />
@@ -162,17 +167,23 @@
     <ClInclude Include="View\Core\VBO.h" />
     <ClInclude Include="View\IView.h" />
     <ClInclude Include="View\RenderStrategies\RenderStrategy.h" />
+    <ClInclude Include="View\RenderStrategies\RenderStrategyBoard.h" />
     <ClInclude Include="View\View.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Controller\GameController.cpp" />
-    <ClCompile Include="Controller\GameStates\GameContext.cpp" />
-    <ClCompile Include="Controller\GameStates\GameState.cpp" />
     <ClCompile Include="Controller\InputCommands\InputCommand.cpp" />
+    <ClCompile Include="Controller\InputStates\InputContext.cpp" />
+    <ClCompile Include="Controller\InputStates\InputState.cpp" />
+    <ClCompile Include="Controller\InputStates\InputStateBoard.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Model\BoardObjects\BoardObject.cpp" />
     <ClCompile Include="Model\GameModel.cpp" />
+    <ClCompile Include="Model\GameStates\GameContext.cpp" />
+    <ClCompile Include="Model\GameStates\GameState.cpp" />
+    <ClCompile Include="Model\GameStates\GameStateWait.cpp" />
     <ClCompile Include="Model\IGameModel.cpp" />
+    <ClCompile Include="Model\Point.cpp" />
     <ClCompile Include="View\Core\Camera.cpp" />
     <ClCompile Include="View\Core\EBO.cpp" />
     <ClCompile Include="View\Core\glad.c" />
@@ -185,6 +196,7 @@
     <ClCompile Include="View\Core\VBO.cpp" />
     <ClCompile Include="View\IView.cpp" />
     <ClCompile Include="View\RenderStrategies\RenderStrategy.cpp" />
+    <ClCompile Include="View\RenderStrategies\RenderStrategyBoard.cpp" />
     <ClCompile Include="View\View.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

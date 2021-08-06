@@ -49,17 +49,23 @@
     <Filter Include="Header Files\Model\BoardObjects">
       <UniqueIdentifier>{068f66e9-e412-45c5-a2ee-4bdb8951f2a2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Controller\GameStates">
-      <UniqueIdentifier>{38feba02-84c5-47e2-822d-6a32a633ebe0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Controller\GameStates">
-      <UniqueIdentifier>{6f11a653-c273-4c2f-a915-7a06c6c8ccc7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Controller\InputCommands">
       <UniqueIdentifier>{55db5e76-ce21-432e-9fd7-00289e9f3a96}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Controller\InputCommands">
       <UniqueIdentifier>{8597bdc3-002f-421d-b117-2f30e3f615f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Controller\InputStates">
+      <UniqueIdentifier>{38feba02-84c5-47e2-822d-6a32a633ebe0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Controller\InputStates">
+      <UniqueIdentifier>{6f11a653-c273-4c2f-a915-7a06c6c8ccc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Model\GameStates">
+      <UniqueIdentifier>{5b8564f0-c13e-4bcf-9084-3cf03f93415c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Model\GameStates">
+      <UniqueIdentifier>{6132c6fa-a454-4123-bca8-0ae6be59804c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -108,14 +114,32 @@
     <ClInclude Include="Model\BoardObjects\BoardObject.h">
       <Filter>Header Files\Model\BoardObjects</Filter>
     </ClInclude>
-    <ClInclude Include="Controller\GameStates\GameState.h">
-      <Filter>Header Files\Controller\GameStates</Filter>
-    </ClInclude>
-    <ClInclude Include="Controller\GameStates\GameContext.h">
-      <Filter>Header Files\Controller\GameStates</Filter>
-    </ClInclude>
     <ClInclude Include="Controller\InputCommands\InputCommand.h">
       <Filter>Header Files\Controller\InputCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\Point.h">
+      <Filter>Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="View\RenderStrategies\RenderStrategyBoard.h">
+      <Filter>Header Files\View\RenderStrategies</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\GameStates\GameContext.h">
+      <Filter>Header Files\Model\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\GameStates\GameState.h">
+      <Filter>Header Files\Model\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller\InputStates\InputContext.h">
+      <Filter>Header Files\Controller\InputStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller\InputStates\InputState.h">
+      <Filter>Header Files\Controller\InputStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller\InputStates\InputStateBoard.h">
+      <Filter>Header Files\Controller\InputStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\GameStates\GameStateWait.h">
+      <Filter>Header Files\Model\GameStates</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -173,14 +197,32 @@
     <ClCompile Include="Model\BoardObjects\BoardObject.cpp">
       <Filter>Source Files\Model\BoardObjects</Filter>
     </ClCompile>
-    <ClCompile Include="Controller\GameStates\GameState.cpp">
-      <Filter>Source Files\Controller\GameStates</Filter>
-    </ClCompile>
-    <ClCompile Include="Controller\GameStates\GameContext.cpp">
-      <Filter>Source Files\Controller\GameStates</Filter>
-    </ClCompile>
     <ClCompile Include="Controller\InputCommands\InputCommand.cpp">
       <Filter>Source Files\Controller\InputCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\Point.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="View\RenderStrategies\RenderStrategyBoard.cpp">
+      <Filter>Source Files\View\RenderStrategies</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\GameStates\GameContext.cpp">
+      <Filter>Source Files\Model\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\GameStates\GameState.cpp">
+      <Filter>Source Files\Model\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller\InputStates\InputContext.cpp">
+      <Filter>Source Files\Controller\InputStates</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller\InputStates\InputState.cpp">
+      <Filter>Source Files\Controller\InputStates</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller\InputStates\InputStateBoard.cpp">
+      <Filter>Source Files\Controller\InputStates</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\GameStates\GameStateWait.cpp">
+      <Filter>Source Files\Model\GameStates</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

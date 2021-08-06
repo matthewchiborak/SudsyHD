@@ -5,3 +5,15 @@ GameController::GameController(IGameModel& model, IView& view)
 {
 }
 
+void GameController::start()
+{
+	while (view->isWindowOpen())
+	{
+		model->advance();
+		context.request();
+		view->draw();
+	}
+
+	view->clearMemory();
+}
+

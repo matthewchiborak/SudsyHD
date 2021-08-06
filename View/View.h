@@ -6,8 +6,15 @@
 class View: public IView
 {
 public:
-	View(IGameModel& model);
+	View(Point windowSize, IGameModel& model);
 
+	void draw() override;
+	void clearMemory() override;
+
+private:
+	void setUp();
+
+	Camera camera;
 };
 
 #endif

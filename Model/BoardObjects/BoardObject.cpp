@@ -1,5 +1,11 @@
 #include "BoardObject.h"
 
-BoardObject::BoardObject()
+BoardObject::BoardObject(Point position)
+	: position(position)
 {
+}
+
+Point BoardObject::getPosition()
+{
+	return position;
 }

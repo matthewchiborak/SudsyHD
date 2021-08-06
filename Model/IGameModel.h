@@ -6,6 +6,7 @@ class IGameModel
 public:
 	IGameModel();
 
+	virtual void advance() = 0;
 };
 
 #endif
