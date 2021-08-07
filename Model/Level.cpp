@@ -6,6 +6,16 @@ Level::Level()
 {
 }
 
+void Level::addBoardObject(std::unique_ptr<BoardObject> object)
+{
+	boardObjects.push_back(std::move(object));
+}
+
+const std::vector<std::unique_ptr<BoardObject>>* Level::getBoardObjects() const
+{
+	return &boardObjects;
+}
+
 void Level::setWidth(int value)
 {
 	this->width = value;

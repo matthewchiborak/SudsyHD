@@ -5,17 +5,14 @@
 #include "../ISpriteFlyweightFactory.h"
 #include "../../Model/IGameModel.h"
 
+class IView;
+
 class RenderStrategy
 {
 public:
 	RenderStrategy();
 
-	virtual void execute(	GLFWwindow* window, 
-							Camera& camera, 
-							unsigned const int width, 
-							unsigned const int height, 
-							ISpriteFlyweightFactory& spriteFactory,
-							const IGameModel& model) = 0;
+	virtual void execute(IView& view) = 0;
 
 protected:
 	std::string windowTitle;

@@ -1,11 +1,34 @@
 #include "BoardObject.h"
 
-BoardObject::BoardObject(Point position)
-	: position(position)
+#include "../../View/IView.h"
+#include "../../View/ISpriteFlyweightFactory.h"
+
+BoardObject::BoardObject(Point position, std::string spriteKey)
+	: position(position), spriteKey(spriteKey)
 {
 }
 
-Point BoardObject::getPosition()
+BoardObject::~BoardObject()
+{
+	std::cout << "Board Object Destroyed\n";
+}
+
+void BoardObject::draw(IView& view) const
+{
+	ISpriteFlyweightFactory* factory = view.getSpriteFactory();
+	Camera* camera = view.getCamera();
+	Shader* shader = view.getShader();
+
+	factory->getSprite(this->spriteKey)->Draw(
+		*camera,
+		*shader,
+		glm::vec3((float)this->getPosition().getX() / 10.0f, 
+		0.0f, 
+		(float)this->getPosition().getY() / -10.0f)
+	);
+}
+
+Point BoardObject::getPosition() const
 {
 	return position;
 }

@@ -1,6 +1,8 @@
 #ifndef INPUT_CONTEXT_H
 #define INPUT_CONTEXT_H
 
+#include <memory>
+
 #include "InputState.h"
 
 class InputContext
@@ -10,8 +12,10 @@ public:
 
 	void request();
 
+	void setState(std::unique_ptr<InputState> state);
+
 private:
-	InputState* state;
+	std::unique_ptr<InputState> state;
 };
 
 #endif

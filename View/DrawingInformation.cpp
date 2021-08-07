@@ -1,14 +1,15 @@
 #include "Sprite.h"
 
-Sprite::Sprite(std::string textureFilePath)
+Sprite::Sprite(std::string textureFilePath, Shader& shader)
+	: shader(&shader)
 {
 	createMeshes(textureFilePath);
 }
 
-void Sprite::Draw(Camera& camera, Shader& shader, glm::vec3 translation, glm::quat rotation, glm::vec3 scale)
+void Sprite::Draw(Camera& camera, glm::vec3 translation, glm::quat rotation, glm::vec3 scale)
 {
-	mesh1.Draw(shader, camera, glm::mat4(1.0f), translation, rotation, scale);
-	mesh2.Draw(shader, camera, glm::mat4(1.0f), translation, rotation, scale);
+	mesh1.Draw(*shader, camera, glm::mat4(1.0f), translation, rotation, scale);
+	mesh2.Draw(*shader, camera, glm::mat4(1.0f), translation, rotation, scale);
 }
 
 void Sprite::createMeshes(std::string textureFilePath)

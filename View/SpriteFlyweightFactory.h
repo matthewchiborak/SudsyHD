@@ -8,7 +8,7 @@
 class SpriteFlyweightFactory: public ISpriteFlyweightFactory
 {
 public:
-	SpriteFlyweightFactory(std::string textureKeyListFilePath, std::string shaderFilePath);
+	SpriteFlyweightFactory(std::string textureKeyListFilePath);
 	~SpriteFlyweightFactory();
 
 	Sprite* getSprite(std::string key) override;
@@ -18,11 +18,7 @@ private:
 	std::string shaderFolderFilePath;
 	std::map<std::string, Sprite*> flyweights;
 
-	void createShader();
-	void activateShader();
-
 	Sprite* createFlyweight(std::string key) throw();
-	Shader* cutoutShader;
 };
 
 #endif

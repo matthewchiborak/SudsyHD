@@ -1,5 +1,7 @@
 #include "RenderStrategy.h"
 
+#include "../IView.h"
+
 RenderStrategy::RenderStrategy()
 {
 }

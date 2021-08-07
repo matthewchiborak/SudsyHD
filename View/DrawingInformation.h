@@ -10,18 +10,18 @@
 class Sprite
 {
 public:
-	Sprite(std::string textureFilePath);
+	Sprite(std::string textureFilePath, Shader& shader);
 
 	void Draw
 	(
 		Camera& camera,
-		Shader& shader,
 		glm::vec3 translation = glm::vec3(0.0f, 0.0f, 0.0f),
 		glm::quat rotation = glm::quat(0.0f, 0.0f, 0.0f, 1.0f),
 		glm::vec3 scale = glm::vec3(1.0f, 1.0f, 1.0f)
 	);
 
 protected:
+	Shader* shader;
 	Mesh mesh1;
 	Mesh mesh2;
 	std::vector<Texture> loadedTex;

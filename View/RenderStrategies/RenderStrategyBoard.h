@@ -8,15 +8,13 @@ class RenderStrategyBoard: public RenderStrategy
 public:
 	RenderStrategyBoard();
 
-	void execute(	GLFWwindow* window, 
-					Camera& camera, 
-					unsigned const int width, 
-					unsigned const int height, 
-					ISpriteFlyweightFactory& spriteFactory,
-					const IGameModel& model) override;
+	void execute(IView& view) override;
 
 private:
-	void drawScene(Camera& camera, ISpriteFlyweightFactory& spriteFactory, const IGameModel& model);
+	void drawScene(IView& view);
+
+	void drawFloor(IView& view);
+	void drawBoardObjects(IView& view);
 
 };
 

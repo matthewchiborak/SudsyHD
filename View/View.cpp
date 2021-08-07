@@ -2,16 +2,23 @@
 
 #include "RenderStrategies/RenderStrategyBoard.h"
 
-View::View(Point windowSize, IGameModel& model, IRenderStrategyFactory& renderStratFactory, ISpriteFlyweightFactory& spriteFactory)
-	: IView(windowSize, model, renderStratFactory, spriteFactory)
+View::View(Point windowSize, IGameModel& model, IRenderStrategyFactory& renderStratFactory, ISpriteFlyweightFactory& spriteFactory, std::string shaderFilePath)
+	: IView(windowSize, model, renderStratFactory, spriteFactory), shaderFilePath(shaderFilePath)
 {
 	setUp();
 	this->renderStrategy = this->renderStratFactory->createStrategy(RenderStrategyKey::RENDER_STRATEGY_BOARD);
 }
 
+View::~View()
+{
+}
+
 void View::draw()
 {
-	renderStrategy->execute(window, camera, windowSize.getX(), windowSize.getY(), *this->spriteFactory, *model);
+	if (cutoutShader == nullptr)
+		createShader();
+	
+	renderStrategy->execute(*this);
 }
 
 void View::clearMemory()
@@ -90,4 +97,17 @@ void View::createCamera()
 	// Creates camera object
 	camera = Camera(windowSize.getX(), windowSize.getY(), glm::vec3(0.0f, 1.2f, 0.0f));
 	camera.setRotation(90.0f, 0.0f);
+}
+
+void View::createShader()
+{
+	this->cutoutShader = new Shader((shaderFilePath + "/default.vert").c_str(), (shaderFilePath + "/cutout.frag").c_str(), (shaderFilePath + "/default.geom").c_str());
+
+	this->cutoutShader->Activate();
+	glm::vec4 lightColor = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
+	glm::vec3  lightPos = glm::vec3(0.5f, 0.5f, 0.5f);
+	glm::mat4 lightModel = glm::mat4(1.0f);
+	lightModel = glm::translate(lightModel, lightPos);
+	glUniform4f(glGetUniformLocation(cutoutShader->ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
+	glUniform3f(glGetUniformLocation(cutoutShader->ID, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
 }

@@ -6,7 +6,8 @@
 class View: public IView
 {
 public:
-	View(Point windowSize, IGameModel& model, IRenderStrategyFactory& renderStratFactory, ISpriteFlyweightFactory& spriteFactory);
+	View(Point windowSize, IGameModel& model, IRenderStrategyFactory& renderStratFactory, ISpriteFlyweightFactory& spriteFactory, std::string shaderFilePath);
+	~View();
 
 	void draw() override;
 	void clearMemory() override;
@@ -18,8 +19,9 @@ private:
 	void createWindow();
 	void configureWindow();
 	void createCamera();
-
-	Camera camera;
+	void createShader();
+	
+	std::string shaderFilePath;
 };
 
 #endif

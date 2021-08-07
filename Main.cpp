@@ -11,20 +11,14 @@
 
 int main()
 {
-	IRenderStrategyFactory* renderStratFact = new RenderStrategyFactory();
-	ISpriteFlyweightFactory* spriteFactory = new SpriteFlyweightFactory("Textures/ModelPaths.json", "Shaders");
-	ILevelFactory* levelFactory = new LevelFactory("Levels");
-	IGameModel* model = new GameModel(*levelFactory);
-	IView* view = new View(Point(1600, 800), *model, *renderStratFact, *spriteFactory);
-	IGameController* controller = new GameController(*model, *view);
+	std::unique_ptr<IRenderStrategyFactory> renderStratFact = std::make_unique<RenderStrategyFactory>();
+	std::unique_ptr<ISpriteFlyweightFactory> spriteFactory = std::make_unique<SpriteFlyweightFactory>("Textures/ModelPaths.json");
+	std::unique_ptr<ILevelFactory> levelFactory = std::make_unique<LevelFactory>("Levels");
+	std::unique_ptr<IGameModel> model = std::make_unique<GameModel>(*levelFactory);
+	std::unique_ptr<IView> view = std::make_unique<View>(Point(1600, 800), *(model.get()), *(renderStratFact.get()), *(spriteFactory.get()), "Shaders");
+	std::unique_ptr<IGameController> controller = std::make_unique<GameController>(*(model.get()), *(view.get()));
 
 	controller->start();
-
-	delete controller;
-	delete view;
-	delete model;
-	delete levelFactory;
-	delete renderStratFact;
 
 	return 0;
 }
