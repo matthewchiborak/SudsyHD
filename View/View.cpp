@@ -2,11 +2,11 @@
 
 #include "RenderStrategies/RenderStrategyBoard.h"
 
-View::View(Point windowSize, IGameModel& model)
-	: IView(windowSize, model)
+View::View(Point windowSize, IGameModel& model, IRenderStrategyFactory& renderStratFactory)
+	: IView(windowSize, model, renderStratFactory)
 {
 	setUp();
-	this->renderStrategy = new RenderStrategyBoard();
+	this->renderStrategy = this->renderStratFactory->createStrategy(RenderStrategyKey::RENDER_STRATEGY_BOARD);
 }
 
 void View::draw()
@@ -24,6 +24,14 @@ void View::clearMemory()
 
 void View::setUp()
 {
+	setUpWindow();
+	createWindow();
+	configureWindow();
+	createCamera();
+}
+
+void View::setUpWindow()
+{
 	// Initialize GLFW
 	glfwInit();
 
@@ -37,6 +45,10 @@ void View::setUp()
 	// So that means we only have the modern functions
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
+}
+
+void View::createWindow()
+{
 	// Create a GLFWwindow object
 	window = glfwCreateWindow(windowSize.getX(), windowSize.getY(), "Sudsy HD", NULL, NULL);
 	// Error check if the window fails to create
@@ -48,18 +60,17 @@ void View::setUp()
 	}
 	// Introduce the window into the current context
 	glfwMakeContextCurrent(window);
+}
 
+void View::configureWindow()
+{
 	//Load GLAD so it configures OpenGL
 	gladLoadGL();
 	// Specify the viewport of OpenGL in the Window
-	// In this case the viewport goes from x = 0, y = 0, to x = 800, y = 800
 	glViewport(0, 0, windowSize.getX(), windowSize.getY());
 
 	// Enables the Depth Buffer
 	glEnable(GL_DEPTH_TEST);
-
-	//Gamma correction
-	//glEnable(GL_FRAMEBUFFER_SRGB);
 
 	// Enables Multisampling
 	glEnable(GL_MULTISAMPLE);
@@ -72,7 +83,10 @@ void View::setUp()
 	glFrontFace(GL_CCW);
 	// Configures the blending function
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+}
 
+void View::createCamera()
+{
 	// Creates camera object
 	camera = Camera(windowSize.getX(), windowSize.getY(), glm::vec3(0.8f, 1.2f, 0.5f));
 	camera.setRotation(50.0f, 0.0f);

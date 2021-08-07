@@ -1,14 +1,9 @@
 #ifndef GAME_CONTROLLER_H
 #define GAME_CONTROLLER_H
 
-#include <chrono>
+#include "IGameController.h"
 
-#include "../Model/IGameModel.h"
-#include "../View/IView.h"
-
-#include "InputStates/InputContext.h"
-
-class GameController
+class GameController: public IGameController
 {
 public:
 	GameController(
@@ -16,13 +11,8 @@ public:
 		IView& view
 	);
 
-	void start();
+	void start() override;
 
-private:
-	IGameModel* model;
-	IView* view;
-
-	InputContext context;
 };
 
 #endif

@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Controller\GameController.h" />
+    <ClInclude Include="Controller\IGameController.h" />
     <ClInclude Include="Controller\InputCommands\InputCommand.h" />
     <ClInclude Include="Controller\InputStates\InputContext.h" />
     <ClInclude Include="Controller\InputStates\InputState.h" />
@@ -156,6 +157,9 @@
     <ClInclude Include="Model\GameStates\GameState.h" />
     <ClInclude Include="Model\GameStates\GameStateWait.h" />
     <ClInclude Include="Model\IGameModel.h" />
+    <ClInclude Include="Model\ILevelFactory.h" />
+    <ClInclude Include="Model\Level.h" />
+    <ClInclude Include="Model\LevelFactory.h" />
     <ClInclude Include="Model\Point.h" />
     <ClInclude Include="View\Core\Camera.h" />
     <ClInclude Include="View\Core\EBO.h" />
@@ -165,13 +169,16 @@
     <ClInclude Include="View\Core\Texture.h" />
     <ClInclude Include="View\Core\VAO.h" />
     <ClInclude Include="View\Core\VBO.h" />
+    <ClInclude Include="View\IRenderStrategyFactory.h" />
     <ClInclude Include="View\IView.h" />
     <ClInclude Include="View\RenderStrategies\RenderStrategy.h" />
     <ClInclude Include="View\RenderStrategies\RenderStrategyBoard.h" />
+    <ClInclude Include="View\RenderStrategyFactory.h" />
     <ClInclude Include="View\View.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Controller\GameController.cpp" />
+    <ClCompile Include="Controller\IGameController.cpp" />
     <ClCompile Include="Controller\InputCommands\InputCommand.cpp" />
     <ClCompile Include="Controller\InputStates\InputContext.cpp" />
     <ClCompile Include="Controller\InputStates\InputState.cpp" />
@@ -183,6 +190,9 @@
     <ClCompile Include="Model\GameStates\GameState.cpp" />
     <ClCompile Include="Model\GameStates\GameStateWait.cpp" />
     <ClCompile Include="Model\IGameModel.cpp" />
+    <ClCompile Include="Model\ILevelFactory.cpp" />
+    <ClCompile Include="Model\Level.cpp" />
+    <ClCompile Include="Model\LevelFactory.cpp" />
     <ClCompile Include="Model\Point.cpp" />
     <ClCompile Include="View\Core\Camera.cpp" />
     <ClCompile Include="View\Core\EBO.cpp" />
@@ -194,9 +204,11 @@
     <ClCompile Include="View\Core\Texture.cpp" />
     <ClCompile Include="View\Core\VAO.cpp" />
     <ClCompile Include="View\Core\VBO.cpp" />
+    <ClCompile Include="View\IRenderStrategyFactory.cpp" />
     <ClCompile Include="View\IView.cpp" />
     <ClCompile Include="View\RenderStrategies\RenderStrategy.cpp" />
     <ClCompile Include="View\RenderStrategies\RenderStrategyBoard.cpp" />
+    <ClCompile Include="View\RenderStrategyFactory.cpp" />
     <ClCompile Include="View\View.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

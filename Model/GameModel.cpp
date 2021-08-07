@@ -1,7 +1,7 @@
 #include "GameModel.h"
 
-GameModel::GameModel()
-	: IGameModel()
+GameModel::GameModel(ILevelFactory& levelFactory)
+	: IGameModel(levelFactory)
 {
 }
 

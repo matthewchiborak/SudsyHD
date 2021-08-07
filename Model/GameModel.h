@@ -8,7 +8,7 @@
 class GameModel: public IGameModel
 {
 public:
-	GameModel();
+	GameModel(ILevelFactory& levelFactory);
 
 	void advance() override;
 
