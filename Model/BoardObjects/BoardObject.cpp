@@ -10,7 +10,7 @@ BoardObject::BoardObject(Point position, std::string spriteKey)
 
 BoardObject::~BoardObject()
 {
-	std::cout << "Board Object Destroyed\n";
+
 }
 
 void BoardObject::draw(IView& view) const
@@ -23,7 +23,7 @@ void BoardObject::draw(IView& view) const
 		*camera,
 		*shader,
 		glm::vec3((float)this->getPosition().getX() / 10.0f, 
-		0.0f, 
+		0.01f, 
 		(float)this->getPosition().getY() / -10.0f)
 	);
 }

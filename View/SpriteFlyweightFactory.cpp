@@ -10,7 +10,12 @@ SpriteFlyweightFactory::SpriteFlyweightFactory(std::string textureKeyListFilePat
 
 SpriteFlyweightFactory::~SpriteFlyweightFactory()
 {
+	std::map<std::string, Sprite*>::iterator it;
 
+	for (it = flyweights.begin(); it != flyweights.end(); it++)
+	{
+		delete it->second;
+	}
 }
 
 Sprite* SpriteFlyweightFactory::getSprite(std::string key)

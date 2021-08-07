@@ -20,6 +20,7 @@ void RenderStrategyBoard::execute(IView& view)
 void RenderStrategyBoard::drawScene(IView& view)
 {
 	drawFloor(view);
+	drawBoardObjects(view);
 }
 
 void RenderStrategyBoard::drawFloor(IView& view)

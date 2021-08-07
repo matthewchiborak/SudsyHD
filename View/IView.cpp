@@ -10,8 +10,6 @@ IView::~IView()
 {
 	if (cutoutShader != nullptr)
 		delete cutoutShader;
-
-	std::cout << "IVeiw Destructor\n";
 }
 
 bool IView::isWindowOpen()

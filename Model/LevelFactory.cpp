@@ -29,8 +29,8 @@ std::unique_ptr<Level> LevelFactory::createLevel(int level) throw()
 	newLevel.get()->setWidth(JSON["Width"]);
 	newLevel.get()->setHeight(JSON["Height"]);
 
-	//std::unique_ptr<BoardObject> newObject = std::make_unique<BoardObject>(Point(2, 2), "Duke");
-	//newLevel.get()->addBoardObject(std::move(newObject));
+	std::unique_ptr<BoardObject> newObject = std::make_unique<BoardObject>(Point(2, 2), "Duke");
+	newLevel.get()->addBoardObject(std::move(newObject));
 
 	return newLevel;
 }
