@@ -12,6 +12,8 @@ public:
 
 	void loadLevel(int level);
 
+	const Level* getCurrentLevel() const;
+
 protected:
 	ILevelFactory* levelFactory;
 	std::unique_ptr<Level> currentLevel;

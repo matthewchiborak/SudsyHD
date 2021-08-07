@@ -6,7 +6,7 @@
 class View: public IView
 {
 public:
-	View(Point windowSize, IGameModel& model, IRenderStrategyFactory& renderStratFactory);
+	View(Point windowSize, IGameModel& model, IRenderStrategyFactory& renderStratFactory, ISpriteFlyweightFactory& spriteFactory);
 
 	void draw() override;
 	void clearMemory() override;

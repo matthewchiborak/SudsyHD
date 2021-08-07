@@ -5,54 +5,33 @@ RenderStrategyBoard::RenderStrategyBoard()
 {
 }
 
-void RenderStrategyBoard::execute(GLFWwindow* window, Camera& camera, unsigned const int width, unsigned const int height)
+void RenderStrategyBoard::execute(	GLFWwindow* window, 
+									Camera& camera, 
+									unsigned const int width, 
+									unsigned const int height, 
+									ISpriteFlyweightFactory& spriteFactory,
+									const IGameModel& model)
 {
-	drawFPS(window);
+	drawFPS(window, "Sudsy HD");
 	clearScreen();
 	//camera->Inputs(window);
 	updateCamera(camera);
-	drawScene(camera);
-
-	// Swap the back buffer with the front buffer
-	glfwSwapBuffers(window);
-	// Take care of all GLFW events
-	glfwPollEvents();
+	drawScene(camera, spriteFactory, model);
+	finishDrawing(window);
 }
 
-void RenderStrategyBoard::drawFPS(GLFWwindow* window)
+void RenderStrategyBoard::drawScene(Camera& camera, ISpriteFlyweightFactory& spriteFactory, const IGameModel& model)
 {
-	// Updates counter and times
-	crntTime = glfwGetTime();
-	timeDiff = crntTime - prevTime;
-	counter++;
+	int boardWidth = model.getCurrentLevel()->getWidth();
+	int boardHeight = model.getCurrentLevel()->getHeight();
 
-	if (timeDiff >= 1.0 / 30.0)
+	camera.setPosition(glm::vec3((float)boardWidth / 20.0f, 1.2f, (float)boardHeight / -20.0f));
+
+	for (int i = 0; i < boardWidth; i++)
 	{
-		// Creates new title
-		std::string FPS = std::to_string((int)((1.0 / timeDiff) * counter));
-		std::string newTitle = "Sudsy HD - " + FPS + " FPS";
-		glfwSetWindowTitle(window, newTitle.c_str());
-
-		// Resets times and counter
-		prevTime = crntTime;
-		counter = 0;
+		for (int j = 0; j < boardHeight; j++)
+		{
+			spriteFactory.getSprite("Tile")->Draw(camera, glm::vec3((float)i / 10.0f, 0.0f, (float)j / -10.0f));
+		}
 	}
-}
-
-void RenderStrategyBoard::clearScreen()
-{
-	// Specify the color of the background
-	glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
-	// Clean the back buffer and depth buffer
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-}
-
-void RenderStrategyBoard::updateCamera(Camera& camera)
-{
-	// Updates and exports the camera matrix to the Vertex Shader
-	camera.updateMatrix(45.0f, 0.1f, 100.0f);
-}
-
-void RenderStrategyBoard::drawScene(const Camera& camera)
-{
 }

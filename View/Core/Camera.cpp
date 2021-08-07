@@ -22,7 +22,7 @@ void Camera::setRotation(float newRotX, float newRotY)
 	glm::vec3 newOrientation = glm::rotate(Orientation, glm::radians(-newRotX), glm::normalize(glm::cross(Orientation, Up)));
 
 	// Decides whether or not the next vertical Orientation is legal or not
-	if (abs(glm::angle(newOrientation, Up) - glm::radians(90.0f)) <= glm::radians(85.0f))
+	//if (abs(glm::angle(newOrientation, Up) - glm::radians(90.0f)) <= glm::radians(85.0f))
 	{
 		Orientation = newOrientation;
 	}

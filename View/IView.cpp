@@ -1,7 +1,7 @@
 #include "IView.h"
 
-IView::IView(Point windowSize, IGameModel& model, IRenderStrategyFactory& renderStratFactory)
-	: windowSize(windowSize), model(&model), renderStratFactory(&renderStratFactory)
+IView::IView(Point windowSize, IGameModel& model, IRenderStrategyFactory& renderStratFactory, ISpriteFlyweightFactory& spriteFactory)
+	: windowSize(windowSize), model(&model), renderStratFactory(&renderStratFactory), spriteFactory(&spriteFactory)
 {
 }
 

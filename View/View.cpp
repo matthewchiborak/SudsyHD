@@ -2,8 +2,8 @@
 
 #include "RenderStrategies/RenderStrategyBoard.h"
 
-View::View(Point windowSize, IGameModel& model, IRenderStrategyFactory& renderStratFactory)
-	: IView(windowSize, model, renderStratFactory)
+View::View(Point windowSize, IGameModel& model, IRenderStrategyFactory& renderStratFactory, ISpriteFlyweightFactory& spriteFactory)
+	: IView(windowSize, model, renderStratFactory, spriteFactory)
 {
 	setUp();
 	this->renderStrategy = this->renderStratFactory->createStrategy(RenderStrategyKey::RENDER_STRATEGY_BOARD);
@@ -11,7 +11,7 @@ View::View(Point windowSize, IGameModel& model, IRenderStrategyFactory& renderSt
 
 void View::draw()
 {
-	renderStrategy->execute(window, camera, windowSize.getX(), windowSize.getY());
+	renderStrategy->execute(window, camera, windowSize.getX(), windowSize.getY(), *this->spriteFactory, *model);
 }
 
 void View::clearMemory()
@@ -88,6 +88,6 @@ void View::configureWindow()
 void View::createCamera()
 {
 	// Creates camera object
-	camera = Camera(windowSize.getX(), windowSize.getY(), glm::vec3(0.8f, 1.2f, 0.5f));
-	camera.setRotation(50.0f, 0.0f);
+	camera = Camera(windowSize.getX(), windowSize.getY(), glm::vec3(0.0f, 1.2f, 0.0f));
+	camera.setRotation(90.0f, 0.0f);
 }

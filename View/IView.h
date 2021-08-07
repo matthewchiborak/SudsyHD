@@ -5,6 +5,7 @@
 #include "../Model/Point.h"
 
 #include "IRenderStrategyFactory.h"
+#include "ISpriteFlyweightFactory.h"
 #include "RenderStrategies/RenderStrategy.h"
 
 class IView
@@ -13,7 +14,8 @@ public:
 	IView(
 		Point windowSize,
 		IGameModel& model,
-		IRenderStrategyFactory& renderStratFactory
+		IRenderStrategyFactory& renderStratFactory,
+		ISpriteFlyweightFactory& spriteFactory
 	);
 
 	virtual void draw() = 0;
@@ -26,6 +28,7 @@ protected:
 	Point windowSize;
 	GLFWwindow* window;
 	IRenderStrategyFactory* renderStratFactory;
+	ISpriteFlyweightFactory* spriteFactory;
 	std::unique_ptr<RenderStrategy> renderStrategy;
 };
 

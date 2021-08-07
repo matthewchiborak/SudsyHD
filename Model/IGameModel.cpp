@@ -18,3 +18,8 @@ void IGameModel::loadLevel(int level)
 		std::cout << "Load Level Error\n";
 	}
 }
+
+const Level* IGameModel::getCurrentLevel() const
+{
+	return currentLevel.get();
+}

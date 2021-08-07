@@ -2,13 +2,33 @@
 #define RENDER_STRATEGY_H
 
 #include "../Core/Mesh.h"
+#include "../ISpriteFlyweightFactory.h"
+#include "../../Model/IGameModel.h"
 
 class RenderStrategy
 {
 public:
 	RenderStrategy();
 
-	virtual void execute(GLFWwindow* window, Camera& camera, unsigned const int width, unsigned const int height) = 0;
+	virtual void execute(	GLFWwindow* window, 
+							Camera& camera, 
+							unsigned const int width, 
+							unsigned const int height, 
+							ISpriteFlyweightFactory& spriteFactory,
+							const IGameModel& model) = 0;
+
+protected:
+	std::string windowTitle;
+	double prevTime;
+	double crntTime;
+	double timeDiff;
+	// Keeps track of the amount of frames in timeDiff
+	unsigned int counter;
+
+	void drawFPS(GLFWwindow* window, std::string windowTitle);
+	void clearScreen();
+	void updateCamera(Camera& camera);
+	void finishDrawing(GLFWwindow* window);
 };
 
 #endif

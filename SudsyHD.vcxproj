@@ -170,10 +170,13 @@
     <ClInclude Include="View\Core\VAO.h" />
     <ClInclude Include="View\Core\VBO.h" />
     <ClInclude Include="View\IRenderStrategyFactory.h" />
+    <ClInclude Include="View\ISpriteFlyweightFactory.h" />
     <ClInclude Include="View\IView.h" />
     <ClInclude Include="View\RenderStrategies\RenderStrategy.h" />
     <ClInclude Include="View\RenderStrategies\RenderStrategyBoard.h" />
     <ClInclude Include="View\RenderStrategyFactory.h" />
+    <ClInclude Include="View\Sprite.h" />
+    <ClInclude Include="View\SpriteFlyweightFactory.h" />
     <ClInclude Include="View\View.h" />
   </ItemGroup>
   <ItemGroup>
@@ -205,10 +208,13 @@
     <ClCompile Include="View\Core\VAO.cpp" />
     <ClCompile Include="View\Core\VBO.cpp" />
     <ClCompile Include="View\IRenderStrategyFactory.cpp" />
+    <ClCompile Include="View\ISpriteFlyweightFactory.cpp" />
     <ClCompile Include="View\IView.cpp" />
     <ClCompile Include="View\RenderStrategies\RenderStrategy.cpp" />
     <ClCompile Include="View\RenderStrategies\RenderStrategyBoard.cpp" />
     <ClCompile Include="View\RenderStrategyFactory.cpp" />
+    <ClCompile Include="View\Sprite.cpp" />
+    <ClCompile Include="View\SpriteFlyweightFactory.cpp" />
     <ClCompile Include="View\View.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
