@@ -6,6 +6,11 @@ Level::Level()
 {
 }
 
+Level::~Level()
+{
+
+}
+
 void Level::addBoardObject(std::unique_ptr<BoardObject> object)
 {
 	boardObjects.push_back(std::move(object));

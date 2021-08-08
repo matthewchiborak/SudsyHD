@@ -1,6 +1,8 @@
 #ifndef POINT_H
 #define POINT_H
 
+#include <ostream>
+
 class Point
 {
 public:
@@ -8,6 +10,7 @@ public:
 	Point(const Point& copy);
 
 	bool operator == (const Point& point2);
+	friend std::ostream& operator<<(std::ostream& output, const Point& point);
 
 	int getX() const;
 	int getY() const;

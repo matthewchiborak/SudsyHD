@@ -9,6 +9,8 @@ public:
 	IGameModel(ILevelFactory& levelFactory);
 
 	virtual void advance() = 0;
+	virtual void move(const Point direction) = 0;
+	virtual void interact() = 0;
 
 	void loadLevel(int level);
 

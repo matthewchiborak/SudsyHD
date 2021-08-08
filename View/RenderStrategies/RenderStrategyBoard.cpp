@@ -30,7 +30,7 @@ void RenderStrategyBoard::drawFloor(IView& view)
 	int boardHeight = currentLevel->getHeight();
 
 	Camera* camera = view.getCamera();
-	camera->setPosition(glm::vec3((float)boardWidth / 20.0f, 1.2f, (float)boardHeight / -20.0f));
+	camera->setPosition(glm::vec3((float)boardWidth / 20.0f, 1.2f, (float)boardHeight / 20.0f));
 
 	Shader* shader = view.getShader();
 
@@ -40,7 +40,7 @@ void RenderStrategyBoard::drawFloor(IView& view)
 	{
 		for (int j = 0; j < boardHeight; j++)
 		{
-			factory->getSprite("Tile")->Draw(*camera, *shader, glm::vec3((float)i / 10.0f, 0.0f, (float)j / -10.0f));
+			factory->getSprite("Tile")->Draw(*camera, *shader, glm::vec3((float)i / 10.0f, 0.0f, (float)j / 10.0f));
 		}
 	}
 }

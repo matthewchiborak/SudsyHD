@@ -35,3 +35,9 @@ void Point::setY(int y)
 {
 	this->y = y;
 }
+
+std::ostream& operator<<(std::ostream& output, const Point& point)
+{
+	output << "X: " << point.getX() << " Y: " << point.getY();
+	return output;
+}

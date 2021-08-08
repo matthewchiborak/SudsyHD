@@ -11,11 +11,16 @@ void GameController::start()
 
 	while (view->isWindowOpen())
 	{
+		handleUserInput();
 		model->advance();
-		context.request();
 		view->draw();
 	}
 
 	view->clearMemory();
+}
+
+void GameController::handleUserInput()
+{
+	context.request(*(this->model), *(this->view));
 }
 

@@ -41,15 +41,15 @@ void Sprite::createMeshes(std::string textureFilePath)
 	std::vector<glm::vec3> normals = groupFloatsVec3(normalVec);
 	std::vector<float> texVec1 =
 	{
-		0.0f, 0.0f,
 		0.0f, 1.0f,
-		1.0f, 1.0f
+		1.0f, 1.0f,
+		1.0f, 0.0f
 	};
 	std::vector<float> texVec2 =
 	{
-		0.0f, 0.0f,
-		1.0f, 1.0f,
-		1.0f, 0.0f
+		0.0f, 1.0f,
+		1.0f, 0.0f,
+		0.0f, 0.0f
 	};
 	std::vector<glm::vec2> texUVs1 = groupFloatsVec2(texVec1);
 	std::vector<glm::vec2> texUVs2 = groupFloatsVec2(texVec2);

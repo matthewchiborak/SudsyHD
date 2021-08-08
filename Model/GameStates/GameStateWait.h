@@ -8,7 +8,9 @@ class GameStateWait: public GameState
 public:
 	GameStateWait();
 
-	void handle() override;
+	void advance() override;
+	void move(const Point direction) override;
+	void interact() override;
 };
 
 #endif

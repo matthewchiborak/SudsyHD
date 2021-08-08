@@ -10,6 +10,8 @@ class GameModel: public IGameModel
 public:
 	GameModel(ILevelFactory& levelFactory);
 
+	void move(const Point direction) override;
+	void interact() override;
 	void advance() override;
 
 private:

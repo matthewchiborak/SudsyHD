@@ -159,6 +159,7 @@
     <ClInclude Include="Model\IGameModel.h" />
     <ClInclude Include="Model\ILevelFactory.h" />
     <ClInclude Include="Model\Level.h" />
+    <ClInclude Include="Model\LevelBoard.h" />
     <ClInclude Include="Model\LevelFactory.h" />
     <ClInclude Include="Model\Point.h" />
     <ClInclude Include="View\Core\Camera.h" />
@@ -195,6 +196,7 @@
     <ClCompile Include="Model\IGameModel.cpp" />
     <ClCompile Include="Model\ILevelFactory.cpp" />
     <ClCompile Include="Model\Level.cpp" />
+    <ClCompile Include="Model\LevelBoard.cpp" />
     <ClCompile Include="Model\LevelFactory.cpp" />
     <ClCompile Include="Model\Point.cpp" />
     <ClCompile Include="View\Core\Camera.cpp" />

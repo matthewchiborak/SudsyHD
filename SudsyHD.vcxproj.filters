@@ -168,6 +168,9 @@
     <ClInclude Include="View\SpriteFlyweightFactory.h">
       <Filter>Header Files\View</Filter>
     </ClInclude>
+    <ClInclude Include="Model\LevelBoard.h">
+      <Filter>Header Files\Model</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="View\Core\glad.c">
@@ -277,6 +280,9 @@
     </ClCompile>
     <ClCompile Include="View\SpriteFlyweightFactory.cpp">
       <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\LevelBoard.cpp">
+      <Filter>Source Files\Model</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

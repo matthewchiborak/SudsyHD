@@ -13,6 +13,8 @@ public:
 
 	void start() override;
 
+private:
+	void handleUserInput();
 };
 
 #endif

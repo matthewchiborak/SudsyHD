@@ -7,9 +7,9 @@ InputContext::InputContext()
 {
 }
 
-void InputContext::request()
+void InputContext::request(IGameModel& model, IView& view)
 {
-	state->handle();
+	state->handle(model, view);
 }
 
 void InputContext::setState(std::unique_ptr<InputState> state)

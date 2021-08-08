@@ -7,9 +7,19 @@ GameContext::GameContext()
 {
 }
 
-void GameContext::request()
+void GameContext::advance()
 {
-	state->handle();
+	this->state.get()->advance();
+}
+
+void GameContext::move(const Point direction)
+{
+	this->state.get()->move(direction);
+}
+
+void GameContext::interact()
+{
+	this->state.get()->interact();
 }
 
 void GameContext::setState(std::unique_ptr<GameState> state)

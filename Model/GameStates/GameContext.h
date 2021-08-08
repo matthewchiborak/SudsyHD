@@ -3,6 +3,7 @@
 
 #include <memory>
 
+#include "../Point.h"
 #include "GameState.h"
 
 class GameContext
@@ -10,7 +11,9 @@ class GameContext
 public:
 	GameContext();
 
-	void request();
+	void advance();
+	void move(const Point direction);
+	void interact();
 
 	void setState(std::unique_ptr<GameState> state);
 

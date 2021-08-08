@@ -10,6 +10,10 @@ class Level
 {
 public:
 	Level();
+	~Level();
+
+	//virtual void move(const Point direction) = 0;
+	//virtual void interact() = 0;
 	
 	void addBoardObject(std::unique_ptr<BoardObject> object);
 	const std::vector<std::unique_ptr<BoardObject>>* getBoardObjects() const;
@@ -19,7 +23,7 @@ public:
 	void setHeight(int value);
 	int getHeight() const;
 
-private:
+protected:
 	int width;
 	int height;
 

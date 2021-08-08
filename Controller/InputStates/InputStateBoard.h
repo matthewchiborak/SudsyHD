@@ -8,7 +8,10 @@ class InputStateBoard: public InputState
 public:
 	InputStateBoard();
 
-	void handle() override;
+	void handle(IGameModel& model, IView& view) override;
+
+private:
+	bool buttonDown;
 };
 
 #endif

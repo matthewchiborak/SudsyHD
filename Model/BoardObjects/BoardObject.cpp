@@ -23,8 +23,8 @@ void BoardObject::draw(IView& view) const
 		*camera,
 		*shader,
 		glm::vec3((float)this->getPosition().getX() / 10.0f, 
-		0.01f, 
-		(float)this->getPosition().getY() / -10.0f)
+		0.001f, 
+		(float)this->getPosition().getY() / 10.0f)
 	);
 }
 

@@ -10,7 +10,7 @@ class InputContext
 public:
 	InputContext();
 
-	void request();
+	void request(IGameModel& model, IView& view);
 
 	void setState(std::unique_ptr<InputState> state);
 
