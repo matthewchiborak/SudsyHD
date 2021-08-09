@@ -39,7 +39,7 @@ void InputStateBoard::handle(IGameModel& model, IView& view)
 	{
 		if (!buttonDown)
 		{
-			//model->playerChange(false);
+			model.change(false);
 			buttonDown = true;
 		}
 		return;
@@ -49,7 +49,7 @@ void InputStateBoard::handle(IGameModel& model, IView& view)
 	{
 		if (!buttonDown)
 		{
-			//model->playerChange(false);
+			model.change(true);
 			buttonDown = true;
 		}
 		return;

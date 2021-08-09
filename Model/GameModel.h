@@ -3,7 +3,7 @@
 
 #include "IGameModel.h"
 
-#include "GameStates/GameContext.h"
+#include "GameStates/GameState.h"
 
 class GameModel: public IGameModel
 {
@@ -13,9 +13,12 @@ public:
 	void move(const Point direction) override;
 	void interact() override;
 	void advance() override;
+	void change(bool next) override;
+
+	void setState(std::unique_ptr<GameState> state);
 
 private:
-	GameContext context;
+	std::unique_ptr<GameState> state;
 };
 
 #endif

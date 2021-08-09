@@ -11,10 +11,11 @@ public:
 	virtual void advance() = 0;
 	virtual void move(const Point direction) = 0;
 	virtual void interact() = 0;
+	virtual void change(bool next) = 0;
 
 	void loadLevel(int level);
 
-	const Level* getCurrentLevel() const;
+	Level* getCurrentLevel() const;
 
 protected:
 	ILevelFactory* levelFactory;

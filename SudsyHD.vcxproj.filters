@@ -67,6 +67,12 @@
     <Filter Include="Header Files\Model\GameStates">
       <UniqueIdentifier>{6132c6fa-a454-4123-bca8-0ae6be59804c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Model\LevelCommands">
+      <UniqueIdentifier>{62f9c7f7-9b58-4e98-a8d6-e430b3d36481}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Model\LevelCommands">
+      <UniqueIdentifier>{6cf522f4-1e22-4dcb-8c9d-50ff8346eb25}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="View\Core\Camera.h">
@@ -123,9 +129,6 @@
     <ClInclude Include="View\RenderStrategies\RenderStrategyBoard.h">
       <Filter>Header Files\View\RenderStrategies</Filter>
     </ClInclude>
-    <ClInclude Include="Model\GameStates\GameContext.h">
-      <Filter>Header Files\Model\GameStates</Filter>
-    </ClInclude>
     <ClInclude Include="Model\GameStates\GameState.h">
       <Filter>Header Files\Model\GameStates</Filter>
     </ClInclude>
@@ -170,6 +173,18 @@
     </ClInclude>
     <ClInclude Include="Model\LevelBoard.h">
       <Filter>Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\LevelCommands\LevelCommand.h">
+      <Filter>Header Files\Model\LevelCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\LevelCommands\LevelCommandMove.h">
+      <Filter>Header Files\Model\LevelCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\LevelCommands\LevelCommandSwitch.h">
+      <Filter>Header Files\Model\LevelCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\LevelCommands\LevelCommandInteract.h">
+      <Filter>Header Files\Model\LevelCommands</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -236,9 +251,6 @@
     <ClCompile Include="View\RenderStrategies\RenderStrategyBoard.cpp">
       <Filter>Source Files\View\RenderStrategies</Filter>
     </ClCompile>
-    <ClCompile Include="Model\GameStates\GameContext.cpp">
-      <Filter>Source Files\Model\GameStates</Filter>
-    </ClCompile>
     <ClCompile Include="Model\GameStates\GameState.cpp">
       <Filter>Source Files\Model\GameStates</Filter>
     </ClCompile>
@@ -283,6 +295,18 @@
     </ClCompile>
     <ClCompile Include="Model\LevelBoard.cpp">
       <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\LevelCommands\LevelCommand.cpp">
+      <Filter>Source Files\Model\LevelCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\LevelCommands\LevelCommandMove.cpp">
+      <Filter>Source Files\Model\LevelCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\LevelCommands\LevelCommandSwitch.cpp">
+      <Filter>Source Files\Model\LevelCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\LevelCommands\LevelCommandInteract.cpp">
+      <Filter>Source Files\Model\LevelCommands</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

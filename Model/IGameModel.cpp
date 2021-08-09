@@ -19,7 +19,7 @@ void IGameModel::loadLevel(int level)
 	}
 }
 
-const Level* IGameModel::getCurrentLevel() const
+Level* IGameModel::getCurrentLevel() const
 {
 	return currentLevel.get();
 }

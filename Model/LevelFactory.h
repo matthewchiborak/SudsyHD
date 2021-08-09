@@ -19,10 +19,11 @@ private:
 
 	bool doesFileExist(const std::string& filePath);
 
-	void setLevelParameters(Level* levelBeingMade);
-	void createPlayers(Level* levelBeingMade);
-	void createEnemies(Level* levelBeingMade);
-	void createObstacles(Level* levelBeingMade);
+	void setLevelParameters(LevelBoard* levelBeingMade);
+	void createPlayersAndPlayerDependantCommands(LevelBoard* levelBeingMade);
+	void createEnemies(LevelBoard* levelBeingMade);
+	void createObstacles(LevelBoard* levelBeingMade);
+
 };
 
 #endif

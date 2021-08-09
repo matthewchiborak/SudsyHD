@@ -7,21 +7,44 @@ LevelBoard::LevelBoard()
 {
 }
 
-//void LevelBoard::addPlayerObject(std::unique_ptr<BoardObject> object)
-//{
-//	if (this->playerObjects.size() < 1)
-//		this->currentPlayer = object.get();
-//
-//	this->playerObjects.push_back(object.get());
-//	this->boardObjects.push_back(std::move(object));
-//}
+void LevelBoard::advance()
+{
+}
 
-//void LevelBoard::move(const Point direction)
-//{
-//	std::cout << "Level Board Move: " << direction << "\n";
-//}
-//
-//void LevelBoard::interact()
-//{
-//	std::cout << "Level Board Interact\n";
-//}
+void LevelBoard::move(const Point direction)
+{
+	this->moveCommand.get()->execute();
+}
+
+void LevelBoard::interact()
+{
+	this->interactCommand.get()->execute();
+}
+
+void LevelBoard::change(bool next)
+{
+	if (next)
+		this->changeNextCommand.get()->execute();
+	else
+		this->changePrevCommand.get()->execute();
+}
+
+void LevelBoard::setMoveCommand(std::unique_ptr<LevelCommand> cmd)
+{
+	this->moveCommand = std::move(cmd);
+}
+
+void LevelBoard::setInteractCommand(std::unique_ptr<LevelCommand> cmd)
+{
+	this->interactCommand = std::move(cmd);
+}
+
+void LevelBoard::setChangeNextCommand(std::unique_ptr<LevelCommand> cmd)
+{
+	this->changeNextCommand = std::move(cmd);
+}
+
+void LevelBoard::setChangePrevCommand(std::unique_ptr<LevelCommand> cmd)
+{
+	this->changePrevCommand = std::move(cmd);
+}

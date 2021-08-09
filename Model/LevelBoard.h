@@ -8,15 +8,21 @@ class LevelBoard: public Level
 public:
 	LevelBoard();
 	
-	//void addPlayerObject(std::unique_ptr<BoardObject> object);
+	void advance() override;
+	void move(const Point direction) override;
+	void interact() override;
+	void change(bool next) override;
 
-	//void move(const Point direction) override;
-	//void interact() override;
+	void setMoveCommand(std::unique_ptr<LevelCommand> cmd);
+	void setInteractCommand(std::unique_ptr<LevelCommand> cmd);
+	void setChangeNextCommand(std::unique_ptr<LevelCommand> cmd);
+	void setChangePrevCommand(std::unique_ptr<LevelCommand> cmd);
 
-//private:
-	//BoardObject* currentPlayer;
-	//std::vector<BoardObject*> playerObjects;
-
+private:
+	std::unique_ptr<LevelCommand> moveCommand;
+	std::unique_ptr<LevelCommand> interactCommand;
+	std::unique_ptr<LevelCommand> changeNextCommand;
+	std::unique_ptr<LevelCommand> changePrevCommand;
 };
 
 #endif

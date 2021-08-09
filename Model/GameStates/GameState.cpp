@@ -1,5 +1,6 @@
 #include "GameState.h"
 
-GameState::GameState()
+GameState::GameState(IGameModel& model)
+	: model(&model)
 {
 }

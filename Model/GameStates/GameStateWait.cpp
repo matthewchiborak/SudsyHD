@@ -2,21 +2,27 @@
 
 #include <iostream>
 
-GameStateWait::GameStateWait()
-	: GameState()
+GameStateWait::GameStateWait(IGameModel& model)
+	: GameState(model)
 {
 }
 
 void GameStateWait::advance()
 {
-	
+	model->getCurrentLevel()->advance();
 }
 
 void GameStateWait::move(const Point direction)
 {
-	std::cout << direction << " : Movve called\n";
+	model->getCurrentLevel()->move(direction);
 }
 
 void GameStateWait::interact()
 {
+	model->getCurrentLevel()->interact();
+}
+
+void GameStateWait::change(bool next)
+{
+	model->getCurrentLevel()->change(next);
 }

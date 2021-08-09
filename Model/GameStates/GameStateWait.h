@@ -6,11 +6,12 @@
 class GameStateWait: public GameState
 {
 public:
-	GameStateWait();
+	GameStateWait(IGameModel& model);
 
 	void advance() override;
 	void move(const Point direction) override;
 	void interact() override;
+	void change(bool next) override;
 };
 
 #endif
