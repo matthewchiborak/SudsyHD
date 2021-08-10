@@ -73,6 +73,12 @@
     <Filter Include="Source Files\Model\LevelCommands">
       <UniqueIdentifier>{6cf522f4-1e22-4dcb-8c9d-50ff8346eb25}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Model\BoardObjectBehaviours">
+      <UniqueIdentifier>{77f5f67d-a07b-44a7-aa07-9efc5692bca6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Model\BoardObjectBehaviours">
+      <UniqueIdentifier>{d987c924-f027-406a-bfb9-b3601821a96d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="View\Core\Camera.h">
@@ -185,6 +191,30 @@
     </ClInclude>
     <ClInclude Include="Model\LevelCommands\LevelCommandInteract.h">
       <Filter>Header Files\Model\LevelCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\LevelCommands\LevelCommandPoint.h">
+      <Filter>Header Files\Model\LevelCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\PointF.h">
+      <Filter>Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\BoardObjectBehaviours\BoardObjectBehaviour.h">
+      <Filter>Header Files\Model\BoardObjectBehaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\BoardObjectBehaviours\BoardObjectBehaviourNone.h">
+      <Filter>Header Files\Model\BoardObjectBehaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\BoardObjectBehaviours\BoardObjectBehaviourMoveOne.h">
+      <Filter>Header Files\Model\BoardObjectBehaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\BoardObjectBehaviours\BoardObjectBehaviourMoveOneCont.h">
+      <Filter>Header Files\Model\BoardObjectBehaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\BoardObjectBehaviours\BoardObjectBehaviourMoveInfinite.h">
+      <Filter>Header Files\Model\BoardObjectBehaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\GameStates\GameStateAction.h">
+      <Filter>Header Files\Model\GameStates</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -307,6 +337,30 @@
     </ClCompile>
     <ClCompile Include="Model\LevelCommands\LevelCommandInteract.cpp">
       <Filter>Source Files\Model\LevelCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\LevelCommands\LevelCommandPoint.cpp">
+      <Filter>Source Files\Model\LevelCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\PointF.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BoardObjectBehaviours\BoardObjectBehaviour.cpp">
+      <Filter>Source Files\Model\BoardObjectBehaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BoardObjectBehaviours\BoardObjectBehaviourNone.cpp">
+      <Filter>Source Files\Model\BoardObjectBehaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BoardObjectBehaviours\BoardObjectBehaviourMoveOne.cpp">
+      <Filter>Source Files\Model\BoardObjectBehaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BoardObjectBehaviours\BoardObjectBehaviourMoveOneCont.cpp">
+      <Filter>Source Files\Model\BoardObjectBehaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BoardObjectBehaviours\BoardObjectBehaviourMoveInfinite.cpp">
+      <Filter>Source Files\Model\BoardObjectBehaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\GameStates\GameStateAction.cpp">
+      <Filter>Source Files\Model\GameStates</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

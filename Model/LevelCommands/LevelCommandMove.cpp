@@ -2,14 +2,16 @@
 
 #include <iostream>
 
+#include "../BoardObjectBehaviours/BoardObjectBehaviourMoveOne.h"
+
 LevelCommandMove::LevelCommandMove()
-	: LevelCommand(), currentPlayer(0)
+	: LevelCommandPoint(), currentPlayer(0)
 {
 }
 
-void LevelCommandMove::execute()
+void LevelCommandMove::execute(Point point)
 {
-	std::cout << "56 Level Move Command Execute called\n";
+	this->players[currentPlayer]->setBehaviour(std::move(std::make_unique<BoardObjectBehaviourMoveOne>(point)));
 }
 
 void LevelCommandMove::addPlayer(BoardObject& object)
@@ -19,8 +21,6 @@ void LevelCommandMove::addPlayer(BoardObject& object)
 
 void LevelCommandMove::switchPlayer(bool next)
 {
-	std::cout << "ghfdjkshdklfg Level Move Command Switch Player Called\n";
-
 	if (players.size() <= 1)
 		return;
 

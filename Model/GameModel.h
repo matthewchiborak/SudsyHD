@@ -15,10 +15,7 @@ public:
 	void advance() override;
 	void change(bool next) override;
 
-	void setState(std::unique_ptr<GameState> state);
 
-private:
-	std::unique_ptr<GameState> state;
 };
 
 #endif

@@ -3,8 +3,8 @@
 #include "../../View/IView.h"
 #include "../../View/ISpriteFlyweightFactory.h"
 
-BoardObject::BoardObject(Point position, std::string spriteKey)
-	: position(position), spriteKey(spriteKey)
+BoardObject::BoardObject(Point position, std::string spriteKey, std::unique_ptr<BoardObjectBehaviour> behaviour)
+	: position(position), positionF(position.getX(), position.getY()), spriteKey(spriteKey), behaviour(std::move(behaviour))
 {
 }
 
@@ -22,13 +22,33 @@ void BoardObject::draw(IView& view) const
 	factory->getSprite(this->spriteKey)->Draw(
 		*camera,
 		*shader,
-		glm::vec3((float)this->getPosition().getX() / 10.0f, 
+		glm::vec3((float)this->getPositionF().getX() / 10.0f, 
 		0.001f, 
-		(float)this->getPosition().getY() / 10.0f)
+		(float)this->getPositionF().getY() / 10.0f)
 	);
+}
+
+void BoardObject::advance(float t, IGameModel& model)
+{
+	this->behaviour.get()->execute(t, *this, model);
+}
+
+bool BoardObject::isDoneAction()
+{
+	return behaviour.get()->isDone();
+}
+
+void BoardObject::setBehaviour(std::unique_ptr<BoardObjectBehaviour> behaviour)
+{
+	this->behaviour = std::move(behaviour);
 }
 
 Point BoardObject::getPosition() const
 {
 	return position;
+}
+
+PointF BoardObject::getPositionF() const
+{
+	return positionF;
 }

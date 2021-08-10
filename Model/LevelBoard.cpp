@@ -7,13 +7,17 @@ LevelBoard::LevelBoard()
 {
 }
 
-void LevelBoard::advance()
+void LevelBoard::advance(IGameModel& model)
 {
+	for (int i = 0; i < boardObjects.size(); i++)
+	{
+		boardObjects[i].get()->advance(0, model);
+	}
 }
 
 void LevelBoard::move(const Point direction)
 {
-	this->moveCommand.get()->execute();
+	this->moveCommand.get()->execute(direction);
 }
 
 void LevelBoard::interact()
@@ -29,7 +33,7 @@ void LevelBoard::change(bool next)
 		this->changePrevCommand.get()->execute();
 }
 
-void LevelBoard::setMoveCommand(std::unique_ptr<LevelCommand> cmd)
+void LevelBoard::setMoveCommand(std::unique_ptr<LevelCommandPoint> cmd)
 {
 	this->moveCommand = std::move(cmd);
 }

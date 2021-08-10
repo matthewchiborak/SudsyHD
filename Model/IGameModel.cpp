@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+#include "GameStates/GameState.h"
+
 IGameModel::IGameModel(ILevelFactory& levelFactory)
 	: levelFactory(&levelFactory)
 {
@@ -22,4 +24,9 @@ void IGameModel::loadLevel(int level)
 Level* IGameModel::getCurrentLevel() const
 {
 	return currentLevel.get();
+}
+
+void IGameModel::setState(std::unique_ptr<GameState> state)
+{
+	this->state = std::move(state);
 }

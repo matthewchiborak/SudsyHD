@@ -3,6 +3,8 @@
 
 #include "ILevelFactory.h"
 
+class GameState;
+
 class IGameModel
 {
 public:
@@ -17,7 +19,10 @@ public:
 
 	Level* getCurrentLevel() const;
 
+	void setState(std::unique_ptr<GameState> state);
+
 protected:
+	std::unique_ptr<GameState> state;
 	ILevelFactory* levelFactory;
 	std::unique_ptr<Level> currentLevel;
 };

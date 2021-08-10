@@ -3,15 +3,15 @@
 
 #include <vector>
 
-#include "LevelCommand.h"
+#include "LevelCommandPoint.h"
 #include "../BoardObjects/BoardObject.h"
 
-class LevelCommandMove: public LevelCommand
+class LevelCommandMove: public LevelCommandPoint
 {
 public:
 	LevelCommandMove();
 
-	void execute() override;
+	void execute(Point point) override;
 
 	void addPlayer(BoardObject& object);
 	void switchPlayer(bool next);

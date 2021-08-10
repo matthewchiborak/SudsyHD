@@ -1,10 +1,9 @@
 #include "GameModel.h"
 
-#include "GameStates/GameStateWait.h"
-
 GameModel::GameModel(ILevelFactory& levelFactory)
-	: IGameModel(levelFactory), state(std::make_unique<GameStateWait>(*this))
+	: IGameModel(levelFactory)
 {
+	
 }
 
 void GameModel::move(const Point direction)
@@ -27,7 +26,3 @@ void GameModel::change(bool next)
 	this->state.get()->change(next);
 }
 
-void GameModel::setState(std::unique_ptr<GameState> state)
-{
-	this->state = std::move(state);
-}
