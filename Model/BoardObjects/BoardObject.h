@@ -18,9 +18,11 @@ public:
 
 	Point getPosition() const;
 	PointF getPositionF() const;
+	void setPositionF(const PointF newPos);
+	void setPosition(const Point newPos);
 
 	void draw(IView& view) const;
-	void advance(float t, IGameModel& model);
+	void advance(float t, Level& level);
 	bool isDoneAction();
 
 	void setBehaviour(std::unique_ptr<BoardObjectBehaviour> behaviour);

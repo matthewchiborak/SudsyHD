@@ -7,15 +7,13 @@
 #include "BoardObjects/BoardObject.h"
 #include "LevelCommands/LevelCommand.h"
 
-class IGameModel;
-
 class Level
 {
 public:
 	Level();
 	~Level();
 
-	virtual void advance(IGameModel& model) = 0;
+	virtual void advance(float t) = 0;
 	virtual void move(const Point direction) = 0;
 	virtual void interact() = 0;
 	virtual void change(bool next) = 0;
@@ -27,6 +25,10 @@ public:
 	int getWidth() const;
 	void setHeight(int value);
 	int getHeight() const;
+
+	bool isAllObjectDoneBehaviour() const;
+	bool isSpaceAvailableToMoveOn(Point point) const;
+	bool isSpaceOutOfBoards(Point point) const;
 
 protected:
 	int width;

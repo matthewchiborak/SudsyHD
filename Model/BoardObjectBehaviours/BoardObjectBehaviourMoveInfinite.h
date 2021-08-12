@@ -10,10 +10,13 @@ class BoardObjectBehaviourMoveInfinite: public BoardObjectBehaviour
 public:
 	BoardObjectBehaviourMoveInfinite(Point dir);
 
-	void execute(float t, BoardObject& me, IGameModel& model) override;
+	void execute(float t, BoardObject& me, Level& level) override;
 
 private:
 	Point dir;
+	int lastT;
+	Point meOriginalPos;
+	bool originalPosSet;
 };
 
 #endif

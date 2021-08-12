@@ -1,6 +1,8 @@
 #ifndef GAME_STATE_H
 #define GAME_STATE_H
 
+#include <chrono>
+
 #include "../Point.h"
 #include "../IGameModel.h"
 
@@ -16,6 +18,7 @@ public:
 
 protected:
 	IGameModel* model;
+	std::chrono::steady_clock::time_point timeStateBegan;
 };
 
 #endif

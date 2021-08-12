@@ -8,7 +8,7 @@ class BoardObjectBehaviourNone: public BoardObjectBehaviour
 public:
 	BoardObjectBehaviourNone();
 
-	void execute(float t, BoardObject& me, IGameModel& model) override;
+	void execute(float t, BoardObject& me, Level& level) override;
 
 };
 

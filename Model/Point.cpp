@@ -16,6 +16,11 @@ bool Point::operator==(const Point& point2)
 	return ((this->x == point2.getX()) && (this->y == point2.getY()));
 }
 
+Point Point::operator+(const Point& point2)
+{
+	return Point(this->x + point2.getX(), this->y + point2.getY());
+}
+
 int Point::getX() const
 {
 	return x;

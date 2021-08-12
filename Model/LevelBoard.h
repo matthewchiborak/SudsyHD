@@ -9,7 +9,7 @@ class LevelBoard: public Level
 public:
 	LevelBoard();
 	
-	void advance(IGameModel& model) override;
+	void advance(float t) override;
 	void move(const Point direction) override;
 	void interact() override;
 	void change(bool next) override;

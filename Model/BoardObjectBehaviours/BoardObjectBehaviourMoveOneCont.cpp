@@ -3,19 +3,22 @@
 #include <iostream>
 
 #include "../BoardObjects/BoardObject.h"
-#include "../IGameModel.h"
+#include "../Level.h"
 
 BoardObjectBehaviourMoveOneCont::BoardObjectBehaviourMoveOneCont(Point dir)
 	: dir(dir)
 {
 }
 
-void BoardObjectBehaviourMoveOneCont::execute(float t, BoardObject& me, IGameModel& model)
+void BoardObjectBehaviourMoveOneCont::execute(float t, BoardObject& me, Level& level)
 {
-	std::cout << "TODO ACTUALLY HAVE THE GAME OBJECT MOVE\n";
+	float newX = me.getPosition().getX() + dir.getX() * t;
+	float newY = me.getPosition().getY() + dir.getY() * t;
+	me.setPositionF(PointF(newX, newY));
 
 	if (t >= 1)
 	{
+		me.setPosition(me.getPosition() + dir);
 		actionDone = true;
 	}
 }

@@ -5,23 +5,38 @@
 #include "BoardObjectBehaviourNone.h"
 
 #include "../BoardObjects/BoardObject.h"
-#include "../IGameModel.h"
+#include "../Level.h"
 
 BoardObjectBehaviourMoveInfinite::BoardObjectBehaviourMoveInfinite(Point dir)
-	: dir(dir)
+	: dir(dir), lastT(0), originalPosSet(false), meOriginalPos(0,0)
 {
 }
 
-void BoardObjectBehaviourMoveInfinite::execute(float t, BoardObject& me, IGameModel& model)
+void BoardObjectBehaviourMoveInfinite::execute(float t, BoardObject& me, Level& level)
 {
-	std::cout << "TODO ACTUALLY HAVE THE GAME OBJECT MOVE\n";
+	if (!originalPosSet)
+	{
+		meOriginalPos = me.getPosition();
+		originalPosSet = true;
+	}
 
-	//If a whole t has passed and the object has been forced not to move by something else in the program....
-	// or. I have access to the model. So i can just check if theres someting in the next space.............
-	//if(can move forward)
-	if (t >= 10)
+	if (actionDone)
+		return;
+
+	if (!level.isSpaceAvailableToMoveOn(me.getPosition() + dir))
 	{
 		me.setBehaviour(std::move(std::make_unique<BoardObjectBehaviourNone>()));
 		actionDone = true;
+		return;
+	}
+
+	float newX = meOriginalPos.getX() + dir.getX() * t;
+	float newY = meOriginalPos.getY() + dir.getY() * t;
+	me.setPositionF(PointF(newX, newY));
+
+	if ((int)t > lastT)
+	{
+		lastT = t;
+		me.setPosition(me.getPosition() + dir);
 	}
 }

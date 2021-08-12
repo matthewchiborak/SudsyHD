@@ -19,7 +19,7 @@ void InputStateBoard::handle(IGameModel& model, IView& view)
 
 	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
 	{
-		model.move(Point(-1, 0));
+		model.move(Point(1, 0));
 		return;
 	}
 
@@ -31,7 +31,7 @@ void InputStateBoard::handle(IGameModel& model, IView& view)
 
 	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
 	{
-		model.move(Point(1, 0));
+		model.move(Point(-1, 0));
 		return;
 	}
 

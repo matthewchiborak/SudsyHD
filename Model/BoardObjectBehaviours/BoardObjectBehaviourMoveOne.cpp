@@ -5,19 +5,22 @@
 #include "BoardObjectBehaviourNone.h"
 
 #include "../BoardObjects/BoardObject.h"
-#include "../IGameModel.h"
+#include "../Level.h"
 
 BoardObjectBehaviourMoveOne::BoardObjectBehaviourMoveOne(Point dir)
 	: dir(dir)
 {
 }
 
-void BoardObjectBehaviourMoveOne::execute(float t, BoardObject& me, IGameModel& model)
+void BoardObjectBehaviourMoveOne::execute(float t, BoardObject& me, Level& level)
 {
-	std::cout << "This is Move One:  TODO ACTUALLY HAVE THE GAME OBJECT MOVE" << dir << "\n";
+	float newX = me.getPosition().getX() + dir.getX() * t;
+	float newY = me.getPosition().getY() + dir.getY() * t;
+	me.setPositionF(PointF(newX, newY));
 
 	if (t >= 1)
 	{
+		me.setPosition(me.getPosition() + dir);
 		me.setBehaviour(std::move(std::make_unique<BoardObjectBehaviourNone>()));
 		actionDone = true;
 	}

@@ -10,7 +10,7 @@ class BoardObjectBehaviourMoveOne: public BoardObjectBehaviour
 public:
 	BoardObjectBehaviourMoveOne(Point dir);
 
-	void execute(float t, BoardObject& me, IGameModel& model) override;
+	void execute(float t, BoardObject& me, Level& level) override;
 
 private:
 	Point dir;

@@ -7,11 +7,11 @@ LevelBoard::LevelBoard()
 {
 }
 
-void LevelBoard::advance(IGameModel& model)
+void LevelBoard::advance(float t)
 {
 	for (int i = 0; i < boardObjects.size(); i++)
 	{
-		boardObjects[i].get()->advance(0, model);
+		boardObjects[i].get()->advance(t, *(this));
 	}
 }
 

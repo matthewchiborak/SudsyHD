@@ -28,9 +28,9 @@ void BoardObject::draw(IView& view) const
 	);
 }
 
-void BoardObject::advance(float t, IGameModel& model)
+void BoardObject::advance(float t, Level& level)
 {
-	this->behaviour.get()->execute(t, *this, model);
+	this->behaviour.get()->execute(t, *this, level);
 }
 
 bool BoardObject::isDoneAction()
@@ -51,4 +51,14 @@ Point BoardObject::getPosition() const
 PointF BoardObject::getPositionF() const
 {
 	return positionF;
+}
+
+void BoardObject::setPositionF(const PointF newPos)
+{
+	this->positionF = newPos;
+}
+
+void BoardObject::setPosition(const Point newPos)
+{
+	this->position = newPos;
 }
