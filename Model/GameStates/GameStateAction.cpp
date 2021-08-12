@@ -9,8 +9,8 @@ GameStateAction::GameStateAction(IGameModel& model)
 
 void GameStateAction::advance()
 {
-	std::chrono::steady_clock::time_point now = std::chrono::steady_clock::now();
-	float t = (float)std::chrono::duration_cast<std::chrono::milliseconds>(now - timeStateBegan).count() / 1000.0f;
+	framesPassed++;
+	float t = (float)framesPassed / 60.0f;
 	model->getCurrentLevel()->advance(t);
 
 	if(model->getCurrentLevel()->isAllObjectDoneBehaviour())
