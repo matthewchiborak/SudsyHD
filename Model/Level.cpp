@@ -83,3 +83,17 @@ bool Level::isSpaceOutOfBoards(Point point) const
 
 	return false;
 }
+
+BoardObject* Level::getObjectAtPoint(Point point) const
+{
+	if (isSpaceOutOfBoards(point))
+		return nullptr;
+
+	for (int i = 0; i < boardObjects.size(); i++)
+	{
+		if (boardObjects.at(i).get()->getPosition() == point)
+			return boardObjects.at(i).get();
+	}
+
+	return nullptr;
+}

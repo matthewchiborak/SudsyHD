@@ -27,6 +27,7 @@ void BoardObjectBehaviourMoveOne::execute(float t, BoardObject& me, Level& level
 	float newX = me.getPosition().getX() + dir.getX() * t;
 	float newY = me.getPosition().getY() + dir.getY() * t;
 	me.setPositionF(PointF(newX, newY));
+	me.setLastDirFacing(dir);
 
 	if (t >= 1)
 	{

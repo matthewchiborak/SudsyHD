@@ -13,6 +13,12 @@
 
 #include "BoardObjectBehaviours/BoardObjectBehaviourNone.h"
 
+#include "BoardObjectInteractSenders/BoardObjectInteractSenderNone.h"
+#include "BoardObjectInteractSenders/BoardObjectInteractSenderPush.h"
+
+#include "BoardObjectInteractReceivers/BoardObjectInteractReceiverNone.h"
+#include "BoardObjectInteractReceivers/BoardObjectInteractReceiverPush.h"
+
 LevelFactory::LevelFactory(std::string levelFileLocation)
 	: ILevelFactory(levelFileLocation)
 {
@@ -56,7 +62,7 @@ void LevelFactory::setLevelParameters(LevelBoard* levelBeingMade)
 void LevelFactory::createPlayersAndPlayerDependantCommands(LevelBoard* levelBeingMade)
 {
 	std::unique_ptr<LevelCommandMove> moveCmd = std::make_unique<LevelCommandMove>();
-	std::unique_ptr<LevelCommandInteract> interactCmd = std::make_unique<LevelCommandInteract>(moveCmd.get());
+	std::unique_ptr<LevelCommandInteract> interactCmd = std::make_unique<LevelCommandInteract>(moveCmd.get(), *levelBeingMade);
 	std::unique_ptr<LevelCommandSwitch> switchNextCmd = std::make_unique<LevelCommandSwitch>(moveCmd.get(), true);
 	std::unique_ptr<LevelCommandSwitch> switchNextCmd2 = std::make_unique<LevelCommandSwitch>(moveCmd.get(), false);
 
@@ -65,7 +71,9 @@ void LevelFactory::createPlayersAndPlayerDependantCommands(LevelBoard* levelBein
 		std::unique_ptr<BoardObject> newObject = std::make_unique<BoardObject>(
 			Point(JSON["Players"][i]["X"], JSON["Players"][i]["Y"]), 
 			std::string(JSON["Players"][i]["Key"]),
-			std::move(std::make_unique<BoardObjectBehaviourNone>())
+			std::move(std::make_unique<BoardObjectBehaviourNone>()),
+			std::move(std::make_unique<BoardObjectInteractSenderPush>()),
+			std::move(std::make_unique<BoardObjectInteractReceiverNone>())
 			);
 		moveCmd.get()->addPlayer(*(newObject.get()));
 		levelBeingMade->addBoardObject(std::move(newObject));
@@ -84,7 +92,9 @@ void LevelFactory::createEnemies(LevelBoard* levelBeingMade)
 		std::unique_ptr<BoardObject> newObject = std::make_unique<BoardObject>(
 			Point(JSON["Enemies"][i]["X"], JSON["Enemies"][i]["Y"]),
 			std::string(JSON["Enemies"][i]["Key"]),
-			std::move(std::make_unique<BoardObjectBehaviourNone>())
+			std::move(std::make_unique<BoardObjectBehaviourNone>()),
+			std::move(std::make_unique<BoardObjectInteractSenderNone>()),
+			std::move(std::make_unique<BoardObjectInteractReceiverPush>())
 			);
 		levelBeingMade->addBoardObject(std::move(newObject));
 	}
@@ -97,7 +107,9 @@ void LevelFactory::createObstacles(LevelBoard* levelBeingMade)
 		std::unique_ptr<BoardObject> newObject = std::make_unique<BoardObject>(
 			Point(JSON["Walls"][i]["X"], JSON["Walls"][i]["Y"]),
 			std::string(JSON["Walls"][i]["Key"]),
-			std::move(std::make_unique<BoardObjectBehaviourNone>())
+			std::move(std::make_unique<BoardObjectBehaviourNone>()),
+			std::move(std::make_unique<BoardObjectInteractSenderNone>()),
+			std::move(std::make_unique<BoardObjectInteractReceiverNone>())
 			);
 		levelBeingMade->addBoardObject(std::move(newObject));
 	}

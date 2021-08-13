@@ -2,12 +2,14 @@
 
 #include <iostream>
 
-LevelCommandInteract::LevelCommandInteract(LevelCommandMove* moveCmd)
-	: LevelCommand(), moveCmd(moveCmd)
+#include "LevelCommandMove.h"
+
+LevelCommandInteract::LevelCommandInteract(LevelCommandMove* moveCmd, Level& level)
+	: LevelCommand(), moveCmd(moveCmd), level(&level)
 {
 }
 
 void LevelCommandInteract::execute()
 {
-	std::cout << "123 Level Command INteract called\n";
+	this->moveCmd->getCurrentPlayer()->interactSend(*level);
 }

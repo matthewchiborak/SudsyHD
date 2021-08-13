@@ -29,6 +29,7 @@ public:
 	bool isAllObjectDoneBehaviour() const;
 	bool isSpaceAvailableToMoveOn(Point point) const;
 	bool isSpaceOutOfBoards(Point point) const;
+	BoardObject* getObjectAtPoint(Point point) const;
 
 protected:
 	int width;

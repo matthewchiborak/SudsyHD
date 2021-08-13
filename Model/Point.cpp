@@ -21,6 +21,11 @@ Point Point::operator+(const Point& point2)
 	return Point(this->x + point2.getX(), this->y + point2.getY());
 }
 
+Point Point::operator-(const Point& point2)
+{
+	return Point(point2.getX() - this->x, point2.getY() - this->y);
+}
+
 int Point::getX() const
 {
 	return x;

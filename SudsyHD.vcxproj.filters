@@ -79,6 +79,18 @@
     <Filter Include="Source Files\Model\BoardObjectBehaviours">
       <UniqueIdentifier>{d987c924-f027-406a-bfb9-b3601821a96d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Model\BoardObjectInteractSenders">
+      <UniqueIdentifier>{4fafcee5-7167-4825-a844-d37690b8890a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Model\BoardObjectInteractSenders">
+      <UniqueIdentifier>{52d37f50-002b-4705-abb1-84c74877e07e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Model\BoardObjectInteractReceivers">
+      <UniqueIdentifier>{169d4c35-006d-475f-a7b4-af28ebf12a9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Model\BoardObjectInteractReceivers">
+      <UniqueIdentifier>{d9dd34b2-2a6a-4103-b11e-34041e9ee0f8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="View\Core\Camera.h">
@@ -215,6 +227,24 @@
     </ClInclude>
     <ClInclude Include="Model\GameStates\GameStateAction.h">
       <Filter>Header Files\Model\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\BoardObjectInteractSenders\BoardObjectInteractSender.h">
+      <Filter>Header Files\Model\BoardObjectInteractSenders</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\BoardObjectInteractReceivers\BoardObjectInteractReceiver.h">
+      <Filter>Header Files\Model\BoardObjectInteractReceivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderPush.h">
+      <Filter>Header Files\Model\BoardObjectInteractSenders</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderNone.h">
+      <Filter>Header Files\Model\BoardObjectInteractSenders</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\BoardObjectInteractReceivers\BoardObjectInteractReceiverNone.h">
+      <Filter>Header Files\Model\BoardObjectInteractReceivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\BoardObjectInteractReceivers\BoardObjectInteractReceiverPush.h">
+      <Filter>Header Files\Model\BoardObjectInteractReceivers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -361,6 +391,24 @@
     </ClCompile>
     <ClCompile Include="Model\GameStates\GameStateAction.cpp">
       <Filter>Source Files\Model\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BoardObjectInteractSenders\BoardObjectInteractSender.cpp">
+      <Filter>Source Files\Model\BoardObjectInteractSenders</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BoardObjectInteractReceivers\BoardObjectInteractReceiver.cpp">
+      <Filter>Source Files\Model\BoardObjectInteractReceivers</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderPush.cpp">
+      <Filter>Source Files\Model\BoardObjectInteractSenders</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderNone.cpp">
+      <Filter>Source Files\Model\BoardObjectInteractSenders</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BoardObjectInteractReceivers\BoardObjectInteractReceiverNone.cpp">
+      <Filter>Source Files\Model\BoardObjectInteractReceivers</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BoardObjectInteractReceivers\BoardObjectInteractReceiverPush.cpp">
+      <Filter>Source Files\Model\BoardObjectInteractReceivers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

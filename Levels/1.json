@@ -11,8 +11,8 @@
 	"Enemies": [
 	{
 		"Key": "Goblin",
-		"X": 3,
-		"Y": 7
+		"X": 4,
+		"Y": 4
 	}
 	],
 	"Walls": [

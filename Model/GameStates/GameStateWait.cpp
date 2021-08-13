@@ -24,6 +24,8 @@ void GameStateWait::move(const Point direction)
 void GameStateWait::interact()
 {
 	model->getCurrentLevel()->interact();
+
+	this->model->setState(std::move(std::make_unique<GameStateAction>(*model)));
 }
 
 void GameStateWait::change(bool next)

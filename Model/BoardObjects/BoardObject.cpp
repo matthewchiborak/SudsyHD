@@ -3,8 +3,19 @@
 #include "../../View/IView.h"
 #include "../../View/ISpriteFlyweightFactory.h"
 
-BoardObject::BoardObject(Point position, std::string spriteKey, std::unique_ptr<BoardObjectBehaviour> behaviour)
-	: position(position), positionF(position.getX(), position.getY()), spriteKey(spriteKey), behaviour(std::move(behaviour))
+BoardObject::BoardObject(Point position, 
+						std::string spriteKey, 
+						std::unique_ptr<BoardObjectBehaviour> behaviour,
+						std::unique_ptr<BoardObjectInteractSender> interactSender,
+						std::unique_ptr<BoardObjectInteractReceiver> interactReceiver
+						)
+	: position(position), 
+	positionF(position.getX(), position.getY()), 
+	spriteKey(spriteKey), 
+	behaviour(std::move(behaviour)), 
+	interactSender(std::move(interactSender)), 
+	interactReceiver(std::move(interactReceiver)),
+	lastDirFacing(0, -1)
 {
 }
 
@@ -41,6 +52,26 @@ bool BoardObject::isDoneAction()
 void BoardObject::setBehaviour(std::unique_ptr<BoardObjectBehaviour> behaviour)
 {
 	this->behaviour = std::move(behaviour);
+}
+
+void BoardObject::interactSend(Level& level)
+{
+	this->interactSender.get()->execute(*(this), level);
+}
+
+void BoardObject::interactReceive(std::string key, BoardObject* sender, Level& level)
+{
+	this->interactReceiver.get()->execute(key, sender, *(this), level);
+}
+
+void BoardObject::setLastDirFacing(Point dir)
+{
+	this->lastDirFacing = dir;
+}
+
+Point BoardObject::getLastDirFacing() const
+{
+	return lastDirFacing;
 }
 
 Point BoardObject::getPosition() const

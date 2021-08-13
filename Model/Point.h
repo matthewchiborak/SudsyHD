@@ -11,6 +11,7 @@ public:
 
 	bool operator == (const Point& point2);
 	Point operator + (const Point& point2);
+	Point operator - (const Point& point2);
 	friend std::ostream& operator<<(std::ostream& output, const Point& point);
 
 	int getX() const;

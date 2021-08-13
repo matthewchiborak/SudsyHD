@@ -7,11 +7,12 @@
 class LevelCommandInteract: public LevelCommand
 {
 public:
-	LevelCommandInteract(LevelCommandMove* moveCmd);
+	LevelCommandInteract(LevelCommandMove* moveCmd, Level& level);
 
 	void execute() override;
 
 private:
+	Level* level;
 	LevelCommandMove* moveCmd;
 };
 

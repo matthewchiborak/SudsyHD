@@ -33,6 +33,7 @@ void BoardObjectBehaviourMoveInfinite::execute(float t, BoardObject& me, Level& 
 	float newX = meOriginalPos.getX() + dir.getX() * t;
 	float newY = meOriginalPos.getY() + dir.getY() * t;
 	me.setPositionF(PointF(newX, newY));
+	me.setLastDirFacing(dir);
 
 	if ((int)t > lastT)
 	{
