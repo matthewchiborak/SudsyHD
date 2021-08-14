@@ -10,6 +10,8 @@
 #include "../BoardObjectInteractSenders/BoardObjectInteractSender.h"
 #include "../BoardObjectInteractReceivers/BoardObjectInteractReceiver.h"
 
+#include "../SpaceClaimResponses.h"
+
 class IView;
 
 class BoardObject
@@ -39,6 +41,9 @@ public:
 
 	void setLastDirFacing(Point dir);
 	Point getLastDirFacing() const;
+
+	virtual SpaceClaimResponse canIShareSpaceWithYou(std::string key) = 0;
+	virtual std::string getSpaceSharingKey() = 0;
 
 protected:
 	Point position;

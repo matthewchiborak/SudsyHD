@@ -8,12 +8,13 @@
 class BoardObjectBehaviourMoveOne: public BoardObjectBehaviour
 {
 public:
-	BoardObjectBehaviourMoveOne(Point dir);
+	BoardObjectBehaviourMoveOne(Point dir, float t = 0);
 
 	void execute(float t, BoardObject& me, Level& level) override;
 
 private:
 	Point dir;
+	float startingT;
 };
 
 #endif

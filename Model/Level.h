@@ -7,6 +7,8 @@
 #include "BoardObjects/BoardObject.h"
 #include "LevelCommands/LevelCommand.h"
 
+#include "SpaceClaimResponses.h"
+
 class Level
 {
 public:
@@ -27,7 +29,7 @@ public:
 	int getHeight() const;
 
 	bool isAllObjectDoneBehaviour() const;
-	bool isSpaceAvailableToMoveOn(Point point) const;
+	SpaceClaimResponse isSpaceAvailableToMoveOn(Point point, std::string objectKey) const;
 	bool isSpaceOutOfBoards(Point point) const;
 	BoardObject* getObjectAtPoint(Point point) const;
 

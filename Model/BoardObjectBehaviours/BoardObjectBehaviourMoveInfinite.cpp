@@ -7,6 +7,8 @@
 #include "../BoardObjects/BoardObject.h"
 #include "../Level.h"
 
+#include "BoardObjectBehaviourMoveOne.h"
+
 BoardObjectBehaviourMoveInfinite::BoardObjectBehaviourMoveInfinite(Point dir)
 	: dir(dir), lastT(0), originalPosSet(false), meOriginalPos(0,0)
 {
@@ -23,10 +25,16 @@ void BoardObjectBehaviourMoveInfinite::execute(float t, BoardObject& me, Level& 
 	if (actionDone)
 		return;
 
-	if (!level.isSpaceAvailableToMoveOn(me.getPosition() + dir))
+	SpaceClaimResponse claimRes = level.isSpaceAvailableToMoveOn(me.getPosition() + dir, me.getSpaceSharingKey());
+	if (SpaceClaimResponse::DENY == claimRes)
 	{
 		me.setBehaviour(std::move(std::make_unique<BoardObjectBehaviourNone>()));
 		actionDone = true;
+		return;
+	}
+	if (SpaceClaimResponse::STOP == claimRes)
+	{
+		me.setBehaviour(std::move(std::make_unique<BoardObjectBehaviourMoveOne>(dir, t)));
 		return;
 	}
 

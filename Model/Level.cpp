@@ -53,18 +53,20 @@ bool Level::isAllObjectDoneBehaviour() const
 	return true;
 }
 
-bool Level::isSpaceAvailableToMoveOn(Point point) const
+SpaceClaimResponse Level::isSpaceAvailableToMoveOn(Point point, std::string objectKey) const
 {
 	if (isSpaceOutOfBoards(point))
-		return false;
+		return SpaceClaimResponse::DENY;
 
 	for (int i = 0; i < boardObjects.size(); i++)
 	{
 		if (boardObjects.at(i).get()->getPosition() == point)
-			return false;
+		{
+			return boardObjects.at(i).get()->canIShareSpaceWithYou(objectKey);
+		}
 	}
 
-	return true;
+	return SpaceClaimResponse::ALLOW;
 }
 
 bool Level::isSpaceOutOfBoards(Point point) const

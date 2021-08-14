@@ -252,6 +252,27 @@
     <ClInclude Include="Model\BehaviourFactory.h">
       <Filter>Header Files\Model</Filter>
     </ClInclude>
+    <ClInclude Include="Model\BoardObjects\BoardObjectPerson.h">
+      <Filter>Header Files\Model\BoardObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\BoardObjects\BoardObjectEnemy.h">
+      <Filter>Header Files\Model\BoardObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\BoardObjects\BoardObjectRock.h">
+      <Filter>Header Files\Model\BoardObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\BoardObjects\BoardObjectArrow.h">
+      <Filter>Header Files\Model\BoardObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\BoardObjects\BoardObjectPit.h">
+      <Filter>Header Files\Model\BoardObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\BoardObjects\BoardObjectGoal.h">
+      <Filter>Header Files\Model\BoardObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\SpaceClaimResponses.h">
+      <Filter>Header Files\Model</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="View\Core\glad.c">
@@ -421,6 +442,24 @@
     </ClCompile>
     <ClCompile Include="Model\BehaviourFactory.cpp">
       <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BoardObjects\BoardObjectPerson.cpp">
+      <Filter>Source Files\Model\BoardObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BoardObjects\BoardObjectEnemy.cpp">
+      <Filter>Source Files\Model\BoardObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BoardObjects\BoardObjectRock.cpp">
+      <Filter>Source Files\Model\BoardObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BoardObjects\BoardObjectArrow.cpp">
+      <Filter>Source Files\Model\BoardObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BoardObjects\BoardObjectPit.cpp">
+      <Filter>Source Files\Model\BoardObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BoardObjects\BoardObjectGoal.cpp">
+      <Filter>Source Files\Model\BoardObjects</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

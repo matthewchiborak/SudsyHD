@@ -15,7 +15,8 @@ void BoardObjectBehaviourMoveOneCont::execute(float t, BoardObject& me, Level& l
 	if (actionDone)
 		return;
 
-	if (!level.isSpaceAvailableToMoveOn(me.getPosition() + dir))
+	SpaceClaimResponse claimRes = level.isSpaceAvailableToMoveOn(me.getPosition() + dir, me.getSpaceSharingKey());
+	if (SpaceClaimResponse::DENY == claimRes)
 	{
 		this->dir = Point(dir.getX() * -1, dir.getY() * -1);
 		actionDone = true;

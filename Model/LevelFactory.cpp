@@ -3,7 +3,12 @@
 #include <fstream>
 #include <streambuf>
 
-#include "BoardObjects/BoardObject.h"
+#include "BoardObjects/BoardObjectArrow.h"
+#include "BoardObjects/BoardObjectEnemy.h"
+#include "BoardObjects/BoardObjectGoal.h"
+#include "BoardObjects/BoardObjectPerson.h"
+#include "BoardObjects/BoardObjectPit.h"
+#include "BoardObjects/BoardObjectRock.h"
 
 #include "LevelBoard.h"
 
@@ -35,6 +40,7 @@ std::unique_ptr<Level> LevelFactory::createLevel(int level) throw()
 	createPlayersAndPlayerDependantCommands(newLevel.get());
 	createEnemies(newLevel.get());
 	createObstacles(newLevel.get());
+	createGoals(newLevel.get());
 
 	return newLevel;
 }
@@ -60,7 +66,7 @@ void LevelFactory::createPlayersAndPlayerDependantCommands(LevelBoard* levelBein
 
 	for (int i = 0; i < JSON["Players"].size(); i++)
 	{
-		std::unique_ptr<BoardObject> newObject = std::make_unique<BoardObject>(
+		std::unique_ptr<BoardObject> newObject = std::make_unique<BoardObjectPerson>(
 			Point(JSON["Players"][i]["X"], JSON["Players"][i]["Y"]), 
 			std::string(JSON["Players"][i]["Key"]),
 			std::move(behaviourFactory->createBehaviour(JSON["Players"][i]["Behaviour"])),
@@ -81,7 +87,7 @@ void LevelFactory::createEnemies(LevelBoard* levelBeingMade)
 {
 	for (int i = 0; i < JSON["Enemies"].size(); i++)
 	{
-		std::unique_ptr<BoardObject> newObject = std::make_unique<BoardObject>(
+		std::unique_ptr<BoardObject> newObject = std::make_unique<BoardObjectEnemy>(
 			Point(JSON["Enemies"][i]["X"], JSON["Enemies"][i]["Y"]),
 			std::string(JSON["Enemies"][i]["Key"]),
 			std::move(behaviourFactory->createBehaviour(JSON["Enemies"][i]["Behaviour"])),
@@ -94,14 +100,29 @@ void LevelFactory::createEnemies(LevelBoard* levelBeingMade)
 
 void LevelFactory::createObstacles(LevelBoard* levelBeingMade)
 {
-	for (int i = 0; i < JSON["Walls"].size(); i++)
+	for (int i = 0; i < JSON["Obs"].size(); i++)
 	{
-		std::unique_ptr<BoardObject> newObject = std::make_unique<BoardObject>(
-			Point(JSON["Walls"][i]["X"], JSON["Walls"][i]["Y"]),
-			std::string(JSON["Walls"][i]["Key"]),
-			std::move(behaviourFactory->createBehaviour(JSON["Walls"][i]["Behaviour"])),
-			std::move(behaviourFactory->createSender(JSON["Walls"][i]["Sender"])),
-			std::move(behaviourFactory->createReceiver(JSON["Walls"][i]["Receiver"]))
+		std::unique_ptr<BoardObject> newObject = std::make_unique<BoardObjectRock>(
+			Point(JSON["Obs"][i]["X"], JSON["Obs"][i]["Y"]),
+			std::string(JSON["Obs"][i]["Key"]),
+			std::move(behaviourFactory->createBehaviour(JSON["Obs"][i]["Behaviour"])),
+			std::move(behaviourFactory->createSender(JSON["Obs"][i]["Sender"])),
+			std::move(behaviourFactory->createReceiver(JSON["Obs"][i]["Receiver"]))
+			);
+		levelBeingMade->addBoardObject(std::move(newObject));
+	}
+}
+
+void LevelFactory::createGoals(LevelBoard* levelBeingMade)
+{
+	for (int i = 0; i < JSON["Goals"].size(); i++)
+	{
+		std::unique_ptr<BoardObject> newObject = std::make_unique<BoardObjectGoal>(
+			Point(JSON["Goals"][i]["X"], JSON["Goals"][i]["Y"]),
+			std::string(JSON["Goals"][i]["Key"]),
+			std::move(behaviourFactory->createBehaviour(JSON["Goals"][i]["Behaviour"])),
+			std::move(behaviourFactory->createSender(JSON["Goals"][i]["Sender"])),
+			std::move(behaviourFactory->createReceiver(JSON["Goals"][i]["Receiver"]))
 			);
 		levelBeingMade->addBoardObject(std::move(newObject));
 	}

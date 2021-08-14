@@ -14,18 +14,36 @@
 	"Enemies": [
 	{
 		"Key": "Goblin",
-		"X": 4,
-		"Y": 4,
+		"X": 7,
+		"Y": 3,
 		"Behaviour": "NONE",
 		"Sender": "NONE",
 		"Receiver": "PUSH"
 	}
 	],
-	"Walls": [
+	"Obs": [
 	{
 		"Key": "Wall",
 		"X": 5,
 		"Y": 5,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "NONE"
+	},
+	{
+		"Key": "Rock",
+		"X": 4,
+		"Y": 3,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "PUSH"
+	}
+	],
+	"Goals": [
+	{
+		"Key": "Goal",
+		"X": 7,
+		"Y": 7,
 		"Behaviour": "NONE",
 		"Sender": "NONE",
 		"Receiver": "NONE"

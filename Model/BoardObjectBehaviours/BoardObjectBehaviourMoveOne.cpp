@@ -7,8 +7,8 @@
 #include "../BoardObjects/BoardObject.h"
 #include "../Level.h"
 
-BoardObjectBehaviourMoveOne::BoardObjectBehaviourMoveOne(Point dir)
-	: dir(dir)
+BoardObjectBehaviourMoveOne::BoardObjectBehaviourMoveOne(Point dir, float t)
+	: dir(dir), startingT(t)
 {
 }
 
@@ -17,12 +17,15 @@ void BoardObjectBehaviourMoveOne::execute(float t, BoardObject& me, Level& level
 	if (actionDone)
 		return;
 
-	if (!level.isSpaceAvailableToMoveOn(me.getPosition() + dir))
+	SpaceClaimResponse claimRes = level.isSpaceAvailableToMoveOn(me.getPosition() + dir, me.getSpaceSharingKey());
+	if (SpaceClaimResponse::DENY == claimRes)
 	{
 		me.setBehaviour(std::move(std::make_unique<BoardObjectBehaviourNone>()));
 		actionDone = true;
 		return;
 	}
+
+	t -= startingT;
 
 	float newX = me.getPosition().getX() + dir.getX() * t;
 	float newY = me.getPosition().getY() + dir.getY() * t;

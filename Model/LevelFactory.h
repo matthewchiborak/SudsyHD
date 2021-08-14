@@ -23,7 +23,7 @@ private:
 	void createPlayersAndPlayerDependantCommands(LevelBoard* levelBeingMade);
 	void createEnemies(LevelBoard* levelBeingMade);
 	void createObstacles(LevelBoard* levelBeingMade);
-
+	void createGoals(LevelBoard* levelBeingMade);
 };
 
 #endif

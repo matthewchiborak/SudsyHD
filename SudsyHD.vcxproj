@@ -164,6 +164,12 @@
     <ClInclude Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderNone.h" />
     <ClInclude Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderPush.h" />
     <ClInclude Include="Model\BoardObjects\BoardObject.h" />
+    <ClInclude Include="Model\BoardObjects\BoardObjectArrow.h" />
+    <ClInclude Include="Model\BoardObjects\BoardObjectEnemy.h" />
+    <ClInclude Include="Model\BoardObjects\BoardObjectGoal.h" />
+    <ClInclude Include="Model\BoardObjects\BoardObjectPerson.h" />
+    <ClInclude Include="Model\BoardObjects\BoardObjectPit.h" />
+    <ClInclude Include="Model\BoardObjects\BoardObjectRock.h" />
     <ClInclude Include="Model\GameModel.h" />
     <ClInclude Include="Model\GameStates\GameState.h" />
     <ClInclude Include="Model\GameStates\GameStateAction.h" />
@@ -181,6 +187,7 @@
     <ClInclude Include="Model\LevelFactory.h" />
     <ClInclude Include="Model\Point.h" />
     <ClInclude Include="Model\PointF.h" />
+    <ClInclude Include="Model\SpaceClaimResponses.h" />
     <ClInclude Include="View\Core\Camera.h" />
     <ClInclude Include="View\Core\EBO.h" />
     <ClInclude Include="View\Core\Mesh.h" />
@@ -220,6 +227,12 @@
     <ClCompile Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderNone.cpp" />
     <ClCompile Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderPush.cpp" />
     <ClCompile Include="Model\BoardObjects\BoardObject.cpp" />
+    <ClCompile Include="Model\BoardObjects\BoardObjectArrow.cpp" />
+    <ClCompile Include="Model\BoardObjects\BoardObjectEnemy.cpp" />
+    <ClCompile Include="Model\BoardObjects\BoardObjectGoal.cpp" />
+    <ClCompile Include="Model\BoardObjects\BoardObjectPerson.cpp" />
+    <ClCompile Include="Model\BoardObjects\BoardObjectPit.cpp" />
+    <ClCompile Include="Model\BoardObjects\BoardObjectRock.cpp" />
     <ClCompile Include="Model\GameModel.cpp" />
     <ClCompile Include="Model\GameStates\GameState.cpp" />
     <ClCompile Include="Model\GameStates\GameStateAction.cpp" />
