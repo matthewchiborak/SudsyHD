@@ -10,7 +10,7 @@
 #include "BoardObjectBehaviourMoveOne.h"
 
 BoardObjectBehaviourMoveInfinite::BoardObjectBehaviourMoveInfinite(Point dir)
-	: dir(dir), lastT(0), originalPosSet(false), meOriginalPos(0,0)
+	: dir(dir), lastT(0), originalPosSet(false), meOriginalPos(0,0), hasClaimedSpace(false)
 {
 }
 
@@ -25,17 +25,22 @@ void BoardObjectBehaviourMoveInfinite::execute(float t, BoardObject& me, Level& 
 	if (actionDone)
 		return;
 
-	SpaceClaimResponse claimRes = level.isSpaceAvailableToMoveOn(me.getPosition() + dir, me.getSpaceSharingKey());
-	if (SpaceClaimResponse::DENY == claimRes)
+	if (!hasClaimedSpace)
 	{
-		me.setBehaviour(std::move(std::make_unique<BoardObjectBehaviourNone>()));
-		actionDone = true;
-		return;
-	}
-	if (SpaceClaimResponse::STOP == claimRes)
-	{
-		me.setBehaviour(std::move(std::make_unique<BoardObjectBehaviourMoveOne>(dir, t)));
-		return;
+		SpaceClaimResponse claimRes = level.isSpaceAvailableToMoveOn(me.getPosition() + dir, me.getSpaceSharingKey());
+		if (SpaceClaimResponse::DENY == claimRes)
+		{
+			me.setBehaviour(std::move(std::make_unique<BoardObjectBehaviourNone>()));
+			actionDone = true;
+			return;
+		}
+		if (SpaceClaimResponse::STOP == claimRes)
+		{
+			me.setBehaviour(std::move(std::make_unique<BoardObjectBehaviourMoveOne>(dir, t)));
+			return;
+		}
+		me.setPosition(me.getPosition() + dir);
+		hasClaimedSpace = true;
 	}
 
 	float newX = meOriginalPos.getX() + dir.getX() * t;
@@ -46,6 +51,6 @@ void BoardObjectBehaviourMoveInfinite::execute(float t, BoardObject& me, Level& 
 	if ((int)t > lastT)
 	{
 		lastT = t;
-		me.setPosition(me.getPosition() + dir);
+		hasClaimedSpace = false;
 	}
 }

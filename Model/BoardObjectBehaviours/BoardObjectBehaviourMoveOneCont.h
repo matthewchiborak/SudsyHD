@@ -13,7 +13,10 @@ public:
 	void execute(float t, BoardObject& me, Level& level) override;
 
 private:
+	bool hasClaimedSpace;
 	Point dir;
+	Point meOriginalPos;
+	bool originalPosSet;
 };
 
 #endif

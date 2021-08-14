@@ -14,7 +14,10 @@ public:
 
 private:
 	Point dir;
+	bool originalPosSet;
+	Point meOriginalPos;
 	float startingT;
+	bool hasClaimedSpace;
 };
 
 #endif
