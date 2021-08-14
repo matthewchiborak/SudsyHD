@@ -13,8 +13,11 @@ void GameStateAction::advance()
 	float t = (float)framesPassed / 60.0f;
 	model->getCurrentLevel()->advance(t);
 
-	if(model->getCurrentLevel()->isAllObjectDoneBehaviour())
+	if (model->getCurrentLevel()->isAllObjectDoneBehaviour())
+	{
+		this->model->getCurrentLevel()->handleCollisions();
 		this->model->setState(std::move(std::make_unique<GameStateWait>(*model)));
+	}
 }
 
 void GameStateAction::move(const Point direction)

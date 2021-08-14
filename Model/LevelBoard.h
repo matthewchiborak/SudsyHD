@@ -13,6 +13,7 @@ public:
 	void move(const Point direction) override;
 	void interact() override;
 	void change(bool next) override;
+	void handleCollisions() override;
 
 	void setMoveCommand(std::unique_ptr<LevelCommandPoint> cmd);
 	void setInteractCommand(std::unique_ptr<LevelCommand> cmd);
@@ -24,6 +25,14 @@ private:
 	std::unique_ptr<LevelCommand> interactCommand;
 	std::unique_ptr<LevelCommand> changeNextCommand;
 	std::unique_ptr<LevelCommand> changePrevCommand;
+
+	void removeOrKeepObjectsOnSameSpace(int& i, int& j);
+	void handlePeopleCollisions(int& i, int& j);
+	void handleEnemyCollisions(int& i, int& j);
+	void handleRockCollisions(int& i, int& j);
+	void handleArrowCollisions(int& i, int& j);
+	void handleHoleCollisions(int& i, int& j);
+	void handleGoalCollisions(int& i, int& j);
 };
 
 #endif

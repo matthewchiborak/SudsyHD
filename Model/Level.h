@@ -16,6 +16,7 @@ public:
 	~Level();
 
 	virtual void advance(float t) = 0;
+	virtual void handleCollisions() = 0;
 	virtual void move(const Point direction) = 0;
 	virtual void interact() = 0;
 	virtual void change(bool next) = 0;

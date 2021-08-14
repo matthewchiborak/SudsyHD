@@ -37,12 +37,30 @@
 		"Behaviour": "NONE",
 		"Sender": "NONE",
 		"Receiver": "PUSH"
+	},
+	{
+		"Key": "Rock",
+		"X": 0,
+		"Y": 2,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "PUSH"
 	}
 	],
 	"Goals": [
 	{
 		"Key": "Goal",
 		"X": 7,
+		"Y": 7,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "NONE"
+	}
+	],
+	"Pits": [
+	{
+		"Key": "Ice",
+		"X": 0,
 		"Y": 7,
 		"Behaviour": "NONE",
 		"Sender": "NONE",

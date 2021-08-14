@@ -40,6 +40,7 @@ std::unique_ptr<Level> LevelFactory::createLevel(int level) throw()
 	createPlayersAndPlayerDependantCommands(newLevel.get());
 	createEnemies(newLevel.get());
 	createObstacles(newLevel.get());
+	createPits(newLevel.get());
 	createGoals(newLevel.get());
 
 	return newLevel;
@@ -108,6 +109,21 @@ void LevelFactory::createObstacles(LevelBoard* levelBeingMade)
 			std::move(behaviourFactory->createBehaviour(JSON["Obs"][i]["Behaviour"])),
 			std::move(behaviourFactory->createSender(JSON["Obs"][i]["Sender"])),
 			std::move(behaviourFactory->createReceiver(JSON["Obs"][i]["Receiver"]))
+			);
+		levelBeingMade->addBoardObject(std::move(newObject));
+	}
+}
+
+void LevelFactory::createPits(LevelBoard* levelBeingMade)
+{
+	for (int i = 0; i < JSON["Pits"].size(); i++)
+	{
+		std::unique_ptr<BoardObject> newObject = std::make_unique<BoardObjectPit>(
+			Point(JSON["Pits"][i]["X"], JSON["Pits"][i]["Y"]),
+			std::string(JSON["Pits"][i]["Key"]),
+			std::move(behaviourFactory->createBehaviour(JSON["Pits"][i]["Behaviour"])),
+			std::move(behaviourFactory->createSender(JSON["Pits"][i]["Sender"])),
+			std::move(behaviourFactory->createReceiver(JSON["Pits"][i]["Receiver"]))
 			);
 		levelBeingMade->addBoardObject(std::move(newObject));
 	}
