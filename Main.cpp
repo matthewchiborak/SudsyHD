@@ -4,6 +4,7 @@
 #include "View/View.h"
 #include "Model/GameModel.h"
 #include "Model/LevelFactory.h"
+#include "Model/BehaviourFactory.h"
 #include "View/RenderStrategyFactory.h"
 #include "View/SpriteFlyweightFactory.h"
 
@@ -15,7 +16,8 @@ int main()
 {
 	std::unique_ptr<IRenderStrategyFactory> renderStratFact = std::make_unique<RenderStrategyFactory>();
 	std::unique_ptr<ISpriteFlyweightFactory> spriteFactory = std::make_unique<SpriteFlyweightFactory>("Textures/ModelPaths.json");
-	std::unique_ptr<ILevelFactory> levelFactory = std::make_unique<LevelFactory>("Levels");
+	std::unique_ptr<IBehaviourFactory> behaviourFactory = std::make_unique<BehaviourFactory>();
+	std::unique_ptr<ILevelFactory> levelFactory = std::make_unique<LevelFactory>("Levels", *(behaviourFactory.get()));
 	std::unique_ptr<IGameModel> model = std::make_unique<GameModel>(*levelFactory);
 	model.get()->setState(std::move(std::make_unique<GameStateWait>(*(model.get()))));
 	std::unique_ptr<IView> view = std::make_unique<View>(Point(1600, 800), *(model.get()), *(renderStratFact.get()), *(spriteFactory.get()), "Shaders");

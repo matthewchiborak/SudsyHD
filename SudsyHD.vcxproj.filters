@@ -246,6 +246,12 @@
     <ClInclude Include="Model\BoardObjectInteractReceivers\BoardObjectInteractReceiverPush.h">
       <Filter>Header Files\Model\BoardObjectInteractReceivers</Filter>
     </ClInclude>
+    <ClInclude Include="Model\IBehaviourFactory.h">
+      <Filter>Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\BehaviourFactory.h">
+      <Filter>Header Files\Model</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="View\Core\glad.c">
@@ -409,6 +415,12 @@
     </ClCompile>
     <ClCompile Include="Model\BoardObjectInteractReceivers\BoardObjectInteractReceiverPush.cpp">
       <Filter>Source Files\Model\BoardObjectInteractReceivers</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\IBehaviourFactory.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BehaviourFactory.cpp">
+      <Filter>Source Files\Model</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

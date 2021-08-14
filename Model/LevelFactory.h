@@ -10,7 +10,7 @@ class LevelBoard;
 class LevelFactory: public ILevelFactory
 {
 public:
-	LevelFactory(std::string levelFileLocation);
+	LevelFactory(std::string levelFileLocation, IBehaviourFactory& behaviourFactory);
 
 	std::unique_ptr<Level> createLevel(int level) throw() override;
 

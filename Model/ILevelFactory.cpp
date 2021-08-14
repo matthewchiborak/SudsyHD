@@ -1,6 +1,6 @@
 #include "ILevelFactory.h"
 
-ILevelFactory::ILevelFactory(std::string levelFileLocation)
-	: levelFileLocation(levelFileLocation)
+ILevelFactory::ILevelFactory(std::string levelFileLocation, IBehaviourFactory& behaviourFactory)
+	: levelFileLocation(levelFileLocation), behaviourFactory(&behaviourFactory)
 {
 }

@@ -151,6 +151,7 @@
     <ClInclude Include="Controller\InputStates\InputContext.h" />
     <ClInclude Include="Controller\InputStates\InputState.h" />
     <ClInclude Include="Controller\InputStates\InputStateBoard.h" />
+    <ClInclude Include="Model\BehaviourFactory.h" />
     <ClInclude Include="Model\BoardObjectBehaviours\BoardObjectBehaviour.h" />
     <ClInclude Include="Model\BoardObjectBehaviours\BoardObjectBehaviourMoveInfinite.h" />
     <ClInclude Include="Model\BoardObjectBehaviours\BoardObjectBehaviourMoveOne.h" />
@@ -167,6 +168,7 @@
     <ClInclude Include="Model\GameStates\GameState.h" />
     <ClInclude Include="Model\GameStates\GameStateAction.h" />
     <ClInclude Include="Model\GameStates\GameStateWait.h" />
+    <ClInclude Include="Model\IBehaviourFactory.h" />
     <ClInclude Include="Model\IGameModel.h" />
     <ClInclude Include="Model\ILevelFactory.h" />
     <ClInclude Include="Model\Level.h" />
@@ -205,6 +207,7 @@
     <ClCompile Include="Controller\InputStates\InputState.cpp" />
     <ClCompile Include="Controller\InputStates\InputStateBoard.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Model\BehaviourFactory.cpp" />
     <ClCompile Include="Model\BoardObjectBehaviours\BoardObjectBehaviour.cpp" />
     <ClCompile Include="Model\BoardObjectBehaviours\BoardObjectBehaviourMoveInfinite.cpp" />
     <ClCompile Include="Model\BoardObjectBehaviours\BoardObjectBehaviourMoveOne.cpp" />
@@ -221,6 +224,7 @@
     <ClCompile Include="Model\GameStates\GameState.cpp" />
     <ClCompile Include="Model\GameStates\GameStateAction.cpp" />
     <ClCompile Include="Model\GameStates\GameStateWait.cpp" />
+    <ClCompile Include="Model\IBehaviourFactory.cpp" />
     <ClCompile Include="Model\IGameModel.cpp" />
     <ClCompile Include="Model\ILevelFactory.cpp" />
     <ClCompile Include="Model\Level.cpp" />
