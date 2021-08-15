@@ -74,6 +74,11 @@ Point BoardObject::getLastDirFacing() const
 	return lastDirFacing;
 }
 
+void BoardObject::setSpaceSharingKey(std::string key)
+{
+	this->spaceSharingKey = key;
+}
+
 std::string BoardObject::getSpriteKey() const
 {
 	return spriteKey;

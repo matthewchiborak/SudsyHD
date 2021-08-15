@@ -30,6 +30,7 @@ private:
 	void handlePeopleCollisions(int& i, int& j);
 	void handleEnemyCollisions(int& i, int& j);
 	void handleRockCollisions(int& i, int& j);
+	void handleRockFloatCollisions(int& i, int& j);
 	void handleArrowCollisions(int& i, int& j);
 	void handleHoleCollisions(int& i, int& j);
 	void handleGoalCollisions(int& i, int& j);

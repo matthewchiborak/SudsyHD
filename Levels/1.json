@@ -7,7 +7,7 @@
 		"X": 3,
 		"Y": 3,
 		"Behaviour": "NONE",
-		"Sender": "PUSH",
+		"Sender": "FLOAT",
 		"Receiver": "NONE"
 	},
 	{
@@ -85,7 +85,7 @@
 	{
 		"Key": "Pit",
 		"X": 0,
-		"Y": 7,
+		"Y": 5,
 		"Behaviour": "NONE",
 		"Sender": "NONE",
 		"Receiver": "NONE"

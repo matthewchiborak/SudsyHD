@@ -89,6 +89,11 @@ void LevelBoard::removeOrKeepObjectsOnSameSpace(int& i, int& j)
 		handleRockCollisions(i, j);
 		return;
 	}
+	if (key == "Rock-Float")
+	{
+		handleRockFloatCollisions(i, j);
+		return;
+	}
 	if (key == "Arrow")
 	{
 		handleArrowCollisions(i, j);
@@ -110,7 +115,7 @@ void LevelBoard::handlePeopleCollisions(int& i, int& j)
 {
 	std::string key = boardObjects[j].get()->getSpaceSharingKey();
 
-	if (key == "Enemy" || key == "Rock")
+	if (key == "Enemy" || key == "Rock" || key == "Rock-Float")
 	{
 		boardObjects.erase(boardObjects.begin() + i);
 		resetIndices(i, j);
@@ -138,7 +143,7 @@ void LevelBoard::handleEnemyCollisions(int& i, int& j)
 {
 	std::string key = boardObjects[j].get()->getSpaceSharingKey();
 
-	if (key == "Rock")
+	if (key == "Rock" || key == "Rock-Float")
 	{
 		boardObjects.erase(boardObjects.begin() + i);
 		resetIndices(i, j);
@@ -174,6 +179,17 @@ void LevelBoard::handleRockCollisions(int& i, int& j)
 		resetIndices(i, j);
 		return;
 	}
+
+	if (key == "Person" || key == "Enemy")
+	{
+		boardObjects.erase(boardObjects.begin() + j);
+		resetIndices(i, j);
+	}
+}
+
+void LevelBoard::handleRockFloatCollisions(int& i, int& j)
+{
+	std::string key = boardObjects[j].get()->getSpaceSharingKey();
 
 	if (key == "Person" || key == "Enemy")
 	{

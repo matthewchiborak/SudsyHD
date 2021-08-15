@@ -9,7 +9,7 @@ SpaceClaimResponse BoardObjectPit::canIShareSpaceWithYou(std::string key)
 {
 	if (key == "Rock")
 		return SpaceClaimResponse::STOP;
-	if (key == "Arrow")
+	if (key == "Arrow" || key == "Rock-Float")
 		return SpaceClaimResponse::ALLOW;
 
 	return SpaceClaimResponse::DENY;

@@ -11,10 +11,12 @@
 #include "BoardObjectInteractSenders/BoardObjectInteractSenderPush.h"
 #include "BoardObjectInteractSenders/BoardObjectInteractSenderShoot.h"
 #include "BoardObjectInteractSenders/BoardObjectInteractSenderFreeze.h"
+#include "BoardObjectInteractSenders/BoardObjectInteractSenderFloat.h"
 
 #include "BoardObjectInteractReceivers/BoardObjectInteractReceiverNone.h"
 #include "BoardObjectInteractReceivers/BoardObjectInteractReceiverPush.h"
 #include "BoardObjectInteractReceivers/BoardObjectInteractReceiverFreeze.h"
+#include "BoardObjectInteractReceivers/BoardObjectInteractReceiverFloat.h"
 
 BehaviourFactory::BehaviourFactory()
 	: IBehaviourFactory()
@@ -68,6 +70,8 @@ std::unique_ptr<BoardObjectInteractSender> BehaviourFactory::createSender(std::s
 		return std::move(std::make_unique<BoardObjectInteractSenderShoot>());
 	if (key == "FREEZE")
 		return std::move(std::make_unique<BoardObjectInteractSenderFreeze>());
+	if (key == "FLOAT")
+		return std::move(std::make_unique<BoardObjectInteractSenderFloat>());
 
 	std::cout << key << " : Unfound Sender\n";
 
@@ -82,6 +86,8 @@ std::unique_ptr<BoardObjectInteractReceiver> BehaviourFactory::createReceiver(st
 		return std::move(std::make_unique<BoardObjectInteractReceiverPush>());
 	if (key == "FREEZE")
 		return std::move(std::make_unique<BoardObjectInteractReceiverFreeze>());
+	if (key == "FLOAT")
+		return std::move(std::make_unique<BoardObjectInteractReceiverFloat>());
 
 	std::cout << key << " : Unfound Receiver\n";
 

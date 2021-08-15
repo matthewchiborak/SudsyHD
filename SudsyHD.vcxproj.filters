@@ -282,6 +282,12 @@
     <ClInclude Include="Model\BoardObjectInteractReceivers\BoardObjectInteractReceiverFreeze.h">
       <Filter>Header Files\Model\BoardObjectInteractReceivers</Filter>
     </ClInclude>
+    <ClInclude Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderFloat.h">
+      <Filter>Header Files\Model\BoardObjectInteractSenders</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\BoardObjectInteractReceivers\BoardObjectInteractReceiverFloat.h">
+      <Filter>Header Files\Model\BoardObjectInteractReceivers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="View\Core\glad.c">
@@ -477,6 +483,12 @@
       <Filter>Source Files\Model\BoardObjectInteractSenders</Filter>
     </ClCompile>
     <ClCompile Include="Model\BoardObjectInteractReceivers\BoardObjectInteractReceiverFreeze.cpp">
+      <Filter>Source Files\Model\BoardObjectInteractReceivers</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderFloat.cpp">
+      <Filter>Source Files\Model\BoardObjectInteractSenders</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BoardObjectInteractReceivers\BoardObjectInteractReceiverFloat.cpp">
       <Filter>Source Files\Model\BoardObjectInteractReceivers</Filter>
     </ClCompile>
   </ItemGroup>
