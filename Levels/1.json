@@ -9,6 +9,14 @@
 		"Behaviour": "NONE",
 		"Sender": "PUSH",
 		"Receiver": "NONE"
+	},
+	{
+		"Key": "Chad",
+		"X": 5,
+		"Y": 3,
+		"Behaviour": "NONE",
+		"Sender": "PUSH",
+		"Receiver": "NONE"
 	}
 	],
 	"Enemies": [

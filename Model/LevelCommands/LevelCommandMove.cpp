@@ -11,6 +11,8 @@ LevelCommandMove::LevelCommandMove(Level& level)
 
 bool LevelCommandMove::execute(Point point)
 {
+	checkAndRemoveNullPlayers();
+
 	//No matter what, want they to change directions
 	this->players[currentPlayer]->setLastDirFacing(point);
 
@@ -32,6 +34,8 @@ void LevelCommandMove::addPlayer(BoardObject& object)
 
 void LevelCommandMove::switchPlayer(bool next)
 {
+	checkAndRemoveNullPlayers();
+
 	if (players.size() <= 1)
 		return;
 
@@ -52,5 +56,22 @@ void LevelCommandMove::switchPlayer(bool next)
 
 BoardObject* LevelCommandMove::getCurrentPlayer()
 {
+	checkAndRemoveNullPlayers();
+
 	return players[currentPlayer];
+}
+
+void LevelCommandMove::checkAndRemoveNullPlayers()
+{
+	for (int i = 0; i < players.size(); i++)
+	{
+		if(players[i]->getPosition().getX() < 0)
+		{
+			players.erase(players.begin() + i);
+			i--;
+
+			if (currentPlayer >= players.size())
+				currentPlayer = 0;
+		}
+	}
 }

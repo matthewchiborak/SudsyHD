@@ -23,6 +23,8 @@ private:
 	int currentPlayer;
 	std::vector<BoardObject*> players;
 	Level* level;
+
+	void checkAndRemoveNullPlayers();
 };
 
 #endif
