@@ -10,7 +10,7 @@ public:
 	BoardObjectInteractReceiverPush(std::unique_ptr<BoardObjectInteractReceiver> child);
 
 protected:
-	void receiverTemplateMethod(std::string key, BoardObject* sender, BoardObject& me, Level& level) override;
+	bool receiverTemplateMethod(std::string key, BoardObject* sender, BoardObject& me, Level& level) override;
 };
 
 #endif

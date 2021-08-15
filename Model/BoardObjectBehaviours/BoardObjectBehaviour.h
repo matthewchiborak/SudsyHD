@@ -10,6 +10,7 @@ public:
 	BoardObjectBehaviour();
 
 	virtual void execute(float t, BoardObject& me, Level& level) = 0;
+	virtual bool wouldBeAbleToExecute(BoardObject& me, Level& level) = 0;
 	bool isDone();
 
 protected:

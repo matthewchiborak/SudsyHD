@@ -10,7 +10,7 @@ public:
 	BoardObjectInteractSenderPush(std::unique_ptr<BoardObjectInteractSender> child);
 
 protected:
-	void senderTemplateMethod(BoardObject& me, Level& level) override;
+	bool senderTemplateMethod(BoardObject& me, Level& level) override;
 };
 
 #endif

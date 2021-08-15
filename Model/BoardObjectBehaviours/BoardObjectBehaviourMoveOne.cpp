@@ -41,11 +41,21 @@ void BoardObjectBehaviourMoveOne::execute(float t, BoardObject& me, Level& level
 	float newX = meOriginalPos.getX() + dir.getX() * t;
 	float newY = meOriginalPos.getY() + dir.getY() * t;
 	me.setPositionF(PointF(newX, newY));
-	me.setLastDirFacing(dir);
 
 	if (t >= 1)
 	{
 		me.setBehaviour(std::move(std::make_unique<BoardObjectBehaviourNone>()));
 		actionDone = true;
 	}
+}
+
+bool BoardObjectBehaviourMoveOne::wouldBeAbleToExecute(BoardObject& me, Level& level)
+{
+	SpaceClaimResponse claimRes = level.isSpaceAvailableToMoveOn(me.getPosition() + dir, me.getSpaceSharingKey());
+	if (SpaceClaimResponse::DENY == claimRes)
+	{
+		return false;
+	}
+
+	return true;
 }

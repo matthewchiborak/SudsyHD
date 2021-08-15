@@ -10,10 +10,13 @@ BoardObjectInteractReceiver::BoardObjectInteractReceiver(std::unique_ptr<BoardOb
 {
 }
 
-void BoardObjectInteractReceiver::execute(std::string key, BoardObject* sender, BoardObject& me, Level& level)
+bool BoardObjectInteractReceiver::execute(std::string key, BoardObject* sender, BoardObject& me, Level& level)
 {
-	receiverTemplateMethod(key, sender, me, level);
+	if (!receiverTemplateMethod(key, sender, me, level))
+		return false;
 
 	if (hasChild)
-		child.get()->execute(key, sender, me, level);
+		return child.get()->execute(key, sender, me, level);
+
+	return true;
 }

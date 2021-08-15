@@ -54,14 +54,14 @@ void BoardObject::setBehaviour(std::unique_ptr<BoardObjectBehaviour> behaviour)
 	this->behaviour = std::move(behaviour);
 }
 
-void BoardObject::interactSend(Level& level)
+bool BoardObject::interactSend(Level& level)
 {
-	this->interactSender.get()->execute(*(this), level);
+	return this->interactSender.get()->execute(*(this), level);
 }
 
-void BoardObject::interactReceive(std::string key, BoardObject* sender, Level& level)
+bool BoardObject::interactReceive(std::string key, BoardObject* sender, Level& level)
 {
-	this->interactReceiver.get()->execute(key, sender, *(this), level);
+	return this->interactReceiver.get()->execute(key, sender, *(this), level);
 }
 
 void BoardObject::setLastDirFacing(Point dir)

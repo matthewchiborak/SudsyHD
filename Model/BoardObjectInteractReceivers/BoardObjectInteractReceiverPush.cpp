@@ -14,10 +14,17 @@ BoardObjectInteractReceiverPush::BoardObjectInteractReceiverPush(std::unique_ptr
 {
 }
 
-void BoardObjectInteractReceiverPush::receiverTemplateMethod(std::string key, BoardObject* sender, BoardObject& me, Level& level)
+bool BoardObjectInteractReceiverPush::receiverTemplateMethod(std::string key, BoardObject* sender, BoardObject& me, Level& level)
 {
 	if (key != "PUSH")
-		return;
+		return false;
 
-	me.setBehaviour(std::move(std::make_unique< BoardObjectBehaviourMoveInfinite>(sender->getPosition() - me.getPosition())));
+	std::unique_ptr<BoardObjectBehaviourMoveInfinite> behave = std::make_unique<BoardObjectBehaviourMoveInfinite>(sender->getPosition() - me.getPosition());
+
+	if (!behave.get()->wouldBeAbleToExecute(me, level))
+		return false;
+
+	me.setBehaviour(std::move(behave));
+
+	return true;
 }

@@ -15,14 +15,14 @@ void LevelBoard::advance(float t)
 	}
 }
 
-void LevelBoard::move(const Point direction)
+bool LevelBoard::move(const Point direction)
 {
-	this->moveCommand.get()->execute(direction);
+	return this->moveCommand.get()->execute(direction);
 }
 
-void LevelBoard::interact()
+bool LevelBoard::interact()
 {
-	this->interactCommand.get()->execute();
+	return this->interactCommand.get()->execute();
 }
 
 void LevelBoard::change(bool next)
@@ -111,27 +111,23 @@ void LevelBoard::handlePeopleCollisions(int& i, int& j)
 	if (key == "Enemy" || key == "Rock")
 	{
 		boardObjects.erase(boardObjects.begin() + i);
-		i--;
-		j--;
+		resetIndices(i, j);
 		return;
 	}
 
 	if (key == "Arrow")
 	{
-		boardObjects.erase(boardObjects.begin() + i);
-		i--;
-		j--;
 		boardObjects.erase(boardObjects.begin() + j);
-		i--;
-		j--;
+		boardObjects.erase(boardObjects.begin() + i);
+		resetIndices(i, j);
+		resetIndices(i, j);
 		return;
 	}
 
 	if (key == "Goal")
 	{
 		boardObjects.erase(boardObjects.begin() + j);
-		i--;
-		j--;
+		resetIndices(i, j);
 		return;
 	}
 }
@@ -143,27 +139,23 @@ void LevelBoard::handleEnemyCollisions(int& i, int& j)
 	if (key == "Rock")
 	{
 		boardObjects.erase(boardObjects.begin() + i);
-		i--;
-		j--;
+		resetIndices(i, j);
 		return;
 	}
 
 	if (key == "Person")
 	{
 		boardObjects.erase(boardObjects.begin() + j);
-		i--;
-		j--;
+		resetIndices(i, j);
 		return;
 	}
 
 	if (key == "Arrow")
 	{
-		boardObjects.erase(boardObjects.begin() + i);
-		i--;
-		j--;
 		boardObjects.erase(boardObjects.begin() + j);
-		i--;
-		j--;
+		boardObjects.erase(boardObjects.begin() + i);
+		resetIndices(i, j);
+		resetIndices(i, j);
 		return;
 	}
 }
@@ -174,20 +166,17 @@ void LevelBoard::handleRockCollisions(int& i, int& j)
 
 	if (key == "Pit")
 	{
-		boardObjects.erase(boardObjects.begin() + i);
-		i--;
-		j--;
 		boardObjects.erase(boardObjects.begin() + j);
-		i--;
-		j--;
+		boardObjects.erase(boardObjects.begin() + i);
+		resetIndices(i, j);
+		resetIndices(i, j);
 		return;
 	}
 
 	if (key == "Person" || key == "Enemy")
 	{
 		boardObjects.erase(boardObjects.begin() + j);
-		i--;
-		j--;
+		resetIndices(i, j);
 	}
 }
 
@@ -197,12 +186,10 @@ void LevelBoard::handleArrowCollisions(int& i, int& j)
 
 	if (key == "Person" || key == "Enemy")
 	{
-		boardObjects.erase(boardObjects.begin() + i);
-		i--;
-		j--;
 		boardObjects.erase(boardObjects.begin() + j);
-		i--;
-		j--;
+		boardObjects.erase(boardObjects.begin() + i);
+		resetIndices(i, j);
+		resetIndices(i, j);
 	}
 }
 
@@ -212,12 +199,10 @@ void LevelBoard::handleHoleCollisions(int& i, int& j)
 
 	if (key == "Rock")
 	{
-		boardObjects.erase(boardObjects.begin() + i);
-		i--;
-		j--;
 		boardObjects.erase(boardObjects.begin() + j);
-		i--;
-		j--;
+		boardObjects.erase(boardObjects.begin() + i);
+		resetIndices(i, j);
+		resetIndices(i, j);
 		return;
 	}
 }
@@ -229,8 +214,13 @@ void LevelBoard::handleGoalCollisions(int& i, int& j)
 	if (key == "Person")
 	{
 		boardObjects.erase(boardObjects.begin() + i);
-		i--;
-		j--;
+		resetIndices(i, j);
 		return;
 	}
+}
+
+void LevelBoard::resetIndices(int& i, int& j)
+{
+	i--;
+	j = boardObjects.size() + 1;
 }

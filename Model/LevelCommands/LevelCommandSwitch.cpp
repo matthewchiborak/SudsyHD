@@ -5,7 +5,8 @@ LevelCommandSwitch::LevelCommandSwitch(LevelCommandMove* moveCmd, bool isNext)
 {
 }
 
-void LevelCommandSwitch::execute()
+bool LevelCommandSwitch::execute()
 {
 	moveCmd->switchPlayer(isNext);
+	return true;
 }

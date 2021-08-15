@@ -6,12 +6,15 @@
 #include "../Level.h"
 
 BoardObjectBehaviourMoveOneCont::BoardObjectBehaviourMoveOneCont(Point dir)
-	: dir(dir), originalPosSet(false), meOriginalPos(0, 0), hasClaimedSpace(false)
+	: dir(dir), originalPosSet(false), meOriginalPos(0, 0), hasClaimedSpace(false), lastT(0)
 {
 }
 
 void BoardObjectBehaviourMoveOneCont::execute(float t, BoardObject& me, Level& level)
 {
+	if (t < lastT)
+		reset();
+
 	if (!originalPosSet)
 	{
 		meOriginalPos = me.getPosition();
@@ -21,6 +24,8 @@ void BoardObjectBehaviourMoveOneCont::execute(float t, BoardObject& me, Level& l
 	if (actionDone)
 		return;
 
+	lastT = t;
+
 	if (!hasClaimedSpace)
 	{
 		SpaceClaimResponse claimRes = level.isSpaceAvailableToMoveOn(me.getPosition() + dir, me.getSpaceSharingKey());
@@ -28,6 +33,7 @@ void BoardObjectBehaviourMoveOneCont::execute(float t, BoardObject& me, Level& l
 		{
 			this->dir = Point(dir.getX() * -1, dir.getY() * -1);
 			actionDone = true;
+			lastT = 1;
 			return;
 		}
 		me.setPosition(me.getPosition() + dir);
@@ -43,4 +49,24 @@ void BoardObjectBehaviourMoveOneCont::execute(float t, BoardObject& me, Level& l
 	{
 		actionDone = true;
 	}
+}
+
+bool BoardObjectBehaviourMoveOneCont::wouldBeAbleToExecute(BoardObject& me, Level& level)
+{
+	SpaceClaimResponse claimRes = level.isSpaceAvailableToMoveOn(me.getPosition() + dir, me.getSpaceSharingKey());
+	if (SpaceClaimResponse::DENY == claimRes)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+void BoardObjectBehaviourMoveOneCont::reset()
+{
+	originalPosSet = false;
+	meOriginalPos = Point(0, 0); 
+	hasClaimedSpace = false; 
+	lastT = 0;
+	actionDone = false;
 }

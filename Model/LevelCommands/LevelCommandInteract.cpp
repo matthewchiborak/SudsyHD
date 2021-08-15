@@ -9,7 +9,7 @@ LevelCommandInteract::LevelCommandInteract(LevelCommandMove* moveCmd, Level& lev
 {
 }
 
-void LevelCommandInteract::execute()
+bool LevelCommandInteract::execute()
 {
-	this->moveCmd->getCurrentPlayer()->interactSend(*level);
+	return this->moveCmd->getCurrentPlayer()->interactSend(*level);
 }

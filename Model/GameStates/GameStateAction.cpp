@@ -22,12 +22,12 @@ void GameStateAction::advance()
 
 void GameStateAction::move(const Point direction)
 {
-
+	
 }
 
 void GameStateAction::interact()
 {
-
+	
 }
 
 void GameStateAction::change(bool next)

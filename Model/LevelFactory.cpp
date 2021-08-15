@@ -60,7 +60,7 @@ void LevelFactory::setLevelParameters(LevelBoard* levelBeingMade)
 
 void LevelFactory::createPlayersAndPlayerDependantCommands(LevelBoard* levelBeingMade)
 {
-	std::unique_ptr<LevelCommandMove> moveCmd = std::make_unique<LevelCommandMove>();
+	std::unique_ptr<LevelCommandMove> moveCmd = std::make_unique<LevelCommandMove>(*levelBeingMade);
 	std::unique_ptr<LevelCommandInteract> interactCmd = std::make_unique<LevelCommandInteract>(moveCmd.get(), *levelBeingMade);
 	std::unique_ptr<LevelCommandSwitch> switchNextCmd = std::make_unique<LevelCommandSwitch>(moveCmd.get(), true);
 	std::unique_ptr<LevelCommandSwitch> switchNextCmd2 = std::make_unique<LevelCommandSwitch>(moveCmd.get(), false);

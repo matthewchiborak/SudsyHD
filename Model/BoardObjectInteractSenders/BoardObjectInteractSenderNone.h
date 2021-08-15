@@ -9,7 +9,7 @@ public:
 	BoardObjectInteractSenderNone();
 
 protected:
-	void senderTemplateMethod(BoardObject& me, Level& level) override;
+	bool senderTemplateMethod(BoardObject& me, Level& level) override;
 };
 
 #endif

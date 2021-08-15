@@ -9,7 +9,7 @@ public:
 	BoardObjectBehaviourNone();
 
 	void execute(float t, BoardObject& me, Level& level) override;
-
+	bool wouldBeAbleToExecute(BoardObject& me, Level& level) override;
 };
 
 #endif

@@ -11,6 +11,7 @@ public:
 	BoardObjectBehaviourMoveInfinite(Point dir);
 
 	void execute(float t, BoardObject& me, Level& level) override;
+	bool wouldBeAbleToExecute(BoardObject& me, Level& level) override;
 
 private:
 	bool hasClaimedSpace;

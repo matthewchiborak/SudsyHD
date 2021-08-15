@@ -10,10 +10,13 @@ BoardObjectInteractSender::BoardObjectInteractSender(std::unique_ptr<BoardObject
 {
 }
 
-void BoardObjectInteractSender::execute(BoardObject& me, Level& level)
+bool BoardObjectInteractSender::execute(BoardObject& me, Level& level)
 {
-	senderTemplateMethod(me, level);
+	if (!senderTemplateMethod(me, level))
+		return false;
 
 	if (hasChild)
-		child.get()->execute(me, level);
+		return child.get()->execute(me, level);
+
+	return true;
 }

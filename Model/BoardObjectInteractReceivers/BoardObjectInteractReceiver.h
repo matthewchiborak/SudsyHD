@@ -13,13 +13,13 @@ public:
 	BoardObjectInteractReceiver();
 	BoardObjectInteractReceiver(std::unique_ptr<BoardObjectInteractReceiver> child);
 
-	void execute(std::string key, BoardObject* sender, BoardObject& me, Level& level);
+	bool execute(std::string key, BoardObject* sender, BoardObject& me, Level& level);
 
 protected:
 	//Composition so can have multi if need be
 	bool hasChild;
 	std::unique_ptr<BoardObjectInteractReceiver> child;
-	virtual void receiverTemplateMethod(std::string key, BoardObject* sender, BoardObject& me, Level& level) = 0;
+	virtual bool receiverTemplateMethod(std::string key, BoardObject* sender, BoardObject& me, Level& level) = 0;
 };
 
 #endif

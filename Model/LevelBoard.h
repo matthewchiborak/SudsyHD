@@ -10,8 +10,8 @@ public:
 	LevelBoard();
 	
 	void advance(float t) override;
-	void move(const Point direction) override;
-	void interact() override;
+	bool move(const Point direction) override;
+	bool interact() override;
 	void change(bool next) override;
 	void handleCollisions() override;
 
@@ -33,6 +33,8 @@ private:
 	void handleArrowCollisions(int& i, int& j);
 	void handleHoleCollisions(int& i, int& j);
 	void handleGoalCollisions(int& i, int& j);
+
+	void resetIndices(int& i, int& j);
 };
 
 #endif

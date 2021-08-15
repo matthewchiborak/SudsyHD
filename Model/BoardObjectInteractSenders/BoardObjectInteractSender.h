@@ -12,13 +12,13 @@ public:
 	BoardObjectInteractSender();
 	BoardObjectInteractSender(std::unique_ptr<BoardObjectInteractSender> child);
 
-	void execute(BoardObject& me, Level& level);
+	bool execute(BoardObject& me, Level& level);
 
 protected:
 	//Composition so can have multi if need be
 	bool hasChild;
 	std::unique_ptr<BoardObjectInteractSender> child;
-	virtual void senderTemplateMethod(BoardObject& me, Level& level) = 0;
+	virtual bool senderTemplateMethod(BoardObject& me, Level& level) = 0;
 };
 
 #endif

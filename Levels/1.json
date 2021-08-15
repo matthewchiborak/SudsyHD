@@ -15,10 +15,10 @@
 	{
 		"Key": "Goblin",
 		"X": 7,
-		"Y": 3,
-		"Behaviour": "NONE",
+		"Y": 7,
+		"Behaviour": "MOVE_ONE_CONT_DOWN",
 		"Sender": "NONE",
-		"Receiver": "PUSH"
+		"Receiver": "NONE"
 	}
 	],
 	"Obs": [
@@ -50,7 +50,7 @@
 	"Goals": [
 	{
 		"Key": "Goal",
-		"X": 7,
+		"X": 6,
 		"Y": 7,
 		"Behaviour": "NONE",
 		"Sender": "NONE",
@@ -59,7 +59,7 @@
 	],
 	"Pits": [
 	{
-		"Key": "Ice",
+		"Key": "Pit",
 		"X": 0,
 		"Y": 7,
 		"Behaviour": "NONE",

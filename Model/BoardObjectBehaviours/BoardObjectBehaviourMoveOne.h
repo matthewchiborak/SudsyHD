@@ -11,6 +11,7 @@ public:
 	BoardObjectBehaviourMoveOne(Point dir, float t = 0);
 
 	void execute(float t, BoardObject& me, Level& level) override;
+	bool wouldBeAbleToExecute(BoardObject& me, Level& level) override;
 
 private:
 	Point dir;

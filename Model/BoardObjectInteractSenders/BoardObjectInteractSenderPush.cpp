@@ -14,13 +14,13 @@ BoardObjectInteractSenderPush::BoardObjectInteractSenderPush(std::unique_ptr<Boa
 {
 }
 
-void BoardObjectInteractSenderPush::senderTemplateMethod(BoardObject& me, Level& level)
+bool BoardObjectInteractSenderPush::senderTemplateMethod(BoardObject& me, Level& level)
 {
 	//Get the would be receiver if it exists
 	BoardObject* receiver = level.getObjectAtPoint(me.getPosition() + me.getLastDirFacing());
 
 	if (receiver == nullptr)
-		return;
+		return false;
 
-	receiver->interactReceive("PUSH", &me, level);
+	return receiver->interactReceive("PUSH", &me, level);
 }

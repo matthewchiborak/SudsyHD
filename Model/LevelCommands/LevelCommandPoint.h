@@ -8,7 +8,7 @@ class LevelCommandPoint
 public:
 	LevelCommandPoint();
 
-	virtual void execute(Point point) = 0;
+	virtual bool execute(Point point) = 0;
 };
 
 #endif

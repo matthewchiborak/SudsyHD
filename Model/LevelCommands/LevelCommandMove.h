@@ -6,12 +6,14 @@
 #include "LevelCommandPoint.h"
 #include "../BoardObjects/BoardObject.h"
 
+class Level;
+
 class LevelCommandMove: public LevelCommandPoint
 {
 public:
-	LevelCommandMove();
+	LevelCommandMove(Level& level);
 
-	void execute(Point point) override;
+	bool execute(Point point) override;
 
 	void addPlayer(BoardObject& object);
 	void switchPlayer(bool next);
@@ -20,6 +22,7 @@ public:
 private:
 	int currentPlayer;
 	std::vector<BoardObject*> players;
+	Level* level;
 };
 
 #endif

@@ -6,7 +6,7 @@ class LevelCommand
 public:
 	LevelCommand();
 
-	virtual void execute() = 0;
+	virtual bool execute() = 0;
 };
 
 #endif

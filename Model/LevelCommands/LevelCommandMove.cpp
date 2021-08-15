@@ -4,14 +4,25 @@
 
 #include "../BoardObjectBehaviours/BoardObjectBehaviourMoveOne.h"
 
-LevelCommandMove::LevelCommandMove()
-	: LevelCommandPoint(), currentPlayer(0)
+LevelCommandMove::LevelCommandMove(Level& level)
+	: LevelCommandPoint(), currentPlayer(0), level(&level)
 {
 }
 
-void LevelCommandMove::execute(Point point)
+bool LevelCommandMove::execute(Point point)
 {
-	this->players[currentPlayer]->setBehaviour(std::move(std::make_unique<BoardObjectBehaviourMoveOne>(point)));
+	//No matter what, want they to change directions
+	this->players[currentPlayer]->setLastDirFacing(point);
+
+	//Check if player can move
+	std::unique_ptr<BoardObjectBehaviourMoveOne> behave = std::make_unique<BoardObjectBehaviourMoveOne>(point);
+
+	if(!behave.get()->wouldBeAbleToExecute(*(this->players[currentPlayer]), *level))
+		return false; 
+
+	this->players[currentPlayer]->setBehaviour(std::move(behave));
+
+	return true;
 }
 
 void LevelCommandMove::addPlayer(BoardObject& object)

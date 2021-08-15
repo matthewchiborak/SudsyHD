@@ -9,7 +9,7 @@ class LevelCommandInteract: public LevelCommand
 public:
 	LevelCommandInteract(LevelCommandMove* moveCmd, Level& level);
 
-	void execute() override;
+	bool execute() override;
 
 private:
 	Level* level;

@@ -54,3 +54,14 @@ void BoardObjectBehaviourMoveInfinite::execute(float t, BoardObject& me, Level& 
 		hasClaimedSpace = false;
 	}
 }
+
+bool BoardObjectBehaviourMoveInfinite::wouldBeAbleToExecute(BoardObject& me, Level& level)
+{
+	SpaceClaimResponse claimRes = level.isSpaceAvailableToMoveOn(me.getPosition() + dir, me.getSpaceSharingKey());
+	if (SpaceClaimResponse::DENY == claimRes)
+	{
+		return false;
+	}
+
+	return true;
+}

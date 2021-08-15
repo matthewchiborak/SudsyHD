@@ -5,6 +5,7 @@ BoardObjectInteractSenderNone::BoardObjectInteractSenderNone()
 {
 }
 
-void BoardObjectInteractSenderNone::senderTemplateMethod(BoardObject& me, Level& level)
+bool BoardObjectInteractSenderNone::senderTemplateMethod(BoardObject& me, Level& level)
 {
+	return true;
 }

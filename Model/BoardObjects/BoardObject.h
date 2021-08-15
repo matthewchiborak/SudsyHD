@@ -36,8 +36,8 @@ public:
 
 	void setBehaviour(std::unique_ptr<BoardObjectBehaviour> behaviour);
 
-	void interactSend(Level& level);
-	void interactReceive(std::string key, BoardObject* sender, Level& level);
+	bool interactSend(Level& level);
+	bool interactReceive(std::string key, BoardObject* sender, Level& level);
 
 	void setLastDirFacing(Point dir);
 	Point getLastDirFacing() const;

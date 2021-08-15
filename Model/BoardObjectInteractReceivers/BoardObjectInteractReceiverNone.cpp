@@ -5,6 +5,7 @@ BoardObjectInteractReceiverNone::BoardObjectInteractReceiverNone()
 {
 }
 
-void BoardObjectInteractReceiverNone::receiverTemplateMethod(std::string key, BoardObject* sender, BoardObject& me, Level& level)
+bool BoardObjectInteractReceiverNone::receiverTemplateMethod(std::string key, BoardObject* sender, BoardObject& me, Level& level)
 {
+	return false;
 }

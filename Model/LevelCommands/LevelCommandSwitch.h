@@ -9,7 +9,7 @@ class LevelCommandSwitch: public LevelCommand
 public:
 	LevelCommandSwitch(LevelCommandMove* moveCmd, bool isNext);
 
-	void execute() override;
+	bool execute() override;
 
 private:
 	bool isNext;
