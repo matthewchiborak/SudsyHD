@@ -273,6 +273,9 @@
     <ClInclude Include="Model\SpaceClaimResponses.h">
       <Filter>Header Files\Model</Filter>
     </ClInclude>
+    <ClInclude Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderShoot.h">
+      <Filter>Header Files\Model\BoardObjectInteractSenders</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="View\Core\glad.c">
@@ -460,6 +463,9 @@
     </ClCompile>
     <ClCompile Include="Model\BoardObjects\BoardObjectGoal.cpp">
       <Filter>Source Files\Model\BoardObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderShoot.cpp">
+      <Filter>Source Files\Model\BoardObjectInteractSenders</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

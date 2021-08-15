@@ -9,6 +9,7 @@
 
 #include "BoardObjectInteractSenders/BoardObjectInteractSenderNone.h"
 #include "BoardObjectInteractSenders/BoardObjectInteractSenderPush.h"
+#include "BoardObjectInteractSenders/BoardObjectInteractSenderShoot.h"
 
 #include "BoardObjectInteractReceivers/BoardObjectInteractReceiverNone.h"
 #include "BoardObjectInteractReceivers/BoardObjectInteractReceiverPush.h"
@@ -61,6 +62,8 @@ std::unique_ptr<BoardObjectInteractSender> BehaviourFactory::createSender(std::s
 		return std::move(std::make_unique<BoardObjectInteractSenderNone>());
 	if(key == "PUSH")
 		return std::move(std::make_unique<BoardObjectInteractSenderPush>());
+	if(key == "SHOOT")
+		return std::move(std::make_unique<BoardObjectInteractSenderShoot>());
 
 	std::cout << key << " : Unfound Sender\n";
 

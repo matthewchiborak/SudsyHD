@@ -17,6 +17,14 @@
 		"Behaviour": "NONE",
 		"Sender": "PUSH",
 		"Receiver": "NONE"
+	},
+	{
+		"Key": "Bullent",
+		"X": 6,
+		"Y": 3,
+		"Behaviour": "NONE",
+		"Sender": "SHOOT",
+		"Receiver": "NONE"
 	}
 	],
 	"Enemies": [

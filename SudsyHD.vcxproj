@@ -163,6 +163,7 @@
     <ClInclude Include="Model\BoardObjectInteractSenders\BoardObjectInteractSender.h" />
     <ClInclude Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderNone.h" />
     <ClInclude Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderPush.h" />
+    <ClInclude Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderShoot.h" />
     <ClInclude Include="Model\BoardObjects\BoardObject.h" />
     <ClInclude Include="Model\BoardObjects\BoardObjectArrow.h" />
     <ClInclude Include="Model\BoardObjects\BoardObjectEnemy.h" />
@@ -226,6 +227,7 @@
     <ClCompile Include="Model\BoardObjectInteractSenders\BoardObjectInteractSender.cpp" />
     <ClCompile Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderNone.cpp" />
     <ClCompile Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderPush.cpp" />
+    <ClCompile Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderShoot.cpp" />
     <ClCompile Include="Model\BoardObjects\BoardObject.cpp" />
     <ClCompile Include="Model\BoardObjects\BoardObjectArrow.cpp" />
     <ClCompile Include="Model\BoardObjects\BoardObjectEnemy.cpp" />
