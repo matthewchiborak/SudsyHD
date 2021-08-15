@@ -13,6 +13,8 @@ void LevelBoard::advance(float t)
 	{
 		boardObjects[i].get()->advance(t, *(this));
 	}
+
+	this->cleanUpBoardObjects();
 }
 
 bool LevelBoard::move(const Point direction)

@@ -10,9 +10,11 @@
 #include "BoardObjectInteractSenders/BoardObjectInteractSenderNone.h"
 #include "BoardObjectInteractSenders/BoardObjectInteractSenderPush.h"
 #include "BoardObjectInteractSenders/BoardObjectInteractSenderShoot.h"
+#include "BoardObjectInteractSenders/BoardObjectInteractSenderFreeze.h"
 
 #include "BoardObjectInteractReceivers/BoardObjectInteractReceiverNone.h"
 #include "BoardObjectInteractReceivers/BoardObjectInteractReceiverPush.h"
+#include "BoardObjectInteractReceivers/BoardObjectInteractReceiverFreeze.h"
 
 BehaviourFactory::BehaviourFactory()
 	: IBehaviourFactory()
@@ -64,6 +66,8 @@ std::unique_ptr<BoardObjectInteractSender> BehaviourFactory::createSender(std::s
 		return std::move(std::make_unique<BoardObjectInteractSenderPush>());
 	if(key == "SHOOT")
 		return std::move(std::make_unique<BoardObjectInteractSenderShoot>());
+	if (key == "FREEZE")
+		return std::move(std::make_unique<BoardObjectInteractSenderFreeze>());
 
 	std::cout << key << " : Unfound Sender\n";
 
@@ -76,6 +80,8 @@ std::unique_ptr<BoardObjectInteractReceiver> BehaviourFactory::createReceiver(st
 		return std::move(std::make_unique<BoardObjectInteractReceiverNone>());
 	if (key == "PUSH")
 		return std::move(std::make_unique<BoardObjectInteractReceiverPush>());
+	if (key == "FREEZE")
+		return std::move(std::make_unique<BoardObjectInteractReceiverFreeze>());
 
 	std::cout << key << " : Unfound Receiver\n";
 

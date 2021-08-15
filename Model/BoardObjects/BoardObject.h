@@ -45,6 +45,8 @@ public:
 	virtual SpaceClaimResponse canIShareSpaceWithYou(std::string key) = 0;
 	virtual std::string getSpaceSharingKey() = 0;
 
+	std::string getSpriteKey() const;
+
 protected:
 	Point position;
 	PointF positionF;

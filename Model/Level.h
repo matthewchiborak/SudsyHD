@@ -22,7 +22,10 @@ public:
 	virtual void change(bool next) = 0;
 	
 	void addBoardObject(std::unique_ptr<BoardObject> object);
+	void replaceBoardObject(BoardObject& oldObject, std::unique_ptr<BoardObject> newObject);
 	const std::vector<std::unique_ptr<BoardObject>>* getBoardObjects() const;
+
+	void cleanUpBoardObjects();
 
 	void setWidth(int value);
 	int getWidth() const;
@@ -39,7 +42,7 @@ protected:
 	int height;
 
 	std::vector<std::unique_ptr<BoardObject>> boardObjects;
-
+	std::vector<std::unique_ptr<BoardObject>> objectsToRemove;
 };
 
 #endif

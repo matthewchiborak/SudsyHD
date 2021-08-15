@@ -25,6 +25,14 @@
 		"Behaviour": "NONE",
 		"Sender": "SHOOT",
 		"Receiver": "NONE"
+	},
+	{
+		"Key": "Allura",
+		"X": 2,
+		"Y": 3,
+		"Behaviour": "NONE",
+		"Sender": "FREEZE",
+		"Receiver": "NONE"
 	}
 	],
 	"Enemies": [
@@ -34,7 +42,7 @@
 		"Y": 7,
 		"Behaviour": "MOVE_ONE_CONT_DOWN",
 		"Sender": "NONE",
-		"Receiver": "NONE"
+		"Receiver": "FREEZE"
 	}
 	],
 	"Obs": [

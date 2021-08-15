@@ -17,9 +17,28 @@ void Level::addBoardObject(std::unique_ptr<BoardObject> object)
 	boardObjects.push_back(std::move(object));
 }
 
+void Level::replaceBoardObject(BoardObject& oldObject, std::unique_ptr<BoardObject> newObject)
+{
+	for (int i = 0; i < boardObjects.size(); i++)
+	{
+		if (boardObjects[i].get() == &oldObject)
+		{
+			objectsToRemove.push_back(std::move(boardObjects[i]));
+			boardObjects.erase(boardObjects.begin() + i);
+			this->addBoardObject(std::move(newObject));
+			return;
+		}
+	}
+}
+
 const std::vector<std::unique_ptr<BoardObject>>* Level::getBoardObjects() const
 {
 	return &boardObjects;
+}
+
+void Level::cleanUpBoardObjects()
+{
+	objectsToRemove.clear();
 }
 
 void Level::setWidth(int value)

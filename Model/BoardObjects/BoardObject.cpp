@@ -74,6 +74,11 @@ Point BoardObject::getLastDirFacing() const
 	return lastDirFacing;
 }
 
+std::string BoardObject::getSpriteKey() const
+{
+	return spriteKey;
+}
+
 Point BoardObject::getPosition() const
 {
 	return position;

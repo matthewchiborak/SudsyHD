@@ -158,9 +158,11 @@
     <ClInclude Include="Model\BoardObjectBehaviours\BoardObjectBehaviourMoveOneCont.h" />
     <ClInclude Include="Model\BoardObjectBehaviours\BoardObjectBehaviourNone.h" />
     <ClInclude Include="Model\BoardObjectInteractReceivers\BoardObjectInteractReceiver.h" />
+    <ClInclude Include="Model\BoardObjectInteractReceivers\BoardObjectInteractReceiverFreeze.h" />
     <ClInclude Include="Model\BoardObjectInteractReceivers\BoardObjectInteractReceiverNone.h" />
     <ClInclude Include="Model\BoardObjectInteractReceivers\BoardObjectInteractReceiverPush.h" />
     <ClInclude Include="Model\BoardObjectInteractSenders\BoardObjectInteractSender.h" />
+    <ClInclude Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderFreeze.h" />
     <ClInclude Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderNone.h" />
     <ClInclude Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderPush.h" />
     <ClInclude Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderShoot.h" />
@@ -222,9 +224,11 @@
     <ClCompile Include="Model\BoardObjectBehaviours\BoardObjectBehaviourMoveOneCont.cpp" />
     <ClCompile Include="Model\BoardObjectBehaviours\BoardObjectBehaviourNone.cpp" />
     <ClCompile Include="Model\BoardObjectInteractReceivers\BoardObjectInteractReceiver.cpp" />
+    <ClCompile Include="Model\BoardObjectInteractReceivers\BoardObjectInteractReceiverFreeze.cpp" />
     <ClCompile Include="Model\BoardObjectInteractReceivers\BoardObjectInteractReceiverNone.cpp" />
     <ClCompile Include="Model\BoardObjectInteractReceivers\BoardObjectInteractReceiverPush.cpp" />
     <ClCompile Include="Model\BoardObjectInteractSenders\BoardObjectInteractSender.cpp" />
+    <ClCompile Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderFreeze.cpp" />
     <ClCompile Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderNone.cpp" />
     <ClCompile Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderPush.cpp" />
     <ClCompile Include="Model\BoardObjectInteractSenders\BoardObjectInteractSenderShoot.cpp" />
