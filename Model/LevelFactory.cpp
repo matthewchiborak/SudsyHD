@@ -108,8 +108,12 @@ void LevelFactory::createObstacles(LevelBoard* levelBeingMade)
 			std::string(JSON["Obs"][i]["Key"]),
 			std::move(behaviourFactory->createBehaviour(JSON["Obs"][i]["Behaviour"])),
 			std::move(behaviourFactory->createSender(JSON["Obs"][i]["Sender"])),
-			std::move(behaviourFactory->createReceiver(JSON["Obs"][i]["Receiver"]))
+			std::move(behaviourFactory->createReceiver(JSON["Obs"][i]["Receivers"][0]["Type"]))
 			);
+		for (int j = 1; j < JSON["Obs"][i]["Receivers"].size(); j++)
+		{
+			newObject.get()->addInteractReceiver(std::move(behaviourFactory->createReceiver(JSON["Obs"][i]["Receivers"][j]["Type"])));
+		}
 		levelBeingMade->addBoardObject(std::move(newObject));
 	}
 }

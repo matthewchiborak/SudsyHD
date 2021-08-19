@@ -11,11 +11,6 @@ BoardObjectInteractReceiverFreeze::BoardObjectInteractReceiverFreeze()
 {
 }
 
-BoardObjectInteractReceiverFreeze::BoardObjectInteractReceiverFreeze(std::unique_ptr<BoardObjectInteractReceiver> child)
-	: BoardObjectInteractReceiver(std::move(child))
-{
-}
-
 bool BoardObjectInteractReceiverFreeze::receiverTemplateMethod(std::string key, BoardObject* sender, BoardObject& me, Level& level)
 {
 	if (key != "FREEZE")

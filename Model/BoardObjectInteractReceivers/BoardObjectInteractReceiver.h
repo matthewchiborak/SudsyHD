@@ -11,9 +11,9 @@ class BoardObjectInteractReceiver
 {
 public:
 	BoardObjectInteractReceiver();
-	BoardObjectInteractReceiver(std::unique_ptr<BoardObjectInteractReceiver> child);
 
 	bool execute(std::string key, BoardObject* sender, BoardObject& me, Level& level);
+	void addChild(std::unique_ptr<BoardObjectInteractReceiver> child);
 
 protected:
 	//Composition so can have multi if need be

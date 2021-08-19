@@ -48,6 +48,8 @@ public:
 
 	std::string getSpriteKey() const;
 
+	void addInteractReceiver(std::unique_ptr<BoardObjectInteractReceiver> receiver);
+
 protected:
 	Point position;
 	PointF positionF;

@@ -7,7 +7,6 @@ class BoardObjectInteractReceiverFloat: public BoardObjectInteractReceiver
 {
 public:
 	BoardObjectInteractReceiverFloat();
-	BoardObjectInteractReceiverFloat(std::unique_ptr<BoardObjectInteractReceiver> child);
 
 protected:
 	bool receiverTemplateMethod(std::string key, BoardObject* sender, BoardObject& me, Level& level) override;

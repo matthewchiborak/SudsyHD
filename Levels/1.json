@@ -52,7 +52,11 @@
 		"Y": 5,
 		"Behaviour": "NONE",
 		"Sender": "NONE",
-		"Receiver": "NONE"
+		"Receivers": [
+		{
+			"Type": "NONE"
+		}
+		]
 	},
 	{
 		"Key": "Rock",
@@ -60,7 +64,14 @@
 		"Y": 3,
 		"Behaviour": "NONE",
 		"Sender": "NONE",
-		"Receiver": "PUSH"
+		"Receivers": [
+		{
+			"Type": "PUSH"
+		},
+		{
+			"Type": "FLOAT"
+		}
+		]
 	},
 	{
 		"Key": "Rock",
@@ -68,7 +79,14 @@
 		"Y": 2,
 		"Behaviour": "NONE",
 		"Sender": "NONE",
-		"Receiver": "PUSH"
+		"Receivers": [
+		{
+			"Type": "PUSH"
+		},
+		{
+			"Type": "FLOAT"
+		}
+		]
 	}
 	],
 	"Goals": [
@@ -78,7 +96,7 @@
 		"Y": 7,
 		"Behaviour": "NONE",
 		"Sender": "NONE",
-		"Receiver": "NONE"
+		"Receiver": "FREEZE"
 	}
 	],
 	"Pits": [
@@ -88,7 +106,7 @@
 		"Y": 5,
 		"Behaviour": "NONE",
 		"Sender": "NONE",
-		"Receiver": "NONE"
+		"Receiver": "FREEZE"
 	}
 	]
 }

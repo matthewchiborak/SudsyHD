@@ -84,6 +84,11 @@ std::string BoardObject::getSpriteKey() const
 	return spriteKey;
 }
 
+void BoardObject::addInteractReceiver(std::unique_ptr<BoardObjectInteractReceiver> receiver)
+{
+	this->interactReceiver.get()->addChild(std::move(receiver));
+}
+
 Point BoardObject::getPosition() const
 {
 	return position;

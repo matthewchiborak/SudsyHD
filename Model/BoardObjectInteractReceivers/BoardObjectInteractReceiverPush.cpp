@@ -9,11 +9,6 @@ BoardObjectInteractReceiverPush::BoardObjectInteractReceiverPush()
 {
 }
 
-BoardObjectInteractReceiverPush::BoardObjectInteractReceiverPush(std::unique_ptr<BoardObjectInteractReceiver> child)
-	: BoardObjectInteractReceiver(std::move(child))
-{
-}
-
 bool BoardObjectInteractReceiverPush::receiverTemplateMethod(std::string key, BoardObject* sender, BoardObject& me, Level& level)
 {
 	if (key != "PUSH")

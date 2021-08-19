@@ -7,7 +7,6 @@ class BoardObjectInteractReceiverFreeze: public BoardObjectInteractReceiver
 {
 public:
 	BoardObjectInteractReceiverFreeze();
-	BoardObjectInteractReceiverFreeze(std::unique_ptr<BoardObjectInteractReceiver> child);
 
 protected:
 	bool receiverTemplateMethod(std::string key, BoardObject* sender, BoardObject& me, Level& level) override;
