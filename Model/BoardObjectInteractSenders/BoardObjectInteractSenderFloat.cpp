@@ -4,12 +4,7 @@
 #include "../Level.h"
 
 BoardObjectInteractSenderFloat::BoardObjectInteractSenderFloat()
-    : BoardObjectInteractSender()
-{
-}
-
-BoardObjectInteractSenderFloat::BoardObjectInteractSenderFloat(std::unique_ptr<BoardObjectInteractSender> child)
-    : BoardObjectInteractSender(std::move(child))
+    : BoardObjectInteractSender(), previousReceiver(nullptr)
 {
 }
 
@@ -20,5 +15,17 @@ bool BoardObjectInteractSenderFloat::senderTemplateMethod(BoardObject& me, Level
 	if (receiver == nullptr)
 		return false;
 
-	return receiver->interactReceive("FLOAT", &me, level);
+	bool receiverResult = receiver->interactReceive("FLOAT", &me, level);
+	if (receiverResult)
+	{
+		if (previousReceiver != nullptr)
+		{
+			previousReceiver->resetSpaceSharingKey();
+			previousReceiver->resetSpriteKey();
+		}
+
+		previousReceiver = receiver;
+	}
+	
+	return receiverResult;
 }

@@ -7,7 +7,6 @@ class BoardObjectInteractSenderPush: public BoardObjectInteractSender
 {
 public:
 	BoardObjectInteractSenderPush();
-	BoardObjectInteractSenderPush(std::unique_ptr<BoardObjectInteractSender> child);
 
 protected:
 	bool senderTemplateMethod(BoardObject& me, Level& level) override;

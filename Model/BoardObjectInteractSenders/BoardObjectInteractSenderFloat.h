@@ -7,10 +7,11 @@ class BoardObjectInteractSenderFloat: public BoardObjectInteractSender
 {
 public:
 	BoardObjectInteractSenderFloat();
-	BoardObjectInteractSenderFloat(std::unique_ptr<BoardObjectInteractSender> child);
 
 protected:
 	bool senderTemplateMethod(BoardObject& me, Level& level) override;
+
+	BoardObject* previousReceiver;
 };
 
 #endif

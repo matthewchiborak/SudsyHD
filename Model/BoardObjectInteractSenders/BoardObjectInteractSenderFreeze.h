@@ -7,7 +7,6 @@ class BoardObjectInteractSenderFreeze: public BoardObjectInteractSender
 {
 public:
 	BoardObjectInteractSenderFreeze();
-	BoardObjectInteractSenderFreeze(std::unique_ptr<BoardObjectInteractSender> child);
 
 protected:
 	bool senderTemplateMethod(BoardObject& me, Level& level) override;

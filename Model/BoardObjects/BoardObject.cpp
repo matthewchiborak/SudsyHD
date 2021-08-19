@@ -17,6 +17,7 @@ BoardObject::BoardObject(Point position,
 	interactReceiver(std::move(interactReceiver)),
 	lastDirFacing(0, -1)
 {
+	
 }
 
 BoardObject::~BoardObject()
@@ -77,6 +78,21 @@ Point BoardObject::getLastDirFacing() const
 void BoardObject::setSpaceSharingKey(std::string key)
 {
 	this->spaceSharingKey = key;
+}
+
+void BoardObject::resetSpaceSharingKey()
+{
+	spaceSharingKey = originalSpaceSharingKey;
+}
+
+void BoardObject::setSpriteKey(std::string key)
+{
+	this->spriteKey = key;
+}
+
+void BoardObject::resetSpriteKey()
+{
+	this->spriteKey = originalSpriteKey;
 }
 
 std::string BoardObject::getSpriteKey() const

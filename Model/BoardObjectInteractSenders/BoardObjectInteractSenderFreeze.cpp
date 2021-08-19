@@ -8,11 +8,6 @@ BoardObjectInteractSenderFreeze::BoardObjectInteractSenderFreeze()
 {
 }
 
-BoardObjectInteractSenderFreeze::BoardObjectInteractSenderFreeze(std::unique_ptr<BoardObjectInteractSender> child)
-	: BoardObjectInteractSender(std::move(child))
-{
-}
-
 bool BoardObjectInteractSenderFreeze::senderTemplateMethod(BoardObject& me, Level& level)
 {
 	//Get the would be receiver if it exists

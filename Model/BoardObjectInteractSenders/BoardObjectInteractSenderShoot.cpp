@@ -12,11 +12,6 @@ BoardObjectInteractSenderShoot::BoardObjectInteractSenderShoot()
 {
 }
 
-BoardObjectInteractSenderShoot::BoardObjectInteractSenderShoot(std::unique_ptr<BoardObjectInteractSender> child)
-	: BoardObjectInteractSender(std::move(child))
-{
-}
-
 bool BoardObjectInteractSenderShoot::senderTemplateMethod(BoardObject& me, Level& level)
 {
 	Point potentialPoint = me.getPosition() + me.getLastDirFacing();

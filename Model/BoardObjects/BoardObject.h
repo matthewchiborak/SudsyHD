@@ -45,7 +45,10 @@ public:
 	virtual SpaceClaimResponse canIShareSpaceWithYou(std::string key) = 0;
 	virtual std::string getSpaceSharingKey() = 0;
 	void setSpaceSharingKey(std::string key);
+	void resetSpaceSharingKey();
 
+	void setSpriteKey(std::string key);
+	void resetSpriteKey();
 	std::string getSpriteKey() const;
 
 	void addInteractReceiver(std::unique_ptr<BoardObjectInteractReceiver> receiver);
@@ -54,6 +57,8 @@ protected:
 	Point position;
 	PointF positionF;
 	std::string spriteKey;
+	std::string originalSpriteKey;
+	std::string originalSpaceSharingKey;
 	std::string spaceSharingKey;
 	std::unique_ptr<BoardObjectBehaviour> behaviour;
 	std::unique_ptr<BoardObjectInteractSender> interactSender;

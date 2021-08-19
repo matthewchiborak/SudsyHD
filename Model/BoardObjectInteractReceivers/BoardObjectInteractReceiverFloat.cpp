@@ -13,6 +13,7 @@ bool BoardObjectInteractReceiverFloat::receiverTemplateMethod(std::string key, B
 		return false;
 
 	me.setSpaceSharingKey("Rock-Float");
+	me.setSpriteKey("Rock-Float");
 
 	return true;
 }

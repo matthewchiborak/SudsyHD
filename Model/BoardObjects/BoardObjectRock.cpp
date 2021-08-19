@@ -4,6 +4,8 @@ BoardObjectRock::BoardObjectRock(Point position, std::string spriteKey, std::uni
 	: BoardObject(position, spriteKey, std::move(behaviour), std::move(interactSender), std::move(interactReceiver))
 {
 	this->spaceSharingKey = "Rock";
+	this->originalSpaceSharingKey = this->spaceSharingKey;
+	this->originalSpriteKey = spriteKey;
 }
 
 SpaceClaimResponse BoardObjectRock::canIShareSpaceWithYou(std::string key)

@@ -10,9 +10,9 @@ class BoardObjectInteractSender
 {
 public:
 	BoardObjectInteractSender();
-	BoardObjectInteractSender(std::unique_ptr<BoardObjectInteractSender> child);
 
 	bool execute(BoardObject& me, Level& level);
+	void addChild(std::unique_ptr<BoardObjectInteractSender> child);
 
 protected:
 	//Composition so can have multi if need be

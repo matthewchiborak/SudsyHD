@@ -5,18 +5,25 @@ BoardObjectInteractSender::BoardObjectInteractSender()
 {
 }
 
-BoardObjectInteractSender::BoardObjectInteractSender(std::unique_ptr<BoardObjectInteractSender> child)
-	: child(std::move(child)), hasChild(true)
-{
-}
-
 bool BoardObjectInteractSender::execute(BoardObject& me, Level& level)
 {
-	if (!senderTemplateMethod(me, level))
-		return false;
+	if (senderTemplateMethod(me, level))
+		return true;
 
 	if (hasChild)
 		return child.get()->execute(me, level);
 
-	return true;
+	return false;
+}
+
+void BoardObjectInteractSender::addChild(std::unique_ptr<BoardObjectInteractSender> child)
+{
+	if (hasChild)
+	{
+		this->child.get()->addChild(std::move(child));
+		return;
+	}
+
+	this->child = std::move(child);
+	hasChild = true;
 }

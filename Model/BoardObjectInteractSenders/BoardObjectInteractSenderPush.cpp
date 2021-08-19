@@ -9,11 +9,6 @@ BoardObjectInteractSenderPush::BoardObjectInteractSenderPush()
 {
 }
 
-BoardObjectInteractSenderPush::BoardObjectInteractSenderPush(std::unique_ptr<BoardObjectInteractSender> child)
-	: BoardObjectInteractSender(std::move(child))
-{
-}
-
 bool BoardObjectInteractSenderPush::senderTemplateMethod(BoardObject& me, Level& level)
 {
 	//Get the would be receiver if it exists
