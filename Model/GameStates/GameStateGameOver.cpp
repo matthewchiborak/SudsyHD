@@ -1,6 +1,6 @@
 #include "GameStateGameOver.h"
 
-#include <iostream>
+#include "GameStateWait.h"
 
 GameStateGameOver::GameStateGameOver(IGameModel& model)
 	: GameState(model)
@@ -17,8 +17,8 @@ void GameStateGameOver::move(const Point direction)
 
 void GameStateGameOver::interact()
 {
-	//Reload the level
-	std::cout << "Time to reload\n";
+	this->model->reloadCurrentLevel();
+	this->model->setState(std::move(std::make_unique<GameStateWait>(*model)));
 }
 
 void GameStateGameOver::change(bool next)

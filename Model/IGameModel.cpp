@@ -14,11 +14,22 @@ void IGameModel::loadLevel(int level)
 	try
 	{
 		currentLevel = levelFactory->createLevel(level);
+		currentLevelNumber = level;
 	}
 	catch (std::exception e)
 	{
 		std::cout << "Load Level Error\n";
 	}
+}
+
+void IGameModel::reloadCurrentLevel()
+{
+	this->loadLevel(currentLevelNumber);
+}
+
+void IGameModel::loadNextLevel()
+{
+	this->loadLevel(++currentLevelNumber);
 }
 
 Level* IGameModel::getCurrentLevel() const

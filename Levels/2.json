@@ -1,0 +1,112 @@
+{
+	"Width": 9,
+	"Height": 9,
+	"Players": [
+	{
+		"Key": "Duke",
+		"X": 3,
+		"Y": 3,
+		"Behaviour": "NONE",
+		"Sender": "FLOAT",
+		"Receiver": "NONE"
+	},
+	{
+		"Key": "Chad",
+		"X": 5,
+		"Y": 3,
+		"Behaviour": "NONE",
+		"Sender": "PUSH",
+		"Receiver": "NONE"
+	},
+	{
+		"Key": "Bullent",
+		"X": 6,
+		"Y": 3,
+		"Behaviour": "NONE",
+		"Sender": "SHOOT",
+		"Receiver": "NONE"
+	},
+	{
+		"Key": "Allura",
+		"X": 2,
+		"Y": 3,
+		"Behaviour": "NONE",
+		"Sender": "FREEZE",
+		"Receiver": "NONE"
+	}
+	],
+	"Enemies": [
+	{
+		"Key": "Goblin",
+		"X": 7,
+		"Y": 7,
+		"Behaviour": "MOVE_ONE_CONT_DOWN",
+		"Sender": "NONE",
+		"Receiver": "FREEZE"
+	}
+	],
+	"Obs": [
+	{
+		"Key": "Wall",
+		"X": 5,
+		"Y": 5,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receivers": [
+		{
+			"Type": "NONE"
+		}
+		]
+	},
+	{
+		"Key": "Rock",
+		"X": 4,
+		"Y": 3,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receivers": [
+		{
+			"Type": "PUSH"
+		},
+		{
+			"Type": "FLOAT"
+		}
+		]
+	},
+	{
+		"Key": "Rock",
+		"X": 0,
+		"Y": 2,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receivers": [
+		{
+			"Type": "PUSH"
+		},
+		{
+			"Type": "FLOAT"
+		}
+		]
+	}
+	],
+	"Goals": [
+	{
+		"Key": "Goal",
+		"X": 6,
+		"Y": 7,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "FREEZE"
+	}
+	],
+	"Pits": [
+	{
+		"Key": "Pit",
+		"X": 0,
+		"Y": 5,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "FREEZE"
+	}
+	]
+}

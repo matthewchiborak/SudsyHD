@@ -1,6 +1,6 @@
 #include "GameStateWin.h"
 
-#include <iostream>
+#include "GameStateWait.h"
 
 GameStateWin::GameStateWin(IGameModel& model)
 	: GameState(model)
@@ -17,7 +17,8 @@ void GameStateWin::move(const Point direction)
 
 void GameStateWin::interact()
 {
-	std::cout << "Go to the next level\n";
+	this->model->loadNextLevel();
+	this->model->setState(std::move(std::make_unique<GameStateWait>(*model)));
 }
 
 void GameStateWin::change(bool next)

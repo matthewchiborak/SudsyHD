@@ -16,12 +16,15 @@ public:
 	virtual void change(bool next) = 0;
 
 	void loadLevel(int level);
+	void reloadCurrentLevel();
+	void loadNextLevel();
 
 	Level* getCurrentLevel() const;
 
 	void setState(std::unique_ptr<GameState> state);
 
 protected:
+	int currentLevelNumber;
 	std::unique_ptr<GameState> state;
 	ILevelFactory* levelFactory;
 	std::unique_ptr<Level> currentLevel;
