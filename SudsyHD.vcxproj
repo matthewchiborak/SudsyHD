@@ -178,7 +178,9 @@
     <ClInclude Include="Model\GameModel.h" />
     <ClInclude Include="Model\GameStates\GameState.h" />
     <ClInclude Include="Model\GameStates\GameStateAction.h" />
+    <ClInclude Include="Model\GameStates\GameStateGameOver.h" />
     <ClInclude Include="Model\GameStates\GameStateWait.h" />
+    <ClInclude Include="Model\GameStates\GameStateWin.h" />
     <ClInclude Include="Model\IBehaviourFactory.h" />
     <ClInclude Include="Model\IGameModel.h" />
     <ClInclude Include="Model\ILevelFactory.h" />
@@ -246,7 +248,9 @@
     <ClCompile Include="Model\GameModel.cpp" />
     <ClCompile Include="Model\GameStates\GameState.cpp" />
     <ClCompile Include="Model\GameStates\GameStateAction.cpp" />
+    <ClCompile Include="Model\GameStates\GameStateGameOver.cpp" />
     <ClCompile Include="Model\GameStates\GameStateWait.cpp" />
+    <ClCompile Include="Model\GameStates\GameStateWin.cpp" />
     <ClCompile Include="Model\IBehaviourFactory.cpp" />
     <ClCompile Include="Model\IGameModel.cpp" />
     <ClCompile Include="Model\ILevelFactory.cpp" />

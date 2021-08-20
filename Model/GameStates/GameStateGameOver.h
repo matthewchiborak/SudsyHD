@@ -1,20 +1,17 @@
-#ifndef GAME_STATE_ACTION_H
-#define GAME_STATE_ACTION_H
+#ifndef GAME_STATE_GAME_OVER_H
+#define GAME_STATE_GAME_OVER_H
 
 #include "GameState.h"
 
-class GameStateAction: public GameState
+class GameStateGameOver: public GameState
 {
 public:
-	GameStateAction(IGameModel& model);
+	GameStateGameOver(IGameModel& model);
 
 	void advance() override;
 	void move(const Point direction) override;
 	void interact() override;
 	void change(bool next) override;
-
-private:
-	void determineNextState();
 };
 
 #endif

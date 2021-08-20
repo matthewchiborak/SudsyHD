@@ -118,3 +118,5 @@ BoardObject* Level::getObjectAtPoint(Point point) const
 
 	return nullptr;
 }
+
+

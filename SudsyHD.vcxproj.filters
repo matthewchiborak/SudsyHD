@@ -288,6 +288,12 @@
     <ClInclude Include="Model\BoardObjectInteractReceivers\BoardObjectInteractReceiverFloat.h">
       <Filter>Header Files\Model\BoardObjectInteractReceivers</Filter>
     </ClInclude>
+    <ClInclude Include="Model\GameStates\GameStateGameOver.h">
+      <Filter>Header Files\Model\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\GameStates\GameStateWin.h">
+      <Filter>Header Files\Model\GameStates</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="View\Core\glad.c">
@@ -490,6 +496,12 @@
     </ClCompile>
     <ClCompile Include="Model\BoardObjectInteractReceivers\BoardObjectInteractReceiverFloat.cpp">
       <Filter>Source Files\Model\BoardObjectInteractReceivers</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\GameStates\GameStateGameOver.cpp">
+      <Filter>Source Files\Model\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\GameStates\GameStateWin.cpp">
+      <Filter>Source Files\Model\GameStates</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

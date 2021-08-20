@@ -15,6 +15,8 @@ public:
 	void change(bool next) override;
 	void handleCollisions() override;
 
+	bool isAtLeastOneOfObjectTypeAlive(std::string key) const override;
+
 	void setMoveCommand(std::unique_ptr<LevelCommandPoint> cmd);
 	void setInteractCommand(std::unique_ptr<LevelCommand> cmd);
 	void setChangeNextCommand(std::unique_ptr<LevelCommand> cmd);

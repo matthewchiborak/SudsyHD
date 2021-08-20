@@ -36,6 +36,7 @@ public:
 	SpaceClaimResponse isSpaceAvailableToMoveOn(Point point, std::string objectKey) const;
 	bool isSpaceOutOfBoards(Point point) const;
 	BoardObject* getObjectAtPoint(Point point) const;
+	virtual bool isAtLeastOneOfObjectTypeAlive(std::string key) const = 0;
 
 protected:
 	int width;

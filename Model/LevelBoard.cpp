@@ -50,6 +50,17 @@ void LevelBoard::handleCollisions()
 	}
 }
 
+bool LevelBoard::isAtLeastOneOfObjectTypeAlive(std::string key) const
+{
+	for (int i = 0; i < this->boardObjects.size(); i++)
+	{
+		if (boardObjects[i].get()->getSpaceSharingKey() == key)
+			return true;
+	}
+
+	return false;
+}
+
 void LevelBoard::setMoveCommand(std::unique_ptr<LevelCommandPoint> cmd)
 {
 	this->moveCommand = std::move(cmd);

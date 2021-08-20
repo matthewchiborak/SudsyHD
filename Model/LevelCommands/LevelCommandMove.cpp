@@ -70,6 +70,9 @@ void LevelCommandMove::checkAndRemoveNullPlayers()
 			players.erase(players.begin() + i);
 			i--;
 
+			if (i >= currentPlayer)
+				currentPlayer--;
+
 			if (currentPlayer >= players.size())
 				currentPlayer = 0;
 		}
