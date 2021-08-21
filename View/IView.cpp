@@ -47,5 +47,7 @@ Shader* IView::getShader() const
 	return this->cutoutShader;
 }
 
-
-
+void IView::setRenderingStrategy(std::string key)
+{
+	this->renderStrategy = std::move(this->renderStratFactory->createStrategy(key));
+}

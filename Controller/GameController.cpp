@@ -9,6 +9,8 @@ void GameController::start()
 {
 	model->loadLevel(1);
 
+	bool loadedOnce = false;
+
 	while (view->isWindowOpen())
 	{
 		handleUserInput();

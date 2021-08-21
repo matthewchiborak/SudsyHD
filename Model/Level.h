@@ -23,6 +23,7 @@ public:
 	virtual void drawCommands(IView& view) const = 0;
 	
 	void addBoardObject(std::unique_ptr<BoardObject> object);
+	void removeLastBoardObject();
 	void replaceBoardObject(BoardObject& oldObject, std::unique_ptr<BoardObject> newObject);
 	const std::vector<std::unique_ptr<BoardObject>>* getBoardObjects() const;
 

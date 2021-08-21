@@ -21,7 +21,8 @@ public:
 				std::string spriteKey, 
 				std::unique_ptr<BoardObjectBehaviour> behaviour, 
 				std::unique_ptr<BoardObjectInteractSender> interactSender,
-				std::unique_ptr<BoardObjectInteractReceiver> interactReceiver
+				std::unique_ptr<BoardObjectInteractReceiver> interactReceiver,
+				Point size = Point(1,1)
 				);
 	~BoardObject();
 
@@ -54,6 +55,7 @@ public:
 	void addInteractReceiver(std::unique_ptr<BoardObjectInteractReceiver> receiver);
 
 protected:
+	Point size;
 	Point position;
 	PointF positionF;
 	std::string spriteKey;

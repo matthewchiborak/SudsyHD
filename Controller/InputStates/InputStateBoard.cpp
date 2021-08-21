@@ -3,7 +3,7 @@
 #include "../../View/IView.h"
 
 InputStateBoard::InputStateBoard()
-	: InputState(), buttonDown(false)
+	: InputState(), buttonDown(false), isPaused(false)
 {
 }
 
@@ -66,6 +66,18 @@ void InputStateBoard::handle(IGameModel& model, IView& view)
 		if (!buttonDown)
 		{
 			model.changeMenu(true);
+			
+			if (isPaused)
+			{
+				isPaused = false;
+				view.setRenderingStrategy("Board");
+			}
+			else
+			{
+				isPaused = true;
+				view.setRenderingStrategy("Pause");
+			}
+
 			buttonDown = true;
 		}
 		return;

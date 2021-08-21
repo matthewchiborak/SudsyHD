@@ -5,6 +5,11 @@
 #include "GameStateAction.h"
 #include "GameStatePause.h"
 
+#include "../BoardObjects/BoardObjectPauseScreen.h"
+#include "../BoardObjectBehaviours/BoardObjectBehaviourNone.h"
+#include "../BoardObjectInteractSenders/BoardObjectInteractSenderNone.h"
+#include "../BoardObjectInteractReceivers/BoardObjectInteractReceiverNone.h"
+
 GameStateWait::GameStateWait(IGameModel& model)
 	: GameState(model)
 {

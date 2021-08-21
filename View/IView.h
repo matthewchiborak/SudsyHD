@@ -31,6 +31,8 @@ public:
 	ISpriteFlyweightFactory* getSpriteFactory() const;
 	Shader* getShader() const;
 
+	void setRenderingStrategy(std::string key);
+
 protected:
 	Camera camera;
 	IGameModel* model;

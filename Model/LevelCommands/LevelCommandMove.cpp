@@ -42,6 +42,7 @@ void LevelCommandMove::draw(IView& view)
 	factory->getSprite("RedCircle")->Draw(
 		*camera, 
 		*shader, 
+		Point(1,1),
 		glm::vec3(current->getPositionF().getX() / 10.0f, 0.0005f, current->getPositionF().getY() / 10.0f));
 }
 

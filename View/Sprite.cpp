@@ -5,8 +5,10 @@ Sprite::Sprite(std::string textureFilePath)
 	createMeshes(textureFilePath);
 }
 
-void Sprite::Draw(Camera& camera, Shader& shader, glm::vec3 translation, glm::quat rotation, glm::vec3 scale)
+void Sprite::Draw(Camera& camera, Shader& shader, Point size, glm::vec3 translation, glm::quat rotation, glm::vec3 scale)
 {
+	scale = glm::vec3((float)size.getX(), 1.0f, (float)size.getY());
+
 	mesh1.Draw(shader, camera, glm::mat4(1.0f), translation, rotation, scale);
 	mesh2.Draw(shader, camera, glm::mat4(1.0f), translation, rotation, scale);
 }

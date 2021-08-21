@@ -9,6 +9,7 @@ public:
 	RenderStrategyFactory();
 
 	std::unique_ptr<RenderStrategy> createStrategy(RenderStrategyKey stratKey) override;
+	std::unique_ptr<RenderStrategy> createStrategy(std::string key) override;
 
 };
 

@@ -306,6 +306,12 @@
     <ClInclude Include="Model\GameStates\GameStatePause.h">
       <Filter>Header Files\Model\GameStates</Filter>
     </ClInclude>
+    <ClInclude Include="Model\BoardObjects\BoardObjectPauseScreen.h">
+      <Filter>Header Files\Model\BoardObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="View\RenderStrategies\RenderStrategyPause.h">
+      <Filter>Header Files\View\RenderStrategies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="View\Core\glad.c">
@@ -520,6 +526,12 @@
     </ClCompile>
     <ClCompile Include="Model\GameStates\GameStatePause.cpp">
       <Filter>Source Files\Model\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BoardObjects\BoardObjectPauseScreen.cpp">
+      <Filter>Source Files\Model\BoardObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="View\RenderStrategies\RenderStrategyPause.cpp">
+      <Filter>Source Files\View\RenderStrategies</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -6,6 +6,15 @@ RenderStrategy::RenderStrategy()
 {
 }
 
+void RenderStrategy::execute(IView& view)
+{
+	drawFPS(view.getWindow(), "DND Puzzles");
+	clearScreen();
+	updateCamera(*view.getCamera());
+	drawScene(view);
+	finishDrawing(view.getWindow());
+}
+
 void RenderStrategy::drawFPS(GLFWwindow* window, std::string windowTitle)
 {
 	// Updates counter and times

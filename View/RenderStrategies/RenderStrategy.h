@@ -12,7 +12,8 @@ class RenderStrategy
 public:
 	RenderStrategy();
 
-	virtual void execute(IView& view) = 0;
+	void execute(IView& view);
+	virtual void drawScene(IView& view) = 0;
 
 protected:
 	std::string windowTitle;

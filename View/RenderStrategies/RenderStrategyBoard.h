@@ -8,10 +8,9 @@ class RenderStrategyBoard: public RenderStrategy
 public:
 	RenderStrategyBoard();
 
-	void execute(IView& view) override;
+	void drawScene(IView& view) override;
 
 private:
-	void drawScene(IView& view);
 
 	void drawFloor(IView& view);
 	void drawBoardObjects(IView& view);

@@ -7,7 +7,8 @@ BoardObject::BoardObject(Point position,
 						std::string spriteKey, 
 						std::unique_ptr<BoardObjectBehaviour> behaviour,
 						std::unique_ptr<BoardObjectInteractSender> interactSender,
-						std::unique_ptr<BoardObjectInteractReceiver> interactReceiver
+						std::unique_ptr<BoardObjectInteractReceiver> interactReceiver,
+						Point size
 						)
 	: position(position), 
 	positionF(position.getX(), position.getY()), 
@@ -15,7 +16,8 @@ BoardObject::BoardObject(Point position,
 	behaviour(std::move(behaviour)), 
 	interactSender(std::move(interactSender)), 
 	interactReceiver(std::move(interactReceiver)),
-	lastDirFacing(0, -1)
+	lastDirFacing(0, -1),
+	size(size)
 {
 	
 }
@@ -34,6 +36,7 @@ void BoardObject::draw(IView& view) const
 	factory->getSprite(this->spriteKey)->Draw(
 		*camera,
 		*shader,
+		this->size,
 		glm::vec3((float)this->getPositionF().getX() / 10.0f, 
 		0.001f, 
 		(float)this->getPositionF().getY() / 10.0f)

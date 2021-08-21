@@ -172,6 +172,7 @@
     <ClInclude Include="Model\BoardObjects\BoardObjectArrow.h" />
     <ClInclude Include="Model\BoardObjects\BoardObjectEnemy.h" />
     <ClInclude Include="Model\BoardObjects\BoardObjectGoal.h" />
+    <ClInclude Include="Model\BoardObjects\BoardObjectPauseScreen.h" />
     <ClInclude Include="Model\BoardObjects\BoardObjectPerson.h" />
     <ClInclude Include="Model\BoardObjects\BoardObjectPit.h" />
     <ClInclude Include="Model\BoardObjects\BoardObjectRock.h" />
@@ -210,6 +211,7 @@
     <ClInclude Include="View\IView.h" />
     <ClInclude Include="View\RenderStrategies\RenderStrategy.h" />
     <ClInclude Include="View\RenderStrategies\RenderStrategyBoard.h" />
+    <ClInclude Include="View\RenderStrategies\RenderStrategyPause.h" />
     <ClInclude Include="View\RenderStrategyFactory.h" />
     <ClInclude Include="View\Sprite.h" />
     <ClInclude Include="View\SpriteFlyweightFactory.h" />
@@ -244,6 +246,7 @@
     <ClCompile Include="Model\BoardObjects\BoardObjectArrow.cpp" />
     <ClCompile Include="Model\BoardObjects\BoardObjectEnemy.cpp" />
     <ClCompile Include="Model\BoardObjects\BoardObjectGoal.cpp" />
+    <ClCompile Include="Model\BoardObjects\BoardObjectPauseScreen.cpp" />
     <ClCompile Include="Model\BoardObjects\BoardObjectPerson.cpp" />
     <ClCompile Include="Model\BoardObjects\BoardObjectPit.cpp" />
     <ClCompile Include="Model\BoardObjects\BoardObjectRock.cpp" />
@@ -283,6 +286,7 @@
     <ClCompile Include="View\IView.cpp" />
     <ClCompile Include="View\RenderStrategies\RenderStrategy.cpp" />
     <ClCompile Include="View\RenderStrategies\RenderStrategyBoard.cpp" />
+    <ClCompile Include="View\RenderStrategies\RenderStrategyPause.cpp" />
     <ClCompile Include="View\RenderStrategyFactory.cpp" />
     <ClCompile Include="View\Sprite.cpp" />
     <ClCompile Include="View\SpriteFlyweightFactory.cpp" />

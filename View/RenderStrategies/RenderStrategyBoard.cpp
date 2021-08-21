@@ -9,15 +9,6 @@ RenderStrategyBoard::RenderStrategyBoard()
 {
 }
 
-void RenderStrategyBoard::execute(IView& view)
-{
-	drawFPS(view.getWindow(), "Sudsy HD");
-	clearScreen();
-	updateCamera(*view.getCamera());
-	drawScene(view);
-	finishDrawing(view.getWindow());
-}
-
 void RenderStrategyBoard::drawScene(IView& view)
 {
 	drawFloor(view);
@@ -42,7 +33,7 @@ void RenderStrategyBoard::drawFloor(IView& view)
 	{
 		for (int j = 0; j < boardHeight; j++)
 		{
-			factory->getSprite("Tile")->Draw(*camera, *shader, glm::vec3((float)i / 10.0f, 0.0f, (float)j / 10.0f));
+			factory->getSprite("Tile")->Draw(*camera, *shader, Point(1,1), glm::vec3((float)i / 10.0f, 0.0f, (float)j / 10.0f));
 		}
 	}
 }

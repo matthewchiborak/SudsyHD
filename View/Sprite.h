@@ -7,6 +7,8 @@
 #include "Core/Camera.h"
 #include "Core/Mesh.h"
 
+#include "../Model/Point.h"
+
 class Sprite
 {
 public:
@@ -16,6 +18,7 @@ public:
 	(
 		Camera& camera,
 		Shader& shader,
+		Point size,
 		glm::vec3 translation = glm::vec3(0.0f, 0.0f, 0.0f),
 		glm::quat rotation = glm::quat(0.0f, 0.0f, 0.0f, 1.0f),
 		glm::vec3 scale = glm::vec3(1.0f, 1.0f, 1.0f)
