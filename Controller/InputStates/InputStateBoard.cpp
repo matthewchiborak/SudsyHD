@@ -61,5 +61,15 @@ void InputStateBoard::handle(IGameModel& model, IView& view)
 		return;
 	}
 
+	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+	{
+		if (!buttonDown)
+		{
+			model.changeMenu(true);
+			buttonDown = true;
+		}
+		return;
+	}
+
 	buttonDown = false;
 }

@@ -20,6 +20,7 @@ public:
 	virtual bool move(const Point direction) = 0;
 	virtual bool interact() = 0;
 	virtual void change(bool next) = 0;
+	virtual void drawCommands(IView& view) const = 0;
 	
 	void addBoardObject(std::unique_ptr<BoardObject> object);
 	void replaceBoardObject(BoardObject& oldObject, std::unique_ptr<BoardObject> newObject);

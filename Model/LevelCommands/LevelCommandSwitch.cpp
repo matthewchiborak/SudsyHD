@@ -10,3 +10,7 @@ bool LevelCommandSwitch::execute()
 	moveCmd->switchPlayer(isNext);
 	return true;
 }
+
+void LevelCommandSwitch::draw(IView& view)
+{
+}

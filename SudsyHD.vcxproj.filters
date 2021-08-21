@@ -91,6 +91,12 @@
     <Filter Include="Source Files\Model\BoardObjectInteractReceivers">
       <UniqueIdentifier>{d9dd34b2-2a6a-4103-b11e-34041e9ee0f8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\View\Text">
+      <UniqueIdentifier>{925ec300-d9d7-4cb7-874b-706c166c6e7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\View\Text">
+      <UniqueIdentifier>{59f3f9ca-9da1-4eff-b733-5dc0c79d4eaf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="View\Core\Camera.h">
@@ -292,6 +298,12 @@
       <Filter>Header Files\Model\GameStates</Filter>
     </ClInclude>
     <ClInclude Include="Model\GameStates\GameStateWin.h">
+      <Filter>Header Files\Model\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\UIText.h">
+      <Filter>Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\GameStates\GameStatePause.h">
       <Filter>Header Files\Model\GameStates</Filter>
     </ClInclude>
   </ItemGroup>
@@ -501,6 +513,12 @@
       <Filter>Source Files\Model\GameStates</Filter>
     </ClCompile>
     <ClCompile Include="Model\GameStates\GameStateWin.cpp">
+      <Filter>Source Files\Model\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\UIText.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\GameStates\GameStatePause.cpp">
       <Filter>Source Files\Model\GameStates</Filter>
     </ClCompile>
   </ItemGroup>

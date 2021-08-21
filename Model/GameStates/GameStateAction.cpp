@@ -37,6 +37,10 @@ void GameStateAction::change(bool next)
 
 }
 
+void GameStateAction::menuChange(bool next)
+{
+}
+
 void GameStateAction::determineNextState()
 {
 	//If no players left, game over

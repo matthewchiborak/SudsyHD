@@ -14,6 +14,7 @@ public:
 	void interact() override;
 	void advance() override;
 	void change(bool next) override;
+	void changeMenu(bool next) override;
 
 
 };

@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "GameStateAction.h"
+#include "GameStatePause.h"
 
 GameStateWait::GameStateWait(IGameModel& model)
 	: GameState(model)
@@ -33,4 +34,9 @@ void GameStateWait::interact()
 void GameStateWait::change(bool next)
 {
 	model->getCurrentLevel()->change(next);
+}
+
+void GameStateWait::menuChange(bool next)
+{
+	this->model->setState(std::move(std::make_unique<GameStatePause>(*model)));
 }

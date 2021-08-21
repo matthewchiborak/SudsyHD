@@ -14,6 +14,7 @@ public:
 	virtual void move(const Point direction) = 0;
 	virtual void interact() = 0;
 	virtual void change(bool next) = 0;
+	virtual void changeMenu(bool next) = 0;
 
 	void loadLevel(int level);
 	void reloadCurrentLevel();

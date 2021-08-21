@@ -24,3 +24,7 @@ void GameStateGameOver::interact()
 void GameStateGameOver::change(bool next)
 {
 }
+
+void GameStateGameOver::menuChange(bool next)
+{
+}

@@ -3,6 +3,7 @@
 #include "../IView.h"
 #include "../../Model/BoardObjects/BoardObject.h"
 
+
 RenderStrategyBoard::RenderStrategyBoard()
 	: RenderStrategy()
 {
@@ -21,6 +22,7 @@ void RenderStrategyBoard::drawScene(IView& view)
 {
 	drawFloor(view);
 	drawBoardObjects(view);
+	drawText(view);
 }
 
 void RenderStrategyBoard::drawFloor(IView& view)
@@ -50,8 +52,15 @@ void RenderStrategyBoard::drawBoardObjects(IView& view)
 	const Level* currentLevel = view.getModel()->getCurrentLevel();
 	const std::vector<std::unique_ptr<BoardObject>>* objects = currentLevel->getBoardObjects();
 
-	for (int i = 0; i < objects->size(); i++)
+	currentLevel->drawCommands(view);
+
+	for (int i = 0; i < objects->size(); ++i)
 	{
 		(*objects)[i].get()->draw(view);
 	}
+}
+
+void RenderStrategyBoard::drawText(IView& view)
+{
+
 }

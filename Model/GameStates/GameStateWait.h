@@ -12,6 +12,7 @@ public:
 	void move(const Point direction) override;
 	void interact() override;
 	void change(bool next) override;
+	void menuChange(bool next) override;
 };
 
 #endif

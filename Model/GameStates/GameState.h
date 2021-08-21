@@ -13,6 +13,7 @@ public:
 	virtual void move(const Point direction) = 0;
 	virtual void interact() = 0;
 	virtual void change(bool next) = 0;
+	virtual void menuChange(bool next) = 0;
 
 protected:
 	IGameModel* model;

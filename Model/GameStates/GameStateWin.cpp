@@ -24,3 +24,7 @@ void GameStateWin::interact()
 void GameStateWin::change(bool next)
 {
 }
+
+void GameStateWin::menuChange(bool next)
+{
+}

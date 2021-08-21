@@ -15,6 +15,7 @@ private:
 
 	void drawFloor(IView& view);
 	void drawBoardObjects(IView& view);
+	void drawText(IView& view);
 
 };
 

@@ -13,3 +13,7 @@ bool LevelCommandInteract::execute()
 {
 	return this->moveCmd->getCurrentPlayer()->interactSend(*level);
 }
+
+void LevelCommandInteract::draw(IView& view)
+{
+}

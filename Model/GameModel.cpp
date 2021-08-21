@@ -26,3 +26,8 @@ void GameModel::change(bool next)
 	this->state.get()->change(next);
 }
 
+void GameModel::changeMenu(bool next)
+{
+	this->state.get()->menuChange(next);
+}
+

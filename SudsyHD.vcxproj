@@ -179,6 +179,7 @@
     <ClInclude Include="Model\GameStates\GameState.h" />
     <ClInclude Include="Model\GameStates\GameStateAction.h" />
     <ClInclude Include="Model\GameStates\GameStateGameOver.h" />
+    <ClInclude Include="Model\GameStates\GameStatePause.h" />
     <ClInclude Include="Model\GameStates\GameStateWait.h" />
     <ClInclude Include="Model\GameStates\GameStateWin.h" />
     <ClInclude Include="Model\IBehaviourFactory.h" />
@@ -195,6 +196,7 @@
     <ClInclude Include="Model\Point.h" />
     <ClInclude Include="Model\PointF.h" />
     <ClInclude Include="Model\SpaceClaimResponses.h" />
+    <ClInclude Include="Model\UIText.h" />
     <ClInclude Include="View\Core\Camera.h" />
     <ClInclude Include="View\Core\EBO.h" />
     <ClInclude Include="View\Core\Mesh.h" />
@@ -249,6 +251,7 @@
     <ClCompile Include="Model\GameStates\GameState.cpp" />
     <ClCompile Include="Model\GameStates\GameStateAction.cpp" />
     <ClCompile Include="Model\GameStates\GameStateGameOver.cpp" />
+    <ClCompile Include="Model\GameStates\GameStatePause.cpp" />
     <ClCompile Include="Model\GameStates\GameStateWait.cpp" />
     <ClCompile Include="Model\GameStates\GameStateWin.cpp" />
     <ClCompile Include="Model\IBehaviourFactory.cpp" />
@@ -264,6 +267,7 @@
     <ClCompile Include="Model\LevelFactory.cpp" />
     <ClCompile Include="Model\Point.cpp" />
     <ClCompile Include="Model\PointF.cpp" />
+    <ClCompile Include="Model\UIText.cpp" />
     <ClCompile Include="View\Core\Camera.cpp" />
     <ClCompile Include="View\Core\EBO.cpp" />
     <ClCompile Include="View\Core\glad.c" />

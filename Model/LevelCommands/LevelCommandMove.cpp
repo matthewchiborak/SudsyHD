@@ -4,6 +4,10 @@
 
 #include "../BoardObjectBehaviours/BoardObjectBehaviourMoveOne.h"
 
+#include "../../View/Core/Camera.h"
+#include "../../View/ISpriteFlyweightFactory.h"
+#include "../../View/IView.h"
+
 LevelCommandMove::LevelCommandMove(Level& level)
 	: LevelCommandPoint(), currentPlayer(0), level(&level)
 {
@@ -25,6 +29,20 @@ bool LevelCommandMove::execute(Point point)
 	this->players[currentPlayer]->setBehaviour(std::move(behave));
 
 	return true;
+}
+
+void LevelCommandMove::draw(IView& view)
+{
+	BoardObject* current = getCurrentPlayer();
+	
+	Camera* camera = view.getCamera();
+	Shader* shader = view.getShader();
+	ISpriteFlyweightFactory* factory = view.getSpriteFactory();
+	
+	factory->getSprite("RedCircle")->Draw(
+		*camera, 
+		*shader, 
+		glm::vec3(current->getPositionF().getX() / 10.0f, 0.0005f, current->getPositionF().getY() / 10.0f));
 }
 
 void LevelCommandMove::addPlayer(BoardObject& object)

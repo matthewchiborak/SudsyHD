@@ -50,6 +50,14 @@ void LevelBoard::handleCollisions()
 	}
 }
 
+void LevelBoard::drawCommands(IView& view) const
+{
+	moveCommand.get()->draw(view);
+	//interactCommand.get()->draw(view);
+	//changeNextCommand.get()->draw(view);
+	//changePrevCommand.get()->draw(view);
+}
+
 bool LevelBoard::isAtLeastOneOfObjectTypeAlive(std::string key) const
 {
 	for (int i = 0; i < this->boardObjects.size(); i++)

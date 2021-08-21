@@ -10,6 +10,7 @@ public:
 	LevelCommandInteract(LevelCommandMove* moveCmd, Level& level);
 
 	bool execute() override;
+	void draw(IView& view) override;
 
 private:
 	Level* level;

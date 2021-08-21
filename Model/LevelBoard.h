@@ -14,6 +14,7 @@ public:
 	bool interact() override;
 	void change(bool next) override;
 	void handleCollisions() override;
+	void drawCommands(IView& view) const override;
 
 	bool isAtLeastOneOfObjectTypeAlive(std::string key) const override;
 

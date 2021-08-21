@@ -10,6 +10,7 @@ public:
 	LevelCommandSwitch(LevelCommandMove* moveCmd, bool isNext);
 
 	bool execute() override;
+	void draw(IView& view) override;
 
 private:
 	bool isNext;

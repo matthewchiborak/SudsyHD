@@ -14,6 +14,7 @@ public:
 	LevelCommandMove(Level& level);
 
 	bool execute(Point point) override;
+	void draw(IView& view) override;
 
 	void addPlayer(BoardObject& object);
 	void switchPlayer(bool next);
