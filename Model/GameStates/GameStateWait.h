@@ -6,7 +6,7 @@
 class GameStateWait: public GameState
 {
 public:
-	GameStateWait(IGameModel& model);
+	GameStateWait(IGameModel& model, IView& view);
 
 	void advance() override;
 	void move(const Point direction) override;

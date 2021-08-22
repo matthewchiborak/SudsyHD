@@ -6,7 +6,7 @@
 class GameStatePause: public GameState
 {
 public:
-	GameStatePause(IGameModel& model);
+	GameStatePause(IGameModel& model, IView& view);
 
 	void advance() override;
 	void move(const Point direction) override;

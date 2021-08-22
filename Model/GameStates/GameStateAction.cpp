@@ -4,8 +4,8 @@
 #include "GameStateGameOver.h"
 #include "GameStateWin.h"
 
-GameStateAction::GameStateAction(IGameModel& model)
-	: GameState(model)
+GameStateAction::GameStateAction(IGameModel& model, IView& view)
+	: GameState(model, view)
 {
 }
 
@@ -46,16 +46,16 @@ void GameStateAction::determineNextState()
 	//If no players left, game over
 	if (!this->model->getCurrentLevel()->isAtLeastOneOfObjectTypeAlive("Person"))
 	{
-		this->model->setState(std::move(std::make_unique<GameStateGameOver>(*model)));
+		this->model->setState(std::move(std::make_unique<GameStateGameOver>(*model, *view)));
 		return;
 	}
 
 	//If no goals left, win
 	if (!this->model->getCurrentLevel()->isAtLeastOneOfObjectTypeAlive("Goal"))
 	{
-		this->model->setState(std::move(std::make_unique<GameStateWin>(*model)));
+		this->model->setState(std::move(std::make_unique<GameStateWin>(*model, *view)));
 		return;
 	}
 
-	this->model->setState(std::move(std::make_unique<GameStateWait>(*model)));
+	this->model->setState(std::move(std::make_unique<GameStateWait>(*model, *view)));
 }

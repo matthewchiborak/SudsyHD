@@ -179,6 +179,7 @@
     <ClInclude Include="Model\GameModel.h" />
     <ClInclude Include="Model\GameStates\GameState.h" />
     <ClInclude Include="Model\GameStates\GameStateAction.h" />
+    <ClInclude Include="Model\GameStates\GameStateEnd.h" />
     <ClInclude Include="Model\GameStates\GameStateGameOver.h" />
     <ClInclude Include="Model\GameStates\GameStatePause.h" />
     <ClInclude Include="Model\GameStates\GameStateWait.h" />
@@ -211,7 +212,10 @@
     <ClInclude Include="View\IView.h" />
     <ClInclude Include="View\RenderStrategies\RenderStrategy.h" />
     <ClInclude Include="View\RenderStrategies\RenderStrategyBoard.h" />
+    <ClInclude Include="View\RenderStrategies\RenderStrategyEnd.h" />
+    <ClInclude Include="View\RenderStrategies\RenderStrategyGameOver.h" />
     <ClInclude Include="View\RenderStrategies\RenderStrategyPause.h" />
+    <ClInclude Include="View\RenderStrategies\RenderStrategyWin.h" />
     <ClInclude Include="View\RenderStrategyFactory.h" />
     <ClInclude Include="View\Sprite.h" />
     <ClInclude Include="View\SpriteFlyweightFactory.h" />
@@ -253,6 +257,7 @@
     <ClCompile Include="Model\GameModel.cpp" />
     <ClCompile Include="Model\GameStates\GameState.cpp" />
     <ClCompile Include="Model\GameStates\GameStateAction.cpp" />
+    <ClCompile Include="Model\GameStates\GameStateEnd.cpp" />
     <ClCompile Include="Model\GameStates\GameStateGameOver.cpp" />
     <ClCompile Include="Model\GameStates\GameStatePause.cpp" />
     <ClCompile Include="Model\GameStates\GameStateWait.cpp" />
@@ -286,7 +291,10 @@
     <ClCompile Include="View\IView.cpp" />
     <ClCompile Include="View\RenderStrategies\RenderStrategy.cpp" />
     <ClCompile Include="View\RenderStrategies\RenderStrategyBoard.cpp" />
+    <ClCompile Include="View\RenderStrategies\RenderStrategyEnd.cpp" />
+    <ClCompile Include="View\RenderStrategies\RenderStrategyGameOver.cpp" />
     <ClCompile Include="View\RenderStrategies\RenderStrategyPause.cpp" />
+    <ClCompile Include="View\RenderStrategies\RenderStrategyWin.cpp" />
     <ClCompile Include="View\RenderStrategyFactory.cpp" />
     <ClCompile Include="View\Sprite.cpp" />
     <ClCompile Include="View\SpriteFlyweightFactory.cpp" />

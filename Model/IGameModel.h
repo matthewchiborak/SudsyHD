@@ -16,9 +16,9 @@ public:
 	virtual void change(bool next) = 0;
 	virtual void changeMenu(bool next) = 0;
 
-	void loadLevel(int level);
+	bool loadLevel(int level);
 	void reloadCurrentLevel();
-	void loadNextLevel();
+	bool loadNextLevel();
 
 	Level* getCurrentLevel() const;
 

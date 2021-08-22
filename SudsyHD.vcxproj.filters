@@ -312,6 +312,18 @@
     <ClInclude Include="View\RenderStrategies\RenderStrategyPause.h">
       <Filter>Header Files\View\RenderStrategies</Filter>
     </ClInclude>
+    <ClInclude Include="View\RenderStrategies\RenderStrategyGameOver.h">
+      <Filter>Header Files\View\RenderStrategies</Filter>
+    </ClInclude>
+    <ClInclude Include="View\RenderStrategies\RenderStrategyWin.h">
+      <Filter>Header Files\View\RenderStrategies</Filter>
+    </ClInclude>
+    <ClInclude Include="View\RenderStrategies\RenderStrategyEnd.h">
+      <Filter>Header Files\View\RenderStrategies</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\GameStates\GameStateEnd.h">
+      <Filter>Header Files\Model\GameStates</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="View\Core\glad.c">
@@ -532,6 +544,18 @@
     </ClCompile>
     <ClCompile Include="View\RenderStrategies\RenderStrategyPause.cpp">
       <Filter>Source Files\View\RenderStrategies</Filter>
+    </ClCompile>
+    <ClCompile Include="View\RenderStrategies\RenderStrategyGameOver.cpp">
+      <Filter>Source Files\View\RenderStrategies</Filter>
+    </ClCompile>
+    <ClCompile Include="View\RenderStrategies\RenderStrategyWin.cpp">
+      <Filter>Source Files\View\RenderStrategies</Filter>
+    </ClCompile>
+    <ClCompile Include="View\RenderStrategies\RenderStrategyEnd.cpp">
+      <Filter>Source Files\View\RenderStrategies</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\GameStates\GameStateEnd.cpp">
+      <Filter>Source Files\Model\GameStates</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

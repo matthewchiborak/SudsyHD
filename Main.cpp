@@ -19,8 +19,8 @@ int main()
 	std::unique_ptr<IBehaviourFactory> behaviourFactory = std::make_unique<BehaviourFactory>();
 	std::unique_ptr<ILevelFactory> levelFactory = std::make_unique<LevelFactory>("Levels", *(behaviourFactory.get()));
 	std::unique_ptr<IGameModel> model = std::make_unique<GameModel>(*levelFactory);
-	model.get()->setState(std::move(std::make_unique<GameStateWait>(*(model.get()))));
 	std::unique_ptr<IView> view = std::make_unique<View>(Point(1600, 800), *(model.get()), *(renderStratFact.get()), *(spriteFactory.get()), "Shaders");
+	model.get()->setState(std::move(std::make_unique<GameStateWait>(*(model.get()), *(view.get()))));
 	std::unique_ptr<IGameController> controller = std::make_unique<GameController>(*(model.get()), *(view.get()));
 
 	controller->start();

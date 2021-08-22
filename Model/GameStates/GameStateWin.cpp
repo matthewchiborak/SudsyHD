@@ -1,10 +1,14 @@
 #include "GameStateWin.h"
 
 #include "GameStateWait.h"
+#include "GameStateEnd.h"
 
-GameStateWin::GameStateWin(IGameModel& model)
-	: GameState(model)
+#include "../../View/IView.h"
+
+GameStateWin::GameStateWin(IGameModel& model, IView& view)
+	: GameState(model, view)
 {
+	view.setRenderingStrategy("Win");
 }
 
 void GameStateWin::advance()
@@ -17,8 +21,10 @@ void GameStateWin::move(const Point direction)
 
 void GameStateWin::interact()
 {
-	this->model->loadNextLevel();
-	this->model->setState(std::move(std::make_unique<GameStateWait>(*model)));
+	if(this->model->loadNextLevel())
+		this->model->setState(std::move(std::make_unique<GameStateWait>(*model, *view)));
+	else
+		this->model->setState(std::move(std::make_unique<GameStateEnd>(*model, *view)));
 }
 
 void GameStateWin::change(bool next)

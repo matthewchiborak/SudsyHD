@@ -9,7 +9,7 @@ IGameModel::IGameModel(ILevelFactory& levelFactory)
 {
 }
 
-void IGameModel::loadLevel(int level)
+bool IGameModel::loadLevel(int level)
 {
 	try
 	{
@@ -19,7 +19,10 @@ void IGameModel::loadLevel(int level)
 	catch (std::exception e)
 	{
 		std::cout << "Load Level Error\n";
+		return false;
 	}
+
+	return true;
 }
 
 void IGameModel::reloadCurrentLevel()
@@ -27,9 +30,9 @@ void IGameModel::reloadCurrentLevel()
 	this->loadLevel(currentLevelNumber);
 }
 
-void IGameModel::loadNextLevel()
+bool IGameModel::loadNextLevel()
 {
-	this->loadLevel(++currentLevelNumber);
+	return this->loadLevel(++currentLevelNumber);
 }
 
 Level* IGameModel::getCurrentLevel() const

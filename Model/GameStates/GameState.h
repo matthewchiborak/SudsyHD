@@ -4,10 +4,12 @@
 #include "../Point.h"
 #include "../IGameModel.h"
 
+class IView;
+
 class GameState
 {
 public:
-	GameState(IGameModel& model);
+	GameState(IGameModel& model, IView& view);
 
 	virtual void advance() = 0;
 	virtual void move(const Point direction) = 0;
@@ -17,6 +19,7 @@ public:
 
 protected:
 	IGameModel* model;
+	IView* view;
 	int framesPassed;
 };
 

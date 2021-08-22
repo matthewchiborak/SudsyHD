@@ -6,7 +6,7 @@
 class GameStateAction: public GameState
 {
 public:
-	GameStateAction(IGameModel& model);
+	GameStateAction(IGameModel& model, IView& view);
 
 	void advance() override;
 	void move(const Point direction) override;

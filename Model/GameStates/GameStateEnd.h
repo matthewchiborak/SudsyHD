@@ -1,12 +1,12 @@
-#ifndef GAME_STATE_GAME_OVER_H
-#define GAME_STATE_GAME_OVER_H
+#ifndef GAME_STATE_END_H
+#define GAME_STATE_END_H
 
 #include "GameState.h"
 
-class GameStateGameOver: public GameState
+class GameStateEnd: public GameState
 {
 public:
-	GameStateGameOver(IGameModel& model, IView& view);
+	GameStateEnd(IGameModel& model, IView& view);
 
 	void advance() override;
 	void move(const Point direction) override;

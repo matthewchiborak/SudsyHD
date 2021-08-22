@@ -2,6 +2,9 @@
 
 #include "RenderStrategies/RenderStrategyBoard.h"
 #include "RenderStrategies/RenderStrategyPause.h"
+#include "RenderStrategies/RenderStrategyEnd.h"
+#include "RenderStrategies/RenderStrategyWin.h"
+#include "RenderStrategies/RenderStrategyGameOver.h"
 
 RenderStrategyFactory::RenderStrategyFactory()
 {
@@ -33,6 +36,24 @@ std::unique_ptr<RenderStrategy> RenderStrategyFactory::createStrategy(std::strin
 	if (key == "Pause")
 	{
 		std::unique_ptr<RenderStrategy> newStrat = std::make_unique<RenderStrategyPause>();
+		return newStrat;
+	}
+
+	if (key == "End")
+	{
+		std::unique_ptr<RenderStrategy> newStrat = std::make_unique<RenderStrategyEnd>();
+		return newStrat;
+	}
+
+	if (key == "Win")
+	{
+		std::unique_ptr<RenderStrategy> newStrat = std::make_unique<RenderStrategyWin>();
+		return newStrat;
+	}
+
+	if (key == "GameOver")
+	{
+		std::unique_ptr<RenderStrategy> newStrat = std::make_unique<RenderStrategyGameOver>();
 		return newStrat;
 	}
 }

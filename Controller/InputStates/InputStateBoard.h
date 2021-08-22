@@ -12,7 +12,6 @@ public:
 
 private:
 	bool buttonDown;
-	bool isPaused;
 };
 
 #endif
