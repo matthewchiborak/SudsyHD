@@ -1,0 +1,46 @@
+{
+	"Width": 7,
+	"Height": 2,
+	"Players": [
+	{
+		"Key": "Allura",
+		"X": 6,
+		"Y": 0,
+		"Behaviour": "NONE",
+		"Sender": "FREEZE",
+		"Receiver": "NONE"
+	}
+	],
+	"Enemies": [
+	{
+		"Key": "Goblin",
+		"X": 4,
+		"Y": 0,
+		"Behaviour": "MOVE_ONE_CONT_DOWN",
+		"Sender": "NONE",
+		"Receiver": "FREEZE"
+	},
+	{
+		"Key": "Goblin",
+		"X": 3,
+		"Y": 1,
+		"Behaviour": "MOVE_ONE_CONT_DOWN",
+		"Sender": "NONE",
+		"Receiver": "FREEZE"
+	}
+	],
+	"Obs": [
+	],
+	"Goals": [
+	{
+		"Key": "Goal",
+		"X": 0,
+		"Y": 0,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "NONE"
+	}
+	],
+	"Pits": [
+	]
+}

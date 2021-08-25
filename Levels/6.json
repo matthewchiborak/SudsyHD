@@ -1,0 +1,77 @@
+{
+	"Width": 7,
+	"Height": 3,
+	"Players": [
+	{
+		"Key": "Bullent",
+		"X": 6,
+		"Y": 0,
+		"Behaviour": "NONE",
+		"Sender": "SHOOT",
+		"Receiver": "NONE"
+	},
+	{
+		"Key": "Chad",
+		"X": 6,
+		"Y": 2,
+		"Behaviour": "NONE",
+		"Sender": "PUSH",
+		"Receiver": "NONE"
+	}
+	],
+	"Enemies": [
+	],
+	"Obs": [
+	{
+		"Key": "Rock",
+		"X": 4,
+		"Y": 1,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receivers": [
+		{
+			"Type": "PUSH"
+		},
+		{
+			"Type": "FLOAT"
+		}
+		]
+	}
+	],
+	"Goals": [
+	{
+		"Key": "Goal",
+		"X": 0,
+		"Y": 1,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "NONE"
+	}
+	],
+	"Pits": [
+	{
+		"Key": "Pit",
+		"X": 2,
+		"Y": 0,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "NONE"
+	},
+	{
+		"Key": "Pit",
+		"X": 2,
+		"Y": 1,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "NONE"
+	},
+	{
+		"Key": "Pit",
+		"X": 2,
+		"Y": 2,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "NONE"
+	}
+	]
+}

@@ -1,10 +1,10 @@
 {
-	"Width": 6,
+	"Width": 7,
 	"Height": 1,
 	"Players": [
 	{
 		"Key": "Chad",
-		"X": 5,
+		"X": 6,
 		"Y": 0,
 		"Behaviour": "NONE",
 		"Sender": "PUSH",
@@ -14,6 +14,21 @@
 	"Enemies": [
 	],
 	"Obs": [
+	{
+		"Key": "Rock",
+		"X": 4,
+		"Y": 0,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receivers": [
+		{
+			"Type": "PUSH"
+		},
+		{
+			"Type": "FLOAT"
+		}
+		]
+	}
 	],
 	"Goals": [
 	{
@@ -26,5 +41,13 @@
 	}
 	],
 	"Pits": [
+	{
+		"Key": "Pit",
+		"X": 2,
+		"Y": 0,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "NONE"
+	}
 	]
 }

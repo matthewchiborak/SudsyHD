@@ -1,17 +1,25 @@
 {
-	"Width": 6,
-	"Height": 1,
+	"Width": 5,
+	"Height": 3,
 	"Players": [
 	{
 		"Key": "Chad",
-		"X": 5,
-		"Y": 0,
+		"X": 6,
+		"Y": 1,
 		"Behaviour": "NONE",
 		"Sender": "PUSH",
 		"Receiver": "NONE"
 	}
 	],
 	"Enemies": [
+	{
+		"Key": "Goblin",
+		"X": 2,
+		"Y": 1,
+		"Behaviour": "MOVE_ONE_CONT_DOWN",
+		"Sender": "NONE",
+		"Receiver": "FREEZE"
+	}
 	],
 	"Obs": [
 	],
@@ -19,7 +27,7 @@
 	{
 		"Key": "Goal",
 		"X": 0,
-		"Y": 0,
+		"Y": 1,
 		"Behaviour": "NONE",
 		"Sender": "NONE",
 		"Receiver": "NONE"

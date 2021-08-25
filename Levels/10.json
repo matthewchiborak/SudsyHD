@@ -1,19 +1,34 @@
 {
 	"Width": 6,
-	"Height": 1,
+	"Height": 2,
 	"Players": [
 	{
-		"Key": "Chad",
+		"Key": "Duke",
 		"X": 5,
 		"Y": 0,
 		"Behaviour": "NONE",
-		"Sender": "PUSH",
+		"Sender": "FLOAT",
 		"Receiver": "NONE"
 	}
 	],
 	"Enemies": [
 	],
 	"Obs": [
+	{
+		"Key": "Rock",
+		"X": 3,
+		"Y": 0,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receivers": [
+		{
+			"Type": "PUSH"
+		},
+		{
+			"Type": "FLOAT"
+		}
+		]
+	}
 	],
 	"Goals": [
 	{

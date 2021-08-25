@@ -1,17 +1,25 @@
 {
-	"Width": 6,
+	"Width": 7,
 	"Height": 1,
 	"Players": [
 	{
-		"Key": "Chad",
-		"X": 5,
+		"Key": "Bullent",
+		"X": 6,
 		"Y": 0,
 		"Behaviour": "NONE",
-		"Sender": "PUSH",
+		"Sender": "SHOOT",
 		"Receiver": "NONE"
 	}
 	],
 	"Enemies": [
+	{
+		"Key": "Goblin",
+		"X": 3,
+		"Y": 0,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "FREEZE"
+	}
 	],
 	"Obs": [
 	],

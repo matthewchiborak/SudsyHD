@@ -1,0 +1,137 @@
+{
+	"Width": 11,
+	"Height": 6,
+	"Players": [
+	{
+		"Key": "Chad",
+		"X": 10,
+		"Y": 5,
+		"Behaviour": "NONE",
+		"Sender": "PUSH",
+		"Receiver": "NONE"
+	},
+	{
+		"Key": "Duke",
+		"X": 9,
+		"Y": 5,
+		"Behaviour": "NONE",
+		"Sender": "FLOAT",
+		"Receiver": "NONE"
+	}
+	],
+	"Enemies": [
+	],
+	"Obs": [
+	{
+		"Key": "Wall",
+		"X": 5,
+		"Y": 5,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receivers": [
+		{
+			"Type": "NONE"
+		}
+		]
+	},
+	{
+		"Key": "Wall",
+		"X": 3,
+		"Y": 5,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receivers": [
+		{
+			"Type": "NONE"
+		}
+		]
+	},
+	{
+		"Key": "Wall",
+		"X": 2,
+		"Y": 1,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receivers": [
+		{
+			"Type": "NONE"
+		}
+		]
+	},
+	{
+		"Key": "Rock",
+		"X": 7,
+		"Y": 1,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receivers": [
+		{
+			"Type": "PUSH"
+		},
+		{
+			"Type": "FLOAT"
+		}
+		]
+	}
+	],
+	"Goals": [
+	{
+		"Key": "Goal",
+		"X": 4,
+		"Y": 5,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "NONE"
+	}
+	],
+	"Pits": [
+	{
+		"Key": "Pit",
+		"X": 5,
+		"Y": 4,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "NONE"
+	},
+	{
+		"Key": "Pit",
+		"X": 3,
+		"Y": 4,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "NONE"
+	},
+	{
+		"Key": "Pit",
+		"X": 4,
+		"Y": 4,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "NONE"
+	},
+	{
+		"Key": "Pit",
+		"X": 5,
+		"Y": 3,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "NONE"
+	},
+	{
+		"Key": "Pit",
+		"X": 5,
+		"Y": 0,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "NONE"
+	},
+	{
+		"Key": "Pit",
+		"X": 5,
+		"Y": 1,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "NONE"
+	}
+	]
+}

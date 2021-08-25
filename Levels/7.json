@@ -1,49 +1,25 @@
 {
-	"Width": 8,
-	"Height": 8,
+	"Width": 11,
+	"Height": 6,
 	"Players": [
 	{
-		"Key": "Duke",
-		"X": 3,
-		"Y": 3,
-		"Behaviour": "NONE",
-		"Sender": "FLOAT",
-		"Receiver": "NONE"
-	},
-	{
 		"Key": "Chad",
-		"X": 5,
-		"Y": 3,
+		"X": 10,
+		"Y": 5,
 		"Behaviour": "NONE",
 		"Sender": "PUSH",
 		"Receiver": "NONE"
 	},
 	{
 		"Key": "Bullent",
-		"X": 6,
-		"Y": 3,
+		"X": 9,
+		"Y": 5,
 		"Behaviour": "NONE",
 		"Sender": "SHOOT",
-		"Receiver": "NONE"
-	},
-	{
-		"Key": "Allura",
-		"X": 2,
-		"Y": 3,
-		"Behaviour": "NONE",
-		"Sender": "FREEZE",
 		"Receiver": "NONE"
 	}
 	],
 	"Enemies": [
-	{
-		"Key": "Goblin",
-		"X": 7,
-		"Y": 7,
-		"Behaviour": "MOVE_ONE_CONT_DOWN",
-		"Sender": "NONE",
-		"Receiver": "FREEZE"
-	}
 	],
 	"Obs": [
 	{
@@ -59,24 +35,33 @@
 		]
 	},
 	{
-		"Key": "Rock",
-		"X": 4,
-		"Y": 3,
+		"Key": "Wall",
+		"X": 3,
+		"Y": 5,
 		"Behaviour": "NONE",
 		"Sender": "NONE",
 		"Receivers": [
 		{
-			"Type": "PUSH"
-		},
+			"Type": "NONE"
+		}
+		]
+	},
+	{
+		"Key": "Wall",
+		"X": 2,
+		"Y": 1,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receivers": [
 		{
-			"Type": "FLOAT"
+			"Type": "NONE"
 		}
 		]
 	},
 	{
 		"Key": "Rock",
-		"X": 0,
-		"Y": 2,
+		"X": 7,
+		"Y": 1,
 		"Behaviour": "NONE",
 		"Sender": "NONE",
 		"Receivers": [
@@ -92,8 +77,8 @@
 	"Goals": [
 	{
 		"Key": "Goal",
-		"X": 6,
-		"Y": 7,
+		"X": 4,
+		"Y": 5,
 		"Behaviour": "NONE",
 		"Sender": "NONE",
 		"Receiver": "NONE"
@@ -102,8 +87,40 @@
 	"Pits": [
 	{
 		"Key": "Pit",
-		"X": 0,
-		"Y": 5,
+		"X": 5,
+		"Y": 4,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "NONE"
+	},
+	{
+		"Key": "Pit",
+		"X": 3,
+		"Y": 4,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "NONE"
+	},
+	{
+		"Key": "Pit",
+		"X": 4,
+		"Y": 4,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "NONE"
+	},
+	{
+		"Key": "Pit",
+		"X": 5,
+		"Y": 3,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receiver": "NONE"
+	},
+	{
+		"Key": "Pit",
+		"X": 5,
+		"Y": 0,
 		"Behaviour": "NONE",
 		"Sender": "NONE",
 		"Receiver": "NONE"
