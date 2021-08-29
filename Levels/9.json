@@ -22,8 +22,8 @@
 	"Enemies": [
 	{
 		"Key": "Goblin",
-		"X": 2,
-		"Y": 5,
+		"X": 3,
+		"Y": 3,
 		"Behaviour": "MOVE_ONE_CONT_DOWN",
 		"Sender": "NONE",
 		"Receiver": "FREEZE"

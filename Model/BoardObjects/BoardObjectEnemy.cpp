@@ -12,6 +12,8 @@ SpaceClaimResponse BoardObjectEnemy::canIShareSpaceWithYou(std::string key)
 	if (key == "Arrow")
 		return SpaceClaimResponse::STOP;
 
+	//Could allow do deny if enemy is planning to not be on this space next turn
+
 	return SpaceClaimResponse::DENY;
 }
 

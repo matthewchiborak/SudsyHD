@@ -48,7 +48,7 @@
 	},
 	{
 		"Key": "Wall",
-		"X": 2,
+		"X": 3,
 		"Y": 1,
 		"Behaviour": "NONE",
 		"Sender": "NONE",
@@ -62,6 +62,21 @@
 		"Key": "Rock",
 		"X": 7,
 		"Y": 1,
+		"Behaviour": "NONE",
+		"Sender": "NONE",
+		"Receivers": [
+		{
+			"Type": "PUSH"
+		},
+		{
+			"Type": "FLOAT"
+		}
+		]
+	},
+	{
+		"Key": "Rock",
+		"X": 0,
+		"Y": 0,
 		"Behaviour": "NONE",
 		"Sender": "NONE",
 		"Receivers": [

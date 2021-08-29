@@ -54,10 +54,24 @@ void InputStateBoard::handle(IGameModel& model, IView& view)
 		}
 		return;
 	}
+
+	if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS)
+	{
+		if (!buttonDown)
+		{
+			model.reloadCurrentLevel();
+			buttonDown = true;
+		}
+		return;
+	}
 	
 	if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
 	{
-		model.interact();
+		if (!buttonDown)
+		{
+			model.interact();
+			buttonDown = true;
+		}
 		return;
 	}
 

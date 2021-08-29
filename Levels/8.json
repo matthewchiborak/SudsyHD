@@ -5,7 +5,7 @@
 	{
 		"Key": "Allura",
 		"X": 6,
-		"Y": 0,
+		"Y": 1,
 		"Behaviour": "NONE",
 		"Sender": "FREEZE",
 		"Receiver": "NONE"
@@ -16,14 +16,6 @@
 		"Key": "Goblin",
 		"X": 4,
 		"Y": 0,
-		"Behaviour": "MOVE_ONE_CONT_DOWN",
-		"Sender": "NONE",
-		"Receiver": "FREEZE"
-	},
-	{
-		"Key": "Goblin",
-		"X": 3,
-		"Y": 1,
 		"Behaviour": "MOVE_ONE_CONT_DOWN",
 		"Sender": "NONE",
 		"Receiver": "FREEZE"
